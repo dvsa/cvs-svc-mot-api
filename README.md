@@ -9,12 +9,6 @@ You will need to install the following DVSA packages to make sure you have the s
 - [git-secrets](https://github.com/awslabs/git-secrets)
 - [repo-security-scanner](https://github.com/UKHomeOffice/repo-security-scanner)
 
-Then, using your prefered shell, you will need to add the hook to your project,:
-
-```sh
-echo 'git secrets --scan && git log -p | scanrepo' > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
-```
-
 ## Installation:
 
 1. Install Docker (https://store.docker.com/editions/community/docker-ce-desktop-mac)
