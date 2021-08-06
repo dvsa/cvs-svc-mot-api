@@ -42,7 +42,7 @@ sourceCompatibility = 11
 jacocoTestReport {
     group = "Reporting"
     reports {
-        xml.enabled false
+        xml.enabled true
         csv.enabled false
         html.destination file("${buildDir}/reports/coverage")
         // html.destination file("./reports/coverage")
