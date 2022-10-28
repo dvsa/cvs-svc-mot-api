@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import uk.gov.dvsa.exception.HttpException;
 import uk.gov.dvsa.logging.EventType;
 import uk.gov.dvsa.logging.LoggingExecutor;
+import uk.gov.dvsa.logging.EventLogger;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.mot.enums.DocumentsConfig;
 
@@ -28,10 +29,12 @@ public class RequestParser {
     public static final String REQUEST_TRACE_ID_HEADER = "x-b3-traceid";
     public static final String REQUEST_SPAN_ID_HEADER = "x-b3-spanid";
     public static final String REQUEST_PARENT_SPAN_ID_HEADER = "x-b3-parentspanid";
+    public static final String INVOKING_LAMBDA_NAME = "FunctionName";
 
     private static final Logger logger = LogManager.getLogger(RequestParser.class);
 
     private final LoggingExecutor executor = new LoggingExecutor(logger);
+    private final EventLogger eventLogger = new EventLogger(logger);
 
     static {
         HashMap<String, Class<? extends Document>> documentsMap = new HashMap<>();
@@ -45,6 +48,7 @@ public class RequestParser {
     }
 
     public Document parseRequest(Map<String, Object> input) {
+        eventLogger.logEvent(EventType.CERT_REQUEST_PARSING);
         return executor.timed(() -> parse(input), EventType.CERT_REQUEST_PARSING);
     }
 
@@ -66,6 +70,8 @@ public class RequestParser {
     }
 
     private static String readDocumentName(Map<String, Object> input) {
+        logger.info("Received invocation from lambda: {}", input.get(INVOKING_LAMBDA_NAME));
+
         if (!input.containsKey(PATH_PARAMETERS)) {
             throw new HttpException.BadRequestException("Required lambda parameter " + PATH_PARAMETERS + " not found");
         }
@@ -84,6 +90,8 @@ public class RequestParser {
         String documentName = pathParameters.get(DOCUMENT_NAME_PARAMETER);
         String documentDirectory = pathParameters.get(DOCUMENT_DIRECTORY_PARAMETER);
 
+        logger.info("documentName received: {}", documentName);
+        logger.info("documentDirectory received: {}", documentDirectory);
         return trimFileExtension(documentDirectory + "/" + documentName);
     }
 
