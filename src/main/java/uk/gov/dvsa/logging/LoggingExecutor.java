@@ -15,6 +15,7 @@ public class LoggingExecutor {
 
     public <T> T timed(Supplier<T> operation, EventType event) {
         long start = System.nanoTime();
+        logEvent(event);
         try {
             T result = operation.get();
             logEvent(event, "Done in {} nanoseconds", start);
@@ -31,5 +32,10 @@ public class LoggingExecutor {
         LogContextWrapper.setDuration(duration);
         logger.info(message, duration);
         LogContextWrapper.cleanupDuration();
+    }
+
+    private void logEvent(EventType event) {
+        LogContextWrapper.setEvent(event);
+        logger.info(event.getDescription());
     }
 }

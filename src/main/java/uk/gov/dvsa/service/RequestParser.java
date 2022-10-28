@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import uk.gov.dvsa.exception.HttpException;
 import uk.gov.dvsa.logging.EventType;
 import uk.gov.dvsa.logging.LoggingExecutor;
-import uk.gov.dvsa.logging.EventLogger;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.mot.enums.DocumentsConfig;
 
@@ -34,7 +33,6 @@ public class RequestParser {
     private static final Logger logger = LogManager.getLogger(RequestParser.class);
 
     private final LoggingExecutor executor = new LoggingExecutor(logger);
-    private final EventLogger eventLogger = new EventLogger(logger);
 
     static {
         HashMap<String, Class<? extends Document>> documentsMap = new HashMap<>();
@@ -48,7 +46,6 @@ public class RequestParser {
     }
 
     public Document parseRequest(Map<String, Object> input) {
-        eventLogger.logEvent(EventType.CERT_REQUEST_PARSING);
         return executor.timed(() -> parse(input), EventType.CERT_REQUEST_PARSING);
     }
 
@@ -103,7 +100,6 @@ public class RequestParser {
         }
         return documentPath;
     }
-
 
     private static String readRequestBody(Map<String, Object> input) {
         if (!input.containsKey(REQUEST_BODY)) {

@@ -34,12 +34,10 @@ public class HtmlGenerator {
     }
 
     public List<String> generate(Document context) {
-        eventLogger.logEvent(EventType.CERT_TEMPLATES_COMPILATION);
         List<Template> templates = executor.timed(
             () -> getTemplates(context.getDocumentName()),
             EventType.CERT_TEMPLATES_COMPILATION
         );
-        eventLogger.logEvent(EventType.CERT_HTML_GENERATION);
         return executor.timed(
             () -> processTemplates(context, templates),
             EventType.CERT_HTML_GENERATION
