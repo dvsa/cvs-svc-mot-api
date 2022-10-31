@@ -28,7 +28,6 @@ public class RequestParser {
     public static final String REQUEST_TRACE_ID_HEADER = "x-b3-traceid";
     public static final String REQUEST_SPAN_ID_HEADER = "x-b3-spanid";
     public static final String REQUEST_PARENT_SPAN_ID_HEADER = "x-b3-parentspanid";
-    public static final String INVOKING_LAMBDA_NAME = "FunctionName";
 
     private static final Logger logger = LogManager.getLogger(RequestParser.class);
 
@@ -67,8 +66,6 @@ public class RequestParser {
     }
 
     private static String readDocumentName(Map<String, Object> input) {
-        logger.info("Received invocation from lambda: {}", input.get(INVOKING_LAMBDA_NAME));
-
         if (!input.containsKey(PATH_PARAMETERS)) {
             throw new HttpException.BadRequestException("Required lambda parameter " + PATH_PARAMETERS + " not found");
         }
