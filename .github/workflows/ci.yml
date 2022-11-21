@@ -6,9 +6,11 @@ on:
 jobs:
   security:
     runs-on: ubuntu-latest
-    uses: actions/checkout@v2
-    uses: snyk/actions/gradle-jdk11@master
-    with:
-      args: '--all-projects'
-    secrets:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/gradle-jdk11@master
+      with:
+        args: '--all-projects'
+      secrets:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
