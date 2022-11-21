@@ -5,8 +5,11 @@ on:
 
 jobs:
   security:
-    uses: dvsa/.github/.github/workflows/nodejs-security.yaml@v2
-    with:
-      args: '--all-projects'
-    secrets:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      uses: actions/checkout@v2
+      uses: snyk/actions/gradle-jdk11@master
+      with:
+        args: '--all-projects'
+      secrets:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
