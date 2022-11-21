@@ -7,7 +7,6 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      snyk ignore -id=snyk:lic:maven:com.itextpdf:itextpdf:AGPL-3.0 [--reason='No fix available, blocks merging Snyk']
     - uses: actions/checkout@v2
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/gradle-jdk11@master
