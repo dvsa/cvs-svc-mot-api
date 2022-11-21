@@ -10,11 +10,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/gradle-jdk11@master
+      ignore:
+        'snyk:lic:maven:com.itextpdf:itextpdf:AGPL-3.0'
+        reason: 'No fix available, blocks merging Snyk'
       with:
         args: '--all-projects'
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
-ignore:
-  'snyk:lic:maven:com.itextpdf:itextpdf:AGPL-3.0'
-  reason: 'No fix available, blocks merging Snyk'
