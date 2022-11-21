@@ -12,5 +12,5 @@ jobs:
       uses: snyk/actions/gradle-jdk11@master
       with:
         args: '--all-projects'
-      secrets:
+      env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
