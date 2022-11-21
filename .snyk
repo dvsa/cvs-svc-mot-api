@@ -1,0 +1,4 @@
+ignore:
+    'snyk:lic:maven:com.itextpdf:itextpdf:AGPL-3.0':
+        - '*':
+            reason: 'No fix available, blocks merging Snyk'
