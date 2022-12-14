@@ -1,9 +1,14 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Reissue {
 
+    @JsonProperty("Reason")
     private String reason;
+    @JsonProperty("Issuer")
     private String issuer;
+    @JsonProperty("Date")
     private String date;
 
     public String getReason() {
