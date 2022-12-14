@@ -53,6 +53,7 @@ public class RequestParser {
             String documentName = readDocumentName(input);
             Class<? extends Document> documentType = readDocumentType(documentName);
             String documentJson = readRequestBody(input);
+            //TODO: remove logging line
             logger.info(documentJson);
             Document document = om.readValue(documentJson, documentType);
             document.setDocumentName(documentName);
