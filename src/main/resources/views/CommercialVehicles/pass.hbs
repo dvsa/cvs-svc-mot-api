@@ -375,15 +375,6 @@
                          {{data.testNumber}}
                      </span>
                 </div>
-
-                {{#if reissue}}
-                <div class="util-avoid-page-break-inside" id="reissueInfo">
-                    <p class="test-information__message">
-                        {{reissue.reason}} certificate issued by {{reissue.issuer}} on {{reissue.date}}
-                    </p>
-                </div>
-                {{/if}}
-
                 <!-- /heading-info -->
                 <div class="util-avoid-page-break-inside">
                     <div class="seat-belt-information__two-columns">
@@ -399,6 +390,13 @@
                         </div>
                     </div>
                 </div>
+                {{#if reissue}}
+                <div class="util-avoid-page-break-inside" id="reissueInfo">
+                    <p class="test-information__message">
+                        {{reissue.reason}} certificate issued by {{reissue.issuer}} on {{reissue.date}}
+                    </p>
+                </div>
+                {{/if}}
                 <div class="util-avoid-page-break-inside">
                     <p class="test-information__message">
                         Check that this document is genuine by visiting <a class="test-information__message-link"
