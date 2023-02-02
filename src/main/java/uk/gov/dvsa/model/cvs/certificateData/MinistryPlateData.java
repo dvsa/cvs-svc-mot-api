@@ -2,9 +2,13 @@ package uk.gov.dvsa.model.cvs.certificateData;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MinistryPlateData {
+
+    private static final Logger logger = LogManager.getLogger(MinistryPlateData.class);
 
     @JsonProperty("PlateSerialNumber")
     private String plateSerialNumber;
@@ -362,6 +366,7 @@ public class MinistryPlateData {
     }
 
     public MinistryPlateData setAxles(Axles axles) {
+        logger.info(axles);
         this.axles = axles;
         return this;
     }
