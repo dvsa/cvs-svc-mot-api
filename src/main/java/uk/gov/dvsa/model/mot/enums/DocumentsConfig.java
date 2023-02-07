@@ -62,6 +62,9 @@ public enum DocumentsConfig {
             new String[]{CertificateTemplates.ADR_PASS.getCertificateTemplateName()}),
     VTG6_VTG7(CertificateTypes.VTG6_VTG7.getType(), MinistryPlate.class,
             new String[]{CertificateTemplates.VTG6_VTG7.getCertificateTemplateName()}),
+
+    VTG6_VTG7_TRL(CertificateTypes.VTG6_VTG7_TRL.getType(), MinistryPlate.class,
+            new String[]{CertificateTemplates.VTG6_VTG7_TRL.getCertificateTemplateName()}),
     RWT_DATA(CertificateTypes.RWT_DATA.getType(), RwtCertificate.class,
             new String[]{CertificateTemplates.RWT_DATA.getCertificateTemplateName()}),
     CVS_HGV_PRS(CertificateTypes.CVS_HGV_PRS.getType(), uk.gov.dvsa.model.cvs.CvsHgvPRS.class,

@@ -165,7 +165,10 @@ public class CertificateTestDataProvider {
 
     public static MinistryPlate getMinistryPlate() {
         MinistryPlate ministryPlateCertificate = new MinistryPlate();
+        Reissue reissue = new Reissue();
+        reissue.setReason("REPLACEMENT");
         ministryPlateCertificate.setDocumentName(CertificateTypes.VTG6_VTG7.getType());
+        ministryPlateCertificate.setReissue(reissue);
         MinistryPlateData ministryPlateCertificateData = new MinistryPlateData();
 
         ministryPlateCertificateData.setPlateSerialNumber("12345")
@@ -181,6 +184,32 @@ public class CertificateTestDataProvider {
                         new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
                         new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
                         new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")))
+                );
+        ministryPlateCertificate.setPlateData(ministryPlateCertificateData);
+        return ministryPlateCertificate;
+    }
+
+    public static MinistryPlate getMinistryPlateTRL() {
+        MinistryPlate ministryPlateCertificate = new MinistryPlate();
+        Reissue reissue = new Reissue();
+        reissue.setReason("REPLACEMENT");
+        ministryPlateCertificate.setDocumentName(CertificateTypes.VTG6_VTG7_TRL.getType());
+        ministryPlateCertificate.setReissue(reissue);
+        MinistryPlateData ministryPlateCertificateData = new MinistryPlateData();
+
+        ministryPlateCertificateData.setPlateSerialNumber("12345")
+                .setDtpNumber("DTPNUM").setPrimaryVrm("BBB333").setVin("ABCDEFGH444444").setVariantNumber("22").setApprovalTypeNumber("12345")
+                .setMake("Ford").setModel("Focus").setSpeedLimiterMrk("Yes").setFunctionCode("A").setRegnDate("2019-12-12").setManufactureYear("2018")
+                .setGrossGbWeight("2556").setGrossEecWeight("1245").setGrossDesignWeight("2345").setTrainGbWeight("3500").setTrainEecWeight("2466")
+                .setTrainDesignWeight("4452").setMaxTrainGbWeight("2233").setMaxTrainEecWeight("1234").setMaxLoadOnCoupling("2500")
+                .setDimensionLength("5600").setDimensionWidth("8700").setFrontAxleTo5thWheelCouplingMax("9845").setFrontAxleTo5thWheelCouplingMin("4567")
+                .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12").setTyreUseCode("2B")
+                .setAxles(
+                        new Axles(
+                                new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
+                                new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
+                                new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
+                                new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")))
                 );
         ministryPlateCertificate.setPlateData(ministryPlateCertificateData);
         return ministryPlateCertificate;
