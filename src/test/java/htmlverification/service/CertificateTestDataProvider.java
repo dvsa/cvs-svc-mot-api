@@ -177,7 +177,7 @@ public class CertificateTestDataProvider {
                 .setGrossGbWeight("2556").setGrossEecWeight("1245").setGrossDesignWeight("2345").setTrainGbWeight("3500").setTrainEecWeight("2466")
                 .setTrainDesignWeight("4452").setMaxTrainGbWeight("2233").setMaxTrainEecWeight("1234").setMaxLoadOnCoupling("2500")
                 .setDimensionLength("5600").setDimensionWidth("8700").setFrontAxleTo5thWheelCouplingMax("9845").setFrontAxleTo5thWheelCouplingMin("4567")
-                .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12").setTyreUseCode("2B")
+                .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12T16:46:09.060Z").setTyreUseCode("2B")
                 .setAxles(
                     new Axles(
                         new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),

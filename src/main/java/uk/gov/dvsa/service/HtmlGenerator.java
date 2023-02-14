@@ -14,7 +14,10 @@ import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.mot.enums.DocumentsConfig;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -98,7 +101,7 @@ public class HtmlGenerator {
                 } else {
                     // try a full UTC DateTime...
                     DateTimeFormatter f = DateTimeFormatter.ISO_INSTANT;
-                    ukDate = LocalDate.from(f.parse(input));
+                    ukDate = LocalDate.ofInstant(Instant.from(f.parse(input)), ZoneId.of("Europe/London"));
                 }
 
                 return ukFormat.format(ukDate);
