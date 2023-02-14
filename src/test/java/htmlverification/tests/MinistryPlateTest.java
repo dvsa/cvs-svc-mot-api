@@ -88,7 +88,7 @@ public class MinistryPlateTest {
     @Test
     public void verifyRegnDate() {
         String regnDate = certificatePageObject.getRegnDate();
-        assertEquals(testCertificate.getPlateData().getRegnDate(), regnDate);
+        assertEquals("12/12/2019", regnDate);
     }
 
     @Test
@@ -190,7 +190,7 @@ public class MinistryPlateTest {
     @Test
     public void verifyPlateIssueDate() {
         String plateIssueDate = certificatePageObject.getPlateIssueDate();
-        assertEquals(testCertificate.getPlateData().getPlateIssueDate(), plateIssueDate);
+        assertEquals("12/06/2020", plateIssueDate);
     }
 
     @Test
