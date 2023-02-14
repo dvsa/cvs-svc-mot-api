@@ -17,6 +17,7 @@
     <table class="vtg7">
         <tbody>
         <tr>
+        <tr>
             <td colspan="4" rowspan="2" class="logo">
                 <img src="{{root}}/assets/images/dvsa-crest-1.1.png" alt="DVSA" width="110"/>
             </td>
@@ -129,7 +130,7 @@
                     <p> Registration </p>
                 </div>
                 <div class="inline_elem_child align_middle">
-                    <span class="regn_date_data" id="regnDate">{{plateData.regnDate}}</span>
+                    <span class="regn_date_data" id="regnDate">{{formatIsoDate plateData.regnDate}}</span>
                 </div>
             </td>
             <td colspan="5" class="no_border_left_top manufacture_year">
@@ -665,7 +666,7 @@
                                     <p>Date of Issue</p>
                                 </div>
                                 <div class="inline_elem_child issue_date">
-                                    <p id="plateIssueDate">{{plateData.plateIssueDate}}</p>
+                                    <p id="plateIssueDate">{{formatIsoDate plateData.plateIssueDate}}</p>
                                 </div>
                             </div>
                             <div class="inline_elem black_square_container">
@@ -816,7 +817,7 @@
                             <p> Registration </p>
                         </div>
                         <div class="inline_elem_child align_middle">
-                            <span class="regn_date_data" id="regnDate">{{plateData.regnDate}}</span>
+                            <span class="regn_date_data" id="regnDate">{{formatIsoDate plateData.regnDate}}</span>
                         </div>
                     </td>
                     <td colspan="5" class="no_border_left_top manufacture_year">
@@ -1004,7 +1005,7 @@
                                     DEPARTMENT FOR
                                 </p>
                                 <p class="department_data">
-                                    [{{plateData.plateIssueDate}}]
+                                    [{{formatIsoDate plateData.plateIssueDate}}]
                                 </p>
                                 <p class="department_for">
                                     TRANSPORT
