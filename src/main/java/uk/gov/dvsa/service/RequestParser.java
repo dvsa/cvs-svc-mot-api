@@ -57,7 +57,7 @@ public class RequestParser {
             document.setDocumentName(documentName);
             return document;
         } catch (Exception e) {
-            throw new HttpException.BadRequestException("Error parsing parameters", e);
+            throw new HttpException.BadRequestException("Error parsing parameters: " + e.getMessage(), e);
         }
     }
 
