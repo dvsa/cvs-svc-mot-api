@@ -14,7 +14,6 @@ import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.mot.enums.DocumentsConfig;
 
 import java.io.IOException;
-import java.text.spi.DateFormatProvider;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
