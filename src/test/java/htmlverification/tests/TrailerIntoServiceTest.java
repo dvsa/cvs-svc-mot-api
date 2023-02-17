@@ -63,8 +63,8 @@ public class TrailerIntoServiceTest {
 
     @Test
     public void verifyParagraph3() {
-        assertEquals("On behalf of the UK approval authority and pursuant to the Road Vehicles (Approval) Regulations 2020, Chapter 2, Regulation 23  we hereby give consent to the supply of the trailer having the above identification numbers for use on a road in Great Britain or Northern Ireland.\n\n"
-                + "Please ensure that the allocated identification number is permanently marked in a conspicuous position on the nearside, on the chassis or a fixed component.\n\n"
+        assertEquals("On behalf of the UK approval authority and pursuant to the Road Vehicles (Approval) Regulations 2020, Chapter 2, Regulation 23, we hereby give consent to the supply of the trailer having the above identification numbers for use on a road in Great Britain or Northern Ireland. "
+                + "Please ensure that the allocated identification number is permanently marked in a conspicuous position on the nearside, on the chassis or a fixed component. "
                 + "To check the authenticity of this document, please contact the above number quoting the trailer ID number."
                 , dom.getElementById("paragraph-3").text());
     }
