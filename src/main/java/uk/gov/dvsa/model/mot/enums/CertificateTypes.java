@@ -37,7 +37,8 @@ public enum CertificateTypes {
     ADR_PASS("CVS/ADR_PASS"),
     VTG6_VTG7("CVS/VTG6_VTG7"),
     VTG6_VTG7_TRL("CVS/VTG6_VTG7_TRL"),
-    TRL_INTO_SERVICE("CVS/TRL_INTO_SERVICE"),
+
+    TRAILER_INTO_SERVICE("CVS/TrailerIntoService"),
 
     INSPECTION_CHECKLIST("MOT/InspectionChecklist");
 
