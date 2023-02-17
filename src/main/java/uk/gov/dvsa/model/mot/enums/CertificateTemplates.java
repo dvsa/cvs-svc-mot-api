@@ -29,7 +29,7 @@ public enum CertificateTemplates {
     VTG6_VTG7("CommercialVehicles/VTG6_VTG7"),
 
     VTG6_VTG7_TRL("CommercialVehicles/VTG6_VTG7_TRL"),
-    TRL_INTO_SERVICE("CommercialVehicles/TRL_INTO_SERVICE"),
+    TRAILER_INTO_SERVICE("CommercialVehicles/TrailerIntoService"),
     RWT_DATA("CommercialVehicles/RWT_DATA"),
 
     INSPECTION_CHECKLIST("MOT/Inspection_Checklist");

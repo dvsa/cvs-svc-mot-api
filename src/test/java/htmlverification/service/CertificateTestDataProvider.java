@@ -3,6 +3,7 @@ package htmlverification.service;
 import htmlverification.framework.component.DefectSummaryComponent;
 import uk.gov.dvsa.model.cvs.AdrPassCertificate;
 import uk.gov.dvsa.model.cvs.MinistryPlate;
+import uk.gov.dvsa.model.cvs.TrailerIntoService;
 import uk.gov.dvsa.model.cvs.certificateData.AdrPassCertificateData;
 import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 import uk.gov.dvsa.model.cvs.certificateData.TankStatement;
@@ -203,7 +204,7 @@ public class CertificateTestDataProvider {
                 .setGrossGbWeight("2556").setGrossEecWeight("1245").setGrossDesignWeight("2345").setTrainGbWeight("3500").setTrainEecWeight("2466")
                 .setTrainDesignWeight("4452").setMaxTrainGbWeight("2233").setMaxTrainEecWeight("1234").setMaxLoadOnCoupling("2500")
                 .setDimensionLength("5600").setDimensionWidth("8700").setFrontAxleTo5thWheelCouplingMax("9845").setFrontAxleTo5thWheelCouplingMin("4567")
-                .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12").setTyreUseCode("2B")
+                .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12T16:46:09.060Z").setTyreUseCode("2B")
                 .setAxles(
                         new Axles(
                                 new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
@@ -213,6 +214,20 @@ public class CertificateTestDataProvider {
                 );
         ministryPlateCertificate.setPlateData(ministryPlateCertificateData);
         return ministryPlateCertificate;
+    }
+
+    public static TrailerIntoService getTrailerIntoService(int paragraphId) {
+        TrailerIntoService model = new TrailerIntoService();
+        model.setDocumentName(CertificateTypes.TRAILER_INTO_SERVICE.getType());
+
+        model.setVin("ABCDEFGH444444")
+                .setTrailerId("1234567Z")
+                .setTypeApprovalNumber("a00*AB00/0000*000")
+                .setLetterDateRequested("2023-02-17T15:16:09.060Z")
+                .setApplicantDetails(new ApplicantDetails("applicant details name", "123 applicant details street", "applicant details town", "applicant details city", "AP01 PCD"))
+                .setParagraphId(paragraphId > 0 ? paragraphId : 3);
+
+        return model;
     }
 
     public static VT20 getMultiPageVt20WithHiddenIssuerInfo() {

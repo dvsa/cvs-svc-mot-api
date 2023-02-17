@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +37,8 @@ public class HtmlGenerator {
         Handlebars handlebarsWithHelpers;
         handlebarsWithHelpers = registerTabulatorHelper(handlebars);
         handlebarsWithHelpers = registerIsoDateFormatHelper(handlebars);
+        handlebarsWithHelpers = registerEqualsHelper(handlebars);
+        handlebarsWithHelpers = registerNotEqualsHelper(handlebars);
         this.handlebars = handlebarsWithHelpers;
     }
 
@@ -90,7 +91,7 @@ public class HtmlGenerator {
     private Handlebars registerIsoDateFormatHelper(Handlebars handlebars) {
         return handlebars.registerHelper("formatIsoDate", (context, options) -> {
             String input = context.toString();
-            DateTimeFormatter ukFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            DateTimeFormatter ukFormat = DateTimeFormatter.ofPattern(options.param(0, "dd/MM/yyyy"));
             LocalDate ukDate;
 
             try {
@@ -109,6 +110,14 @@ public class HtmlGenerator {
                 return context;
             }
         });
+    }
+
+    private Handlebars registerEqualsHelper(Handlebars handlebars) {
+        return handlebars.registerHelper("eq", (context, options) -> context.toString().equals(options.param(0).toString()));
+    }
+
+    private Handlebars registerNotEqualsHelper(Handlebars handlebars) {
+        return handlebars.registerHelper("neq", (context, options) -> !context.toString().equals(options.param(0).toString()));
     }
 
     private List<String> processTemplates(Document context, List<Template> templates) {
