@@ -6,47 +6,59 @@ import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 
 public class TrailerIntoService extends Document {
 
-    @JsonProperty()
+    @JsonProperty
     private ApplicantDetails applicantDetails;
 
-    @JsonProperty()
+    @JsonProperty
     private String letterDateRequested;
 
-    @JsonProperty()
+    @JsonProperty
     private String vin;
 
-    @JsonProperty()
+    @JsonProperty
     private String trailerId;
 
-    @JsonProperty()
+    @JsonProperty
     private String typeApprovalNumber;
 
-    @JsonProperty()
+    @JsonProperty
     private int paragraphId;
 
     public ApplicantDetails getApplicantDetails() {
         return applicantDetails;
     }
-
-    public void setApplicantDetails(ApplicantDetails applicantDetails) {
+    public TrailerIntoService setApplicantDetails(ApplicantDetails applicantDetails) {
         this.applicantDetails = applicantDetails;
+        return this;
     }
 
     public String getLetterDateRequested() { return this.letterDateRequested; }
-
-    public void setLetterDateRequested(String letterDateRequested) {
+    public TrailerIntoService setLetterDateRequested(String letterDateRequested) {
         this.letterDateRequested = letterDateRequested;
+        return this;
     }
 
     public String getVin() { return vin; }
-    public void setVin(String vin) { this.vin = vin; }
+    public TrailerIntoService setVin(String vin) {
+        this.vin = vin;
+        return this;
+    }
 
     public String getTrailerId() { return trailerId; }
-    public void setTrailerId(String trailerId) { this.trailerId = trailerId; }
+    public TrailerIntoService setTrailerId(String trailerId) {
+        this.trailerId = trailerId;
+        return this;
+    }
 
     public String getTypeApprovalNumber() { return typeApprovalNumber; }
-    public void setTypeApprovalNumber(String typeApprovalNumber) { this.typeApprovalNumber = typeApprovalNumber; }
+    public TrailerIntoService setTypeApprovalNumber(String typeApprovalNumber) {
+        this.typeApprovalNumber = typeApprovalNumber;
+        return this;
+    }
 
     public int getParagraphId() { return this.paragraphId; }
-    public void setParagraphId(int paragraphId) { this.paragraphId = paragraphId; }
+    public TrailerIntoService setParagraphId(int paragraphId) {
+        this.paragraphId = paragraphId;
+        return this;
+    }
 }

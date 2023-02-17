@@ -19,28 +19,28 @@
         <table id="letter-heading">
             <tbody>
                 <tr>
-                    <td colspan="3" id="applicants-details">
-                        {{#if applicantDetails.name}}{{applicantDetails.name}}<br>{{/if}}
-                        {{#if applicantDetails.street}}{{applicantDetails.street}}<br>{{/if}}
-                        {{#if applicantDetails.town}}{{applicantDetails.town}}<br>{{/if}}
-                        {{#if applicantDetails.city}}{{applicantDetails.city}}<br>{{/if}}
-                        {{#if applicantDetails.postcode}}{{applicantDetails.postcode}}<br>{{/if}}
+                    <td colspan="3" id="applicant-details">
+                        {{#if applicantDetails.name}}<span class="name">{{applicantDetails.name}}</span>{{/if}}
+                        {{#if applicantDetails.street}}<span class="street">{{applicantDetails.street}}</span>{{/if}}
+                        {{#if applicantDetails.town}}<span class="town">{{applicantDetails.town}}</span>{{/if}}
+                        {{#if applicantDetails.city}}<span class="city">{{applicantDetails.city}}</span>{{/if}}
+                        {{#if applicantDetails.postcode}}<span class="postcode">{{applicantDetails.postcode}}</span>{{/if}}
                     </td>
                     <td id="office-details">
-                        Trailer Section<br>
-                        DVSA,<br>
-                        Ellipse,<br>
-                        Padley Road,<br>
-                        Swansea<br>
-                        SA1 8AN<br>
-                        <br>
-                        Tel: 0300 1239000<br>
-                        Fax: 01792 454273<br>
+                        Trailer Section<br/>
+                        DVSA,<br/>
+                        Ellipse,<br/>
+                        Padley Road,<br/>
+                        Swansea<br/>
+                        SA1 8AN<br/>
+                        <br/>
+                        Tel: 0300 1239000<br/>
+                        Fax: 01792 454273<br/>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3"></td>
-                    <td id="letter-date-requested">Date: {{formatIsoDate letterDateRequested "dd/MM/yyyy"}}</td>
+                    <td>Date: <span id="letter-date-requested">{{formatIsoDate letterDateRequested "d MMMM yyyy"}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -55,10 +55,10 @@
 
         <table id="vehicle-information">
             <tbody>
-                <tr id="vin"><td>Vehicle Identification Number:</td><td>{{vin}}</td></tr>
+                <tr><td>Vehicle Identification Number:</td><td id="vin">{{vin}}</td></tr>
                 {{#if (neq paragraphId 4)}}
-                    <tr id="type-approval-number"><td>Type Approval Number (If applicable):</td><td>{{typeApprovalNumber}}</td></tr>
-                    <tr id="trailerId"><td>The Trailer ID Number allocated to the trailer is:</td><td>{{trailerId}}</td></tr>
+                    <tr><td>Type Approval Number (If applicable):</td><td id="type-approval-number">{{typeApprovalNumber}}</td></tr>
+                    <tr><td>The Trailer ID Number allocated to the trailer is:</td><td id="trailer-id">{{trailerId}}</td></tr>
                 {{/if}}
             </tbody>
         </table>
@@ -67,6 +67,7 @@
         <p id="paragraph-3">
             On behalf of the UK approval authority and pursuant to the Road Vehicles (Approval) Regulations 2020, Chapter 2, Regulation 23  we hereby give consent to the supply of the trailer having the above identification numbers for use on a road in Great Britain or Northern Ireland.<br/><br/>
             Please ensure that the allocated identification number is permanently marked in a conspicuous position on the nearside, on the chassis or a fixed component.<br/><br/>
+            To check the authenticity of this document, please contact the above number quoting the trailer ID number.
             To check the authenticity of this document, please contact the above number quoting the trailer ID number.
         </p>
         {{/if}}
