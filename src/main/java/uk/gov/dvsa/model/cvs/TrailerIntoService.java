@@ -8,22 +8,22 @@ import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TrailerIntoService extends Document {
 
-    @JsonProperty
+    @JsonProperty("applicantDetails")
     private ApplicantDetails applicantDetails;
 
-    @JsonProperty
+    @JsonProperty("letterDateRequested")
     private String letterDateRequested;
 
-    @JsonProperty
+    @JsonProperty("vin")
     private String vin;
 
-    @JsonProperty
+    @JsonProperty("trailerId")
     private String trailerId;
 
-    @JsonProperty
+    @JsonProperty("approvalTypeNumber")
     private String approvalTypeNumber;
 
-    @JsonProperty
+    @JsonProperty("paragraphId")
     private int paragraphId;
 
     public ApplicantDetails getApplicantDetails() {

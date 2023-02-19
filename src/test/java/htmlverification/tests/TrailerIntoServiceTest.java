@@ -52,7 +52,7 @@ public class TrailerIntoServiceTest {
 
     @Test
     public void verifyTypeApprovalNumber() {
-        assertEquals(model.getApprovalTypeNumber(), dom.getElementById("type-approval-number").text());
+        assertEquals(model.getApprovalTypeNumber(), dom.getElementById("approval-type-number").text());
     }
 
     @Test

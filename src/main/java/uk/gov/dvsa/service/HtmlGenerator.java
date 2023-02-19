@@ -90,11 +90,12 @@ public class HtmlGenerator {
 
     private Handlebars registerIsoDateFormatHelper(Handlebars handlebars) {
         return handlebars.registerHelper("formatIsoDate", (context, options) -> {
-            String input = context.toString();
-            DateTimeFormatter ukFormat = DateTimeFormatter.ofPattern(options.param(0, "dd/MM/yyyy"));
-            LocalDate ukDate;
-
             try {
+                DateTimeFormatter ukFormat = DateTimeFormatter.ofPattern(options.param(0, "dd/MM/yyyy"));
+                LocalDate ukDate;
+
+                String input = context.toString();
+
                 if (input.length() == 10) {
                     // likely yyyy-mm-dd
                     DateTimeFormatter f = DateTimeFormatter.ISO_LOCAL_DATE;

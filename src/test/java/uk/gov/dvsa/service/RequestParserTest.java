@@ -34,7 +34,8 @@ public class RequestParserTest {
         Document document = parser.parseRequest(input);
 
         assertEquals(document.getDocumentName(), "CVS/TrailerIntoService");
-        assertEquals(((TrailerIntoService)(document)).getApprovalTypeNumber(), "APPROVAL-NUMBER" );
+        assertEquals(((TrailerIntoService)(document)).getLetterDateRequested(), "2023-02-17T18:15:00.000Z");
+        assertEquals(((TrailerIntoService)(document)).getApprovalTypeNumber(), "APPROVAL-NUMBER");
     }
 
 

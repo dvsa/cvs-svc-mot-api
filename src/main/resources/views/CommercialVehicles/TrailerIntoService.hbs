@@ -11,15 +11,15 @@
     <body>
         <table id="letter-heading-logos">
             <tr>
-                <td class="left-logo"><img src="{{root}}/assets/images/dvsa-crest-small.png" alt="DVSA logo" width="378"/></td>
-                <td class="right-logo"><img src="{{root}}/assets/images/dva-logo.png" alt="DVA logo" width="378"/></td>
+                <td class="logo-cell left"><img id="dvsa-logo" src="{{root}}/assets/images/dvsa-crest-small.png" alt="DVSA logo"/></td>
+                <td class="logo-cell right"><img id="dva-logo" src="{{root}}/assets/images/dva-logo.png" alt="DVA logo"/></td>
             </tr>
         </table>
 
         <table id="letter-heading">
             <tbody>
                 <tr>
-                    <td colspan="3" id="applicant-details">
+                    <td id="applicant-details">
                         {{#if applicantDetails.name}}<span class="name">{{applicantDetails.name}}</span>{{/if}}
                         {{#if applicantDetails.street}}<span class="street">{{applicantDetails.street}}</span>{{/if}}
                         {{#if applicantDetails.town}}<span class="town">{{applicantDetails.town}}</span>{{/if}}
@@ -39,7 +39,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3"></td>
+                    <td></td>
                     <td>Date: <span id="letter-date-requested">{{formatIsoDate letterDateRequested "d MMMM yyyy"}}</span></td>
                 </tr>
             </tbody>
@@ -57,7 +57,7 @@
             <tbody>
                 <tr><td>Vehicle Identification Number:</td><td id="vin">{{vin}}</td></tr>
                 {{#if (neq paragraphId 4)}}
-                    <tr><td>Type Approval Number (If applicable):</td><td id="type-approval-number">{{approvalTypeNumber}}</td></tr>
+                    <tr><td>Type Approval Number (If applicable):</td><td id="approval-type-number">{{approvalTypeNumber}}</td></tr>
                     <tr><td>The Trailer ID Number allocated to the trailer is:</td><td id="trailer-id">{{trailerId}}</td></tr>
                 {{/if}}
             </tbody>
@@ -104,10 +104,12 @@
         {{/if}}
 
         <p id="footer">
-        Yours faithfully
-        <img id="letter-signature" src="{{root}}/assets/images/signature-ceo-loveday-ryder.png" alt="DVSA CEO Loveday Ryder's signature" width="114"/>
-        Loveday Ryder<br/>
-        Chief Executive Officer
+            Yours faithfully
+            <p>
+                <img id="letter-signature" src="{{root}}/assets/images/signature-ceo-loveday-ryder.png" alt="DVSA CEO Loveday Ryder's signature"/>
+            </p>
+            Loveday Ryder<br/>
+            Chief Executive Officer
         </p>
     </body>
 </html>
