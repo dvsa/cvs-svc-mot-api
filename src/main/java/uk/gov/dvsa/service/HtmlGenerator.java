@@ -11,7 +11,7 @@ import uk.gov.dvsa.logging.EventLogger;
 import uk.gov.dvsa.logging.EventType;
 import uk.gov.dvsa.logging.LoggingExecutor;
 import uk.gov.dvsa.model.Document;
-import uk.gov.dvsa.model.mot.enums.DocumentsConfig;
+import uk.gov.dvsa.enums.DocumentsConfig;
 
 import java.io.IOException;
 import java.time.Instant;

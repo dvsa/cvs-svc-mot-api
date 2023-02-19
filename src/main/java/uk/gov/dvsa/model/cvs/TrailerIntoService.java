@@ -1,9 +1,11 @@
 package uk.gov.dvsa.model.cvs;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TrailerIntoService extends Document {
 
     @JsonProperty
@@ -19,7 +21,7 @@ public class TrailerIntoService extends Document {
     private String trailerId;
 
     @JsonProperty
-    private String typeApprovalNumber;
+    private String approvalTypeNumber;
 
     @JsonProperty
     private int paragraphId;
@@ -50,9 +52,9 @@ public class TrailerIntoService extends Document {
         return this;
     }
 
-    public String getTypeApprovalNumber() { return typeApprovalNumber; }
-    public TrailerIntoService setTypeApprovalNumber(String typeApprovalNumber) {
-        this.typeApprovalNumber = typeApprovalNumber;
+    public String getApprovalTypeNumber() { return approvalTypeNumber; }
+    public TrailerIntoService setApprovalTypeNumber(String approvalTypeNumber) {
+        this.approvalTypeNumber = approvalTypeNumber;
         return this;
     }
 

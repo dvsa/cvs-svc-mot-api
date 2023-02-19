@@ -1,4 +1,4 @@
-package uk.gov.dvsa.model.mot.enums;
+package uk.gov.dvsa.enums;
 
 public enum CertificateTypes {
 
@@ -42,13 +42,13 @@ public enum CertificateTypes {
 
     INSPECTION_CHECKLIST("MOT/InspectionChecklist");
 
-    private final String type;
+    private final String certificateType;
 
-    CertificateTypes(String type) {
-        this.type = type;
+    CertificateTypes(String certificateType) {
+        this.certificateType = certificateType;
     }
 
-    public String getType() {
-        return type;
+    public String getCertificateType() {
+        return certificateType;
     }
 }
