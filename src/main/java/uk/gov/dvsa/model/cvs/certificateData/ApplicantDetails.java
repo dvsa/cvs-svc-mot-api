@@ -1,7 +1,9 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicantDetails {
     @JsonProperty
     private String name;

@@ -1,27 +1,29 @@
 package uk.gov.dvsa.model.cvs;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TrailerIntoService extends Document {
 
-    @JsonProperty
+    @JsonProperty("applicantDetails")
     private ApplicantDetails applicantDetails;
 
-    @JsonProperty
+    @JsonProperty("letterDateRequested")
     private String letterDateRequested;
 
-    @JsonProperty
+    @JsonProperty("vin")
     private String vin;
 
-    @JsonProperty
+    @JsonProperty("trailerId")
     private String trailerId;
 
-    @JsonProperty
-    private String typeApprovalNumber;
+    @JsonProperty("approvalTypeNumber")
+    private String approvalTypeNumber;
 
-    @JsonProperty
+    @JsonProperty("paragraphId")
     private int paragraphId;
 
     public ApplicantDetails getApplicantDetails() {
@@ -50,9 +52,9 @@ public class TrailerIntoService extends Document {
         return this;
     }
 
-    public String getTypeApprovalNumber() { return typeApprovalNumber; }
-    public TrailerIntoService setTypeApprovalNumber(String typeApprovalNumber) {
-        this.typeApprovalNumber = typeApprovalNumber;
+    public String getApprovalTypeNumber() { return approvalTypeNumber; }
+    public TrailerIntoService setApprovalTypeNumber(String approvalTypeNumber) {
+        this.approvalTypeNumber = approvalTypeNumber;
         return this;
     }
 

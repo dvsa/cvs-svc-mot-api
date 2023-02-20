@@ -5,7 +5,6 @@ import htmlverification.framework.page_object.CertificatePageObject;
 import htmlverification.service.CertificateTestDataProvider;
 import org.junit.Before;
 import org.junit.Test;
-import uk.gov.dvsa.model.cvs.MinistryPlate;
 import uk.gov.dvsa.model.cvs.TrailerIntoService;
 import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 import uk.gov.dvsa.service.HtmlGenerator;
@@ -53,7 +52,7 @@ public class TrailerIntoServiceTest {
 
     @Test
     public void verifyTypeApprovalNumber() {
-        assertEquals(model.getTypeApprovalNumber(), dom.getElementById("type-approval-number").text());
+        assertEquals(model.getApprovalTypeNumber(), dom.getElementById("approval-type-number").text());
     }
 
     @Test
