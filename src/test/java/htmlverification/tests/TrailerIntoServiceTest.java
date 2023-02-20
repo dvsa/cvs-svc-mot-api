@@ -34,10 +34,11 @@ public class TrailerIntoServiceTest {
     public void verifyApplicantDetails() {
         ApplicantDetails applicant = model.getApplicantDetails();
         assertEquals(applicant.getName(), dom.getElement("#applicant-details .name").text());
-        assertEquals(applicant.getStreet(), dom.getElement("#applicant-details .street").text());
-        assertEquals(applicant.getTown(), dom.getElement("#applicant-details .town").text());
-        assertEquals(applicant.getCity(), dom.getElement("#applicant-details .city").text());
-        assertEquals(applicant.getPostcode(), dom.getElement("#applicant-details .postcode").text());
+        assertEquals(applicant.getAddress1(), dom.getElement("#applicant-details .address1").text());
+        assertEquals(applicant.getAddress2(), dom.getElement("#applicant-details .address2").text());
+        assertEquals(applicant.getPostTown(), dom.getElement("#applicant-details .postTown").text());
+        assertEquals(applicant.getAddress3(), dom.getElement("#applicant-details .address3").text());
+        assertEquals(applicant.getPostCode(), dom.getElement("#applicant-details .postCode").text());
     }
 
     @Test

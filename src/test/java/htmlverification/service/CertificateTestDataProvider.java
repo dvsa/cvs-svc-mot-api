@@ -154,7 +154,7 @@ public class CertificateTestDataProvider {
         adrPassCertificate.setDocumentName(CertificateTypes.ADR_PASS.getCertificateType());
         AdrPassCertificateData adrPassCertificateData = new AdrPassCertificateData();
 
-        adrPassCertificateData.setApplicantDetails( new ApplicantDetails("applicantDetailsName", "applicantDetailsStreet", "applicantDetailsTown", "applicantDetailsCity", "applicantDetailsPostCode"))
+        adrPassCertificateData.setApplicantDetails( new ApplicantDetails("applicantDetailsName", "applicantDetailsAddress1", "applicantDetailsAddress2", "applicantDetailsPostTown", "applicantAddress3", "applicantDetailsPostCode", "applicantTelephoneNumber", "applicantEmailAddress"))
                 .setMake("demoMake").setModel("demoModel").setAtfNameAtfPNumber("demoAtfNameAtfPnumber").setBrakeEndurance(true).setChasisNumber("demoChassisNumber")
                 .setExpiryDate("10-12-2011").setPermittedDangerousGoods(new String[]{"\"FP <61 (FL)\"", "Explosives (type 2)", "Explosives (type 3)"})
                 .setRegistrationNumber("demoRegistrationNumber").setSpecialProvisions("demoSpecialProvisions").setTankCode("demoTankCode").setTankManufacturer("demoTankManufacturer")
@@ -224,7 +224,7 @@ public class CertificateTestDataProvider {
                 .setTrailerId("1234567Z")
                 .setApprovalTypeNumber("a00*AB00/0000*000")
                 .setLetterDateRequested("2023-02-17T15:16:09.060Z")
-                .setApplicantDetails(new ApplicantDetails("applicant details name", "123 applicant details street", "applicant details town", "applicant details city", "AP01 PCD"))
+                .setApplicantDetails(new ApplicantDetails("applicant name", "applicant address 1", "applicant address 2", "applicant post town", "applicant address 3", "applicant post code", "applicantTelephoneNumber", "applicantEmailAddress"))
                 .setParagraphId(paragraphId > 0 ? paragraphId : 3);
 
         return model;
