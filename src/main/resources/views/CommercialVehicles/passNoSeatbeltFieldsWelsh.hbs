@@ -33,7 +33,7 @@
         </div>
         <div class="footer__certificate-tag">
                <span class="footer__certificate-tag-text">
-                {{presentedDocumentNamePass}}/{{versionNumberPass}}
+                {{presentedDocumentNamePassWelsh}}/{{versionNumberPassWelsh}}
                </span>
         </div>
     </div>
@@ -70,7 +70,7 @@
         </div>
         <div class="footer__certificate-tag">
                <span class="footer__certificate-tag-text">
-                {{presentedDocumentNamePass}}/{{versionNumberPass}}
+                {{presentedDocumentNamePassWelsh}}/{{versionNumberPassWelsh}}
                </span>
         </div>
     </div>
@@ -120,7 +120,7 @@
                               </span>
                               <span class="heading-info__title-right">
                               <span class="heading-info__title-message">
-                                  {{regOrIdHeading}}
+                                  {{regOrIdHeadingWelsh}}
                               </span>
                               </span>
                             </h2>
@@ -283,12 +283,12 @@
         <!-- results -->
         <div class="results">
             <div class="results__wrapper">
-                {{~> views/CommercialVehicles/reasonsForRejection data.summary}}
-                {{#if data.minor.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection data.minor}}
+                {{~> views/CommercialVehicles/reasonsForRejection data.summaryWelsh}}
+                {{#if data.minorWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection data.minorWelsh}}
                 {{/if}}
                 {{#if data.advisory.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection data.advisory}}
+                    {{~> views/CommercialVehicles/reasonsForRejection data.advisoryWelsh}}
                 {{/if}}
             </div>
         </div>
@@ -381,7 +381,7 @@
                     </h2>
                      <span class="heading-info__content"
                            id="organisation-and-inspection-name">
-                     {{data.testingOrganisation}}
+                     {{data.testingOrganisationWelsh}}
                          <br/>
                          {{data.issuersName}}
                      </span>
