@@ -2,6 +2,7 @@ package htmlverification.framework.component;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
 
 public class DefectSummaryComponent {
     public static final String RESULT_ITEM_CLASS = "results__item";
@@ -12,7 +13,11 @@ public class DefectSummaryComponent {
     public static final String  ADVISORIES_HEADER_TEXT = "Monitor and repair if necessary (advisories)";
     public static final String  DANGEROUS_DEFECTS_HEADER_TEXT = "Do not drive until repaired (dangerous defects)";
     public static final String  ADVISORIES_HEADER_TEXT_WELSH = "Monitro a thrwsio os oes angen (cynghorol)";
+
+    public static final String ADVISORIES_HEADER_TEXT_WELSH_LATEST = "Monitro a thrwsio os oes angen (cynghorol)";
     public static final String  MINOR_DEFECTS_HEADER_TEXT_WELSH = "Rhaid trwsio cyn gynted â phosibl (mân ddiffygion)";
+
+    public static final String MINOR_DEFECTS_HEADER_TEST_WELSH_LATEST = "Atgyweiriwch cyn gynted â phosibl (ddiffygion bach)";
     public static final String  MAJOR_DEFECTS_HEADER_TEXT_WELSH = "Rhaid trwsio ar unwaith (diffygion pennaf)";
     public static final String  DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH = "Peidiwch â gyrru nes iddo gael ei drwsio (diffygion peryglus)";
 
@@ -56,6 +61,10 @@ public class DefectSummaryComponent {
     public Elements getAdvisoriesWelsh() {
         return getResultItemEntries(ADVISORIES_HEADER_TEXT_WELSH);
     }
+
+    public Elements getMinorDefectsWelshLatest() { return getResultItemEntries(MINOR_DEFECTS_HEADER_TEST_WELSH_LATEST); }
+
+    public Elements getAdvisoriesWelshLatest() { return getResultItemEntries(ADVISORIES_HEADER_TEXT_WELSH_LATEST); }
 
     public Elements getByTitle(String title) {
         return getResultItemEntries(title);
