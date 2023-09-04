@@ -265,8 +265,8 @@ public class CvsCertificateTestDataProvider {
         vtg5WData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_LATEST)
-                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_LATEST)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
 
@@ -314,8 +314,8 @@ public class CvsCertificateTestDataProvider {
         bilingualData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_LATEST)
-                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_LATEST)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
 
