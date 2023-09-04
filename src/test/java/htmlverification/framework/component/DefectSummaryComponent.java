@@ -59,11 +59,11 @@ public class DefectSummaryComponent {
         return getResultItemEntries(ADVISORIES_HEADER_TEXT_WELSH);
     }
 
-    public Elements getMinorDefectsWelshLatest() {
+    public Elements getMinorDefectsWelshCVS() {
         return getResultItemEntries(MINOR_DEFECTS_HEADER_TEST_WELSH_CVS);
     }
 
-    public Elements getAdvisoriesWelshLatest() {
+    public Elements getAdvisoriesWelshCVS() {
         return getResultItemEntries(ADVISORIES_HEADER_TEXT_WELSH_CVS);
     }
 

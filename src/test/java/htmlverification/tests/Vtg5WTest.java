@@ -81,13 +81,13 @@ public class Vtg5WTest {
 
     @Test
     public void verifyAdvisories() {
-        List<String> advisoryDefects = certificatePageObject.getDefectSummaryComponent().getAdvisoriesWelshLatest().eachText();
+        List<String> advisoryDefects = certificatePageObject.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
         assertEquals(1, advisoryDefects.size());
     }
 
     @Test
     public void verifyMinorDefect() {
-        List<String> minorDefects = certificatePageObject.getDefectSummaryComponent().getMinorDefectsWelshLatest().eachText();
+        List<String> minorDefects = certificatePageObject.getDefectSummaryComponent().getMinorDefectsWelshCVS().eachText();
         assertEquals(1, minorDefects.size());
     }
 

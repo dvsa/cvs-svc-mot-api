@@ -94,7 +94,6 @@ public enum DocumentsConfig {
     }
 
     public static DocumentsConfig fromDocumentName(String name) {
-        System.out.println("THIS IS THE NAME: " + name);
         for (DocumentsConfig document: DocumentsConfig.values()) {
             if (document.getDocumentName().equals(name)) {
                 return document;

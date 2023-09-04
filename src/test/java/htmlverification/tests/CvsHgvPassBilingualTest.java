@@ -120,14 +120,14 @@ public class CvsHgvPassBilingualTest {
 
     @Test
     public void verifyAdvisoriesWelsh() {
-        List<String> advisories = certificatePageObjectVTG5W.getDefectSummaryComponent().getAdvisoriesWelshLatest().eachText();
+        List<String> advisories = certificatePageObjectVTG5W.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
 
         assertEquals(1, advisories.size());
     }
 
     @Test
     public void verifyMinorDefectsWelsh() {
-        List<String> minorDefects = certificatePageObjectVTG5W.getDefectSummaryComponent().getMinorDefectsWelshLatest().eachText();
+        List<String> minorDefects = certificatePageObjectVTG5W.getDefectSummaryComponent().getMinorDefectsWelshCVS().eachText();
 
         assertEquals(1, minorDefects.size());
     }
