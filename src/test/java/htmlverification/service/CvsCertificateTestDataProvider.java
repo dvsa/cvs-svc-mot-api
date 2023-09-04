@@ -264,9 +264,11 @@ public class CvsCertificateTestDataProvider {
         CvsMotCertificateDataWelsh vtg5WData = new CvsMotCertificateDataWelsh();
         vtg5WData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
-                .setAdvisoryDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH)
-                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH)
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_LATEST)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_LATEST)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
 
                 .setCountryOfRegistrationCode("GB")
                 .setRawVin(VIN)
@@ -311,9 +313,9 @@ public class CvsCertificateTestDataProvider {
         CvsMotCertificateDataWelsh bilingualData = new CvsMotCertificateDataWelsh();
         bilingualData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
-                .setAdvisoryDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH)
-                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH)
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_LATEST)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_LATEST)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
 
