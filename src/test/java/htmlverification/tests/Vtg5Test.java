@@ -66,13 +66,13 @@ public class Vtg5Test {
     }
 
     @Test
-    public void testOdometer() {
+    public void verifyMileage() {
         String value = certificatePageObject.getMileage();
         assertEquals(vtg5.getData().getFormattedCurrentOdometer(), value);
     }
 
     @Test
-    public void testOdometerHistory() {
+    public void verifyOdometerHistoryCount() {
         List<Object> list = List.of(certificatePageObject.getMileageHistoryComponent().getEntries().toArray());
         assertEquals(2, list.size());
     }

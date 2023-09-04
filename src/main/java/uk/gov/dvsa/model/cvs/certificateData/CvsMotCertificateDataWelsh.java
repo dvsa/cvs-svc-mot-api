@@ -1,10 +1,13 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import uk.gov.dvsa.model.mot.certificateData.FormattedOdometerReading;
 import uk.gov.dvsa.model.mot.results.DefectsList;
 import uk.gov.dvsa.model.mot.results.Summary;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CvsMotCertificateDataWelsh extends CvsMotCertificateData {
 
@@ -61,5 +64,24 @@ public class CvsMotCertificateDataWelsh extends CvsMotCertificateData {
 
     public String getTestingOrganisationWelsh() {
         return TESTING_ORGANISATION_WELSH;
+    }
+
+    public String getFormattedCurrentOdometerWelsh() {
+        return ODOMETER_FORMATTER.formatWelshValue(getCurrentOdometer());
+    }
+
+    public List<FormattedOdometerReading> getMileageHistoryWelsh() {
+        if (null != getOdometerHistoryList()) {
+            return getOdometerHistoryList().stream()
+                    .map(
+                            entry -> new FormattedOdometerReading(
+                                    ODOMETER_FORMATTER.formatValue(entry),
+                                    entry.getDate()
+                            )
+                    )
+                    .collect(Collectors.toList());
+        } else {
+            return Collections.emptyList();
+        }
     }
 }

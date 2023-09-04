@@ -216,7 +216,7 @@
                     </div>
                     <!-- /heading-info -->
                 </div>
-                {{#if data.formattedCurrentOdometer}}
+                {{#if data.formattedCurrentOdometerWelsh}}
                 <div class="header__three-columns-two">
                     <!-- heading-info -->
                     <div class="heading-info">
@@ -233,7 +233,7 @@
                            </span>
                         </h2>
                         <span class="heading-info__content" id="mileage">
-                            {{data.formattedCurrentOdometer}}
+                            {{data.formattedCurrentOdometerWelsh}}
                         </span>
                     </div>
                     <!-- /heading-info -->
@@ -251,7 +251,7 @@
                                 <!-- header__histories -->
                                 {{#if data.odometerHistoryList}}
                                 <ul class="header__histories">
-                                    {{#each data.mileageHistory}}
+                                    {{#each data.mileageHistoryWelsh}}
                                         <li class="header__history">
                                             <div class="header__history-left-wide">
                                     <span class="header__history-mileage">

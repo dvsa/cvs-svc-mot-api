@@ -281,11 +281,11 @@ public class CvsCertificateTestDataProvider {
                 .setVehicleEuClassification("M1")
                 .setRawVrm("KA15APH")
                 .setCurrentOdometer(
-                        new CvsOdometerReading("20000", "km", "22.08.2023")
+                        new CvsOdometerReading("20000", "mi", "22.08.2023")
                 )
                 .setOdometerHistoryList(Arrays.asList(
-                        new CvsOdometerReading("12000", "km", "13.08.2022"),
-                        new CvsOdometerReading("7000", "km", "02.08.2021")
+                        new CvsOdometerReading("12000", "mi", "13.08.2022"),
+                        new CvsOdometerReading("7000", "mi", "02.08.2021")
                         )
                 )
                 .setIssuersName("TESTER NAME")

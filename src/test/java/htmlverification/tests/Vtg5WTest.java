@@ -15,6 +15,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.TESTING_ORGANISATION_WELSH;
 import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.view.cvs.CvsOdometerReadingFormatter.MILES_WELSH;
 
 public class Vtg5WTest {
 
@@ -67,13 +68,13 @@ public class Vtg5WTest {
     }
 
     @Test
-    public void testOdometer() {
+    public void verifyMileage() {
         String value = certificatePageObject.getMileage();
-        assertEquals(vtg5W.getData().getFormattedCurrentOdometer(), value);
+        assertEquals("20,000 " + MILES_WELSH, value);
     }
 
     @Test
-    public void testOdometerHistory() {
+    public void verifyOdometerHistoryCount() {
         List<Object> list = List.of(certificatePageObject.getMileageHistoryComponent().getEntries().toArray());
         assertEquals(2, list.size());
     }
