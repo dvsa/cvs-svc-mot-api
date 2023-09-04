@@ -75,7 +75,7 @@ public class CvsMotCertificateDataWelsh extends CvsMotCertificateData {
             return getOdometerHistoryList().stream()
                     .map(
                             entry -> new FormattedOdometerReading(
-                                    ODOMETER_FORMATTER.formatValue(entry),
+                                    ODOMETER_FORMATTER.formatWelshValue(entry),
                                     entry.getDate()
                             )
                     )
