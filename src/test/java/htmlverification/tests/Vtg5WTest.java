@@ -80,8 +80,7 @@ public class Vtg5WTest {
 
     @Test
     public void verifyAdvisories() {
-        List<String> advisoryDefects = certificatePageObject.getDefectSummaryComponent().getMinorDefectsWelshLatest().eachText();
-        System.out.println(advisoryDefects.size());
+        List<String> advisoryDefects = certificatePageObject.getDefectSummaryComponent().getAdvisoriesWelshLatest().eachText();
         assertEquals(1, advisoryDefects.size());
     }
 

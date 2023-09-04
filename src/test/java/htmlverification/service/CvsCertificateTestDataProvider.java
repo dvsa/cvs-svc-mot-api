@@ -304,6 +304,47 @@ public class CvsCertificateTestDataProvider {
         return vtg5W;
     }
 
+    public static CvsHgvPassBilingual getCvsHgvPassBilingual() {
+        CvsHgvPassBilingual hgvPassBilingual = new CvsHgvPassBilingual();
+        hgvPassBilingual.setDocumentName(CertificateTypes.CVS_HGV_PASS_BILINGUAL.getCertificateType());
+
+        CvsMotCertificateDataWelsh bilingualData = new CvsMotCertificateDataWelsh();
+        bilingualData
+                .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+
+
+                .setCountryOfRegistrationCode("GB")
+                .setRawVin(VIN)
+                .setDateOfTheTest("22.08.2023")
+                .setExpiryDate("31.08.2024")
+                .setTestStationPNumber("P12345")
+                .setTestStationName("TEST STATION NAME")
+                .setMake("MERCEDES")
+                .setModel("Z WAGON")
+                .setVehicleEuClassification("M1")
+                .setRawVrm("KA15APH")
+                .setCurrentOdometer(
+                        new CvsOdometerReading("20000", "km", "22.08.2023")
+                )
+                .setOdometerHistoryList(Arrays.asList(
+                                new CvsOdometerReading("12000", "km", "13.08.2022"),
+                                new CvsOdometerReading("7000", "km", "02.08.2021")
+                        )
+                )
+                .setIssuersName("TESTER NAME")
+                .setTestStationName("TEST STATION NAME")
+                .setTestNumber("X01X00001")
+                .setEarliestDateOfTheNextTest("01.07.2024");
+
+        hgvPassBilingual.setData(bilingualData);
+        return hgvPassBilingual;
+    }
+
     public static VTG5 getVtg5HavingInvalidXMLCharacter() {
         VTG5 document = getVtg5();
 
