@@ -2,10 +2,11 @@ package uk.gov.dvsa.model.cvs;
 
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData;
+import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
 
 public class VTG5AW extends CvsMotCertificate {
 
-    public Document setData(CvsMotCertificateData data) {
+    public Document setData(CvsMotCertificateDataWelsh data) {
         this.data = data;
         return this;
     }
