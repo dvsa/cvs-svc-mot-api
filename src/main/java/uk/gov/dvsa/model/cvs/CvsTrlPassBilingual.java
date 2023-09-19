@@ -23,6 +23,6 @@ public class CvsTrlPassBilingual extends VTG5AW {
     }
 
     public String getRegOrIdHeading() {
-        return "Registration number";
+        return "Identification number";
     }
 }
