@@ -23,5 +23,5 @@ public class VTG5AW extends CvsMotCertificate {
         return "1.0";
     }
 
-    public String getRegOrIdHeading() { return "Rhif adnabod";  }
+    public String getRegOrIdHeadingWelsh() { return "Rhif adnabod";  }
 }
