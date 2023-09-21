@@ -10,7 +10,7 @@
 
 <body>
 
-<div class="separatePage">
+<div class="separate-page">
     <table>
         <td class="table-half">
             <table class="vtg7">
@@ -71,7 +71,7 @@
                 </tr>
                 <tr>
                     <td colspan="13" class="no_border_top align_top">
-                        <p class="tyre_approval">Type Approval No. &nbsp; <strong
+                        <p class="type_approval">Type Approval No. <strong
                                 id="approvalTypeNumber">{{plateData.approvalTypeNumber}}</strong></p>
                     </td>
                 </tr>
@@ -80,10 +80,7 @@
                         <div class="inline_elem">
                             <div class="inline_elem_child manufacturer_model_container">
                                 <p>
-                                    <span>Manufacturer/</span>
-                                </p>
-                                <p>
-                                    <span>Model</span>
+                                    <span>Manufacturer/Model</span>
                                 </p>
                             </div>
                             <div class="inline_elem_child">
@@ -93,17 +90,19 @@
                             </div>
                         </div>
                     </td>
-                    <td colspan="5" class="no_border_left_top align_top speed_limiter">
-                        <p>
-                            <span>Speed</span>
-                        </p>
-                        <p>
-                            <span>Limiter</span>
-                            <span class="speed_limiter_data" id="speedLimiterMrk">{{plateData.speedLimiterMrk}}</span>
-                        </p>
-                        <p>
-                            <span>Exempt</span>
-                        </p>
+                    <td colspan="5" class="no_border_top align_top speed_limiter">
+                        <div class="inline_elem">
+                            <div class="inline_elem_child speed_limiter_container">
+                                <p>
+                                    <span>Speed Limiter Exempt</span>
+                                </p>
+                            </div>
+                            <div class="inline_elem_child speed_limiter_data_container">
+                                <p class="make_model_container">
+                                    <span class="speed_limiter_data" id="speedLimiterMrk">{{plateData.speedLimiterMrk}}</span>
+                                </p>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -131,17 +130,18 @@
                             <span class="regn_date_data" id="regnDate">{{formatIsoDate plateData.regnDate}}</span>
                         </div>
                     </td>
-                    <td colspan="5" class="no_border_left_top manufacture_year">
-                        <div class="inline_elem_child">
-                            <p>
-                                <span>Year of</span>
-                            </p>
-                            <p>
-                                <span>Manufacture</span>
-                            </p>
-                        </div>
-                        <div class="inline_elem_child align_middle">
-                            <span class="manufacture_year_data" id="manufactureYear">{{plateData.manufactureYear}}</span>
+                    <td colspan="5" class="no_border_left_top align_top year_of_manufacture">
+                        <div class="inline_elem">
+                            <div class="inline_elem_child year_of_manufacture_container">
+                                <p>
+                                    <span>Year of Manufacture</span>
+                                </p>
+                            </div>
+                            <div class="inline_elem_child year_of_manufacture_data_container">
+                                <p class="make_model_container">
+                                    <span class="year_of_manufacture_data" id="manufactureYear">{{plateData.manufactureYear}}</span>
+                                </p>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -760,7 +760,7 @@
                 </tr>
                 <tr>
                     <td colspan="13" class="no_border_top align_top">
-                        <p class="tyre_approval">Type Approval No. &nbsp; <strong
+                        <p class="type_approval">Type Approval No. <strong
                                 id="approvalTypeNumber">{{plateData.approvalTypeNumber}}</strong></p>
                     </td>
                 </tr>
@@ -769,10 +769,7 @@
                         <div class="inline_elem">
                             <div class="inline_elem_child manufacturer_model_container">
                                 <p>
-                                    <span>Manufacturer/</span>
-                                </p>
-                                <p>
-                                    <span>Model</span>
+                                    <span>Manufacturer/Model</span>
                                 </p>
                             </div>
                             <div class="inline_elem_child">
@@ -782,17 +779,19 @@
                             </div>
                         </div>
                     </td>
-                    <td colspan="5" class="no_border_left_top align_top speed_limiter">
-                        <p>
-                            <span>Speed</span>
-                        </p>
-                        <p>
-                            <span>Limiter</span>
-                            <span class="speed_limiter_data" id="speedLimiterMrk">{{plateData.speedLimiterMrk}}</span>
-                        </p>
-                        <p>
-                            <span>Exempt</span>
-                        </p>
+                    <td colspan="5" class="no_border_top align_top speed_limiter">
+                        <div class="inline_elem">
+                            <div class="inline_elem_child speed_limiter_container">
+                                <p>
+                                    <span>Speed Limiter Exempt</span>
+                                </p>
+                            </div>
+                            <div class="inline_elem_child speed_limiter_data_container">
+                                <p class="make_model_container">
+                                    <span class="speed_limiter_data" id="speedLimiterMrk">{{plateData.speedLimiterMrk}}</span>
+                                </p>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -820,17 +819,18 @@
                             <span class="regn_date_data" id="regnDate">{{formatIsoDate plateData.regnDate}}</span>
                         </div>
                     </td>
-                    <td colspan="5" class="no_border_left_top manufacture_year">
-                        <div class="inline_elem_child">
-                            <p>
-                                <span>Year of</span>
-                            </p>
-                            <p>
-                                <span>Manufacture</span>
-                            </p>
-                        </div>
-                        <div class="inline_elem_child align_middle">
-                            <span class="manufacture_year_data" id="manufactureYear">{{plateData.manufactureYear}}</span>
+                    <td colspan="5" class="no_border_left_top align_top year_of_manufacture">
+                        <div class="inline_elem">
+                            <div class="inline_elem_child year_of_manufacture_container">
+                                <p>
+                                    <span>Year of Manufacture</span>
+                                </p>
+                            </div>
+                            <div class="inline_elem_child year_of_manufacture_data_container">
+                                <p class="make_model_container">
+                                    <span class="year_of_manufacture_data" id="manufactureYear">{{plateData.manufactureYear}}</span>
+                                </p>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -1272,7 +1272,7 @@
     </table>
 </div>
 
-<div class="separatePage">
+<div class="separate-page">
     <table>
         <td class="table-half">
             <div class="vtg6 notes">
