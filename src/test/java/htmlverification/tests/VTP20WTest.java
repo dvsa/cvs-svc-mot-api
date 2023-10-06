@@ -70,8 +70,8 @@ public class VTP20WTest {
 
     @Test
     public void verifyAdvisories() {
-        List<String> advisories = certificatePageObject.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
-        assertEquals(1, advisories.size());
+        List<String> advisoryDefects = certificatePageObject.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
+        assertEquals(1, advisoryDefects.size());
     }
 
     @Test

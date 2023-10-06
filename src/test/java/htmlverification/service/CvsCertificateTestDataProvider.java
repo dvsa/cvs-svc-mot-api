@@ -315,6 +315,7 @@ public class CvsCertificateTestDataProvider {
 
         return vtg5a;
     }
+
     public static VTG5W getVTG5W() {
         VTG5W vtg5W = new VTG5W();
         vtg5W.setDocumentName(CertificateTypes.CVS_HGV_PASS_WELSH.getCertificateType());

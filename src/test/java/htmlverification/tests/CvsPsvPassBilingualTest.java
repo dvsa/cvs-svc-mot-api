@@ -96,27 +96,27 @@ public class CvsPsvPassBilingualTest {
     }
 
     @Test
-    public void verifyAdvisories() {
-        List<String> advisories = certificatePageObjectVTP20.getDefectSummaryComponent().getAdvisories().eachText();
-        assertEquals(1, advisories.size());
+    public void verifyAdvisoryDefects() {
+        List<String> advisoryDefects = certificatePageObjectVTP20.getDefectSummaryComponent().getAdvisories().eachText();
+        assertEquals(1, advisoryDefects.size());
     }
 
     @Test
-    public void verifyMinors() {
-        List<String> minors = certificatePageObjectVTP20.getDefectSummaryComponent().getMinorDefects().eachText();
-        assertEquals(1, minors.size());
+    public void verifyMinorDefects() {
+        List<String> minorDefects = certificatePageObjectVTP20.getDefectSummaryComponent().getMinorDefects().eachText();
+        assertEquals(1, minorDefects.size());
     }
 
     @Test
     public void verifyAdvisoryDefectsWelsh() {
-        List<String> advisories = certificatePageObjectVTP20W.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
-        assertEquals(1, advisories.size());
+        List<String> advisoryDefects = certificatePageObjectVTP20W.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
+        assertEquals(1, advisoryDefects.size());
     }
 
     @Test
     public void verifyMinorDefectsWelsh() {
-        List<String> minors = certificatePageObjectVTP20W.getDefectSummaryComponent().getMinorDefectsWelshCVS().eachText();
-        assertEquals(1, minors.size());
+        List<String> minorDefects = certificatePageObjectVTP20W.getDefectSummaryComponent().getMinorDefectsWelshCVS().eachText();
+        assertEquals(1, minorDefects.size());
     }
 
     @Test
