@@ -40,7 +40,7 @@ public enum CertificateTypes {
 
     INSPECTION_CHECKLIST("MOT/InspectionChecklist"),
 
-    IVA30_FAIL("CVS/IVA30_Fail");
+    IVA30("CVS/IVA30");
 
     private final String certificateType;
 
