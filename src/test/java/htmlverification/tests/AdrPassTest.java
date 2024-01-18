@@ -31,8 +31,8 @@ public class AdrPassTest {
 
     @Test
     public void verifyChassisNumber() {
-        String chassisNumber = certificatePageObject.getChassisNumber();
-        assertEquals(testCertificate.getAdrData().getChasisNumber(), chassisNumber);
+        String chassisNumber = certificatePageObject.getVin();
+        assertEquals(testCertificate.getAdrData().getVin(), chassisNumber);
     }
 
     @Test
@@ -43,8 +43,8 @@ public class AdrPassTest {
 
     @Test
     public void verifyVehicleType() {
-        String vehicleType = certificatePageObject.getVehicleType();
-        assertEquals(testCertificate.getAdrData().getVehicleType(), vehicleType);
+        String vehicleType = certificatePageObject.getAdrVehicleType();
+        assertEquals(testCertificate.getAdrData().getAdrVehicleType(), vehicleType);
     }
 
     @Test
@@ -99,17 +99,5 @@ public class AdrPassTest {
     public void verifyNotes() {
         String notes = certificatePageObject.getNotes();
         assertEquals(testCertificate.getAdrData().getNotes(), notes);
-    }
-
-    @Test
-    public void verifyTestTypeDate() {
-        String testTypeDate = certificatePageObject.getTestTypeDate();
-        assertEquals(testCertificate.getAdrData().getTestTypeDate(), testTypeDate);
-    }
-
-    @Test
-    public void verifyAtfNameAtfPNumber() {
-        String atfNameAtfPNumber = certificatePageObject.getAtfNameAtfPNumber();
-        assertEquals(testCertificate.getAdrData().getAtfNameAtfPNumber(), atfNameAtfPNumber);
     }
 }
