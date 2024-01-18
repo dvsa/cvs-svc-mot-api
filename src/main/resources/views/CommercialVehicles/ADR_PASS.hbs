@@ -19,10 +19,14 @@
         {{#if adrData.isApplicantDetailsNull}}
             <br/>
         {{else}}
-            <p><span id="applicantDetailsName">{{adrData.applicantDetails.name}}</span> <span id="applicantDetailsStreet">{{adrData.applicantDetails.address1}}</span> <span id="applicantDetailsTown">{{adrData.applicantDetails.address2}}</span> <span id="applicantDetailsCity">{{adrData.applicantDetails.postTown}}</span> <span id="applicantDetailsPostCode">{{adrData.applicantDetails.postCode}}</span></p>
+            <p>{{#if adrData.applicantDetails.name}}<span id="applicantDetailsName">{{adrData.applicantDetails.name}}</span>{{/if}} </p>
+            <p>{{#if adrData.applicantDetails.address1}}<span id="applicantDetailsStreet">{{adrData.applicantDetails.address1}}, </span>{{/if}}
+               {{#if adrData.applicantDetails.address2}}<span id="applicantDetailsTown">{{adrData.applicantDetails.address2}}, </span>{{/if}}
+               {{#if adrData.applicantDetails.city}}<span id="applicantDetailsCity">{{adrData.applicantDetails.city}}, </span>{{/if}}
+               {{#if adrData.applicantDetails.postCode}}<span id="applicantDetailsPostCode">{{adrData.applicantDetails.postCode}}</span>{{/if}} </p>
         {{/if}}
     </div>
-    <div class="vehicleType">
+    <div class="adrVehicleType">
         <h3>6 Description of vehicle</h3>
         {{#if adrData.isVehicleTypeNull}}
             <br/>
@@ -76,6 +80,7 @@
                 <div class= "float" id="dangerousGoodsDescription">
                     <p>10.1 In the case of an EX/II or EX/III</p>
                     <br/>
+                    <br />
                     <p>10.2 In the case of a tank-vehicle/battery vehicle</p>
                     <p>
                         {{#if adrData.formattedSubstancesPermitted}}
@@ -87,33 +92,33 @@
                 </div>
                 <div class= "floatValues">
                     {{#if adrData.isExplosivesType2}}
-                        <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)goods of Class 1 including compatibility group J</p>
+                        <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>) goods of Class 1 including compatibility group J</p>
                     {{else}}
-                        <p>( )goods of Class 1 including compatibility group J</p>
+                        <p>( ) goods of Class 1 including compatibility group J</p>
                     {{/if}}
                     {{#if adrData.isExplosivesType3}}
-                        <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)goods of Class 1 excluding compatibility group J</p>
+                        <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>) goods of Class 1 excluding compatibility group J</p>
                     {{else}}
                         <p>( ) goods of Class 1 excluding compatibility group J</p>
                     {{/if}}
-
+                    <br />
                     {{#if adrData.isTankStatementNull}}
-                        <p>( )only the substances permitted under the tank code and</p>
+                        <p>( ) only the substances permitted under the tank code and</p>
                         <p>any special provisions in no.9 may be carried</p>
                         <p>or</p>
-                        <p>( )only the following substances (Class, UN number and if</p>
+                        <p>( ) only the following substances (Class, UN number and if</p>
                         <p>necessary packing group and proper shipping name) may</p>
                         <p>be carried</p>
                     {{else}}
                         {{#if adrData.formattedSubstancesPermitted}}
-                            <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)only the substances permitted under the tank code and</p>
+                            <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>) only the substances permitted under the tank code and</p>
                             <p>any special provisions in no.9 may be carried</p>
                             <p>or</p>
-                            <p>( )only the following substances (Class, UN number and if</p>
+                            <p>( ) only the following substances (Class, UN number and if</p>
                             <p>necessary packing group and proper shipping name) may</p>
                             <p>be carried</p>
                         {{else}}
-                            <p>( )only the substances permitted under the tank code and</p>
+                            <p>( ) only the substances permitted under the tank code and</p>
                             <p>any special provisions in no.9 may be carried</p>
                             <p>or</p>
                             <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>) only the following substances (Class, UN number and if</p>
