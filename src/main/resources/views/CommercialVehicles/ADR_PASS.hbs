@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-    <title>MOT test certificate ({{testType}})</title>
+    <title>ADR Pass Certificate</title>
     <style type="text/css" media="print, screen">
             {{~> assets/stylesheets/adr this}}
     </style>
@@ -10,8 +10,8 @@
 <div class="firstPage">
     <div class="header">
         <p><span id="make">{{adrData.make}}</span>
-            <span id="chasisNumber">{{adrData.chasisNumber}}</span>
-            <span id="registrationNumber">{{adrData.registrationNumber}}</span>
+            <span id="vin">{{adrData.vin}}</span>
+            <span id="vrm">{{adrData.vrm}}</span>
         </p>
     </div>
     <div class = "applicantDetails">
@@ -27,7 +27,7 @@
         {{#if adrData.isVehicleTypeNull}}
             <br/>
         {{else}}
-            <p><span id="vehicleType">{{adrData.vehicleType}}</span></p>
+            <p><span id="vehicleType">{{adrData.adrVehicleType}}</span></p>
         {{/if}}
     </div>
     <div class="permittedDangerousGoods">
@@ -59,12 +59,12 @@
                 <p>9.6 Special provisions according to 6.8.4 of ADR (if applicable)</p>
             </div>
             <div class="floatValues">
-                <p><strong>9.1</strong><span id="tankManufacturer">{{adrData.tankManufacturer}}</span></p>
-                <p><strong>9.2</strong><span id="tc2IntermediateApprovalNo">{{adrData.tc2InitApprovalNo}}</span></p>
-                <p><strong>9.3</strong><span id="tankManufactureSerialNo">{{adrData.tankManufactureSerialNo}}</span></p><br/>
-                <p><strong>9.4</strong><span id="yearOfManufacture">{{adrData.yearOfManufacture}}</span></p>
-                <p><strong>9.5</strong><span id="specialProvisions">{{adrData.specialProvisions}}</span></p>
-                <p><strong>9.6</strong><span id="tankCode">{{adrData.tankCode}}</span></p>
+                <p><strong>9.1</strong><span id="tankManufacturer"> {{adrData.tankManufacturer}}</span></p>
+                <p><strong>9.2</strong><span id="tc2IntermediateApprovalNo">    {{adrData.tc2InitApprovalNo}}</span></p>
+                <p><strong>9.3</strong><span id="tankManufactureSerialNo">  {{adrData.tankManufactureSerialNo}}</span></p><br/>
+                <p><strong>9.4</strong><span id="yearOfManufacture">    {{adrData.yearOfManufacture}}</span></p>
+                <p><strong>9.5</strong><span id="specialProvisions">    {{adrData.specialProvisions}}</span></p>
+                <p><strong>9.6</strong><span id="tankCode"> {{adrData.tankCode}}</span></p>
             </div>
         </div>
     </div>
@@ -154,12 +154,6 @@
             <br/>
             <br/>
         {{/if}}
-    </div>
-    <div class="validUntil">
-        <p id="expiryDate">{{adrData.expiryDate}}</p>
-        <p id="atfNameAtfPNumber">{{adrData.atfNameAtfPNumber}}</p>
-        <p id="testTypeDate">{{adrData.testTypeDate}}</p>
-        <img id="signature" class="signature-image" src="{{signature.formattedImageData}}" alt="signature" height = "30"/>
     </div>
 </div>
 </body>

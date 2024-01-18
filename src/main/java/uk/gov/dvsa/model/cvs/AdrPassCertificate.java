@@ -11,9 +11,6 @@ public class AdrPassCertificate extends Document {
     @JsonProperty("ID")
     private String id;
 
-    @JsonProperty("Signature")
-    private Signature signature;
-
     @JsonProperty("ADR_DATA")
     protected AdrPassCertificateData adrData;
 
@@ -32,15 +29,6 @@ public class AdrPassCertificate extends Document {
 
     public Document setAdrData(AdrPassCertificateData adrData) {
         this.adrData = adrData;
-        return this;
-    }
-
-    public Signature getSignature() {
-        return signature;
-    }
-
-    public AdrPassCertificate setSignature(Signature signature) {
-        this.signature = signature;
         return this;
     }
 }
