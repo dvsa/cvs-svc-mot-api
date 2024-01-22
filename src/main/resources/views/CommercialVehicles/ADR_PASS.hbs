@@ -7,6 +7,7 @@
     </style>
 </head>
 <body>
+{{#if adrData.replacement }}<h4 class="topReplacement">REPLACEMENT</h4>{{/if}}
 <div class="firstPage">
     <div class="header">
         <p><span id="make">{{adrData.make}}</span>
@@ -134,6 +135,7 @@
             <p>Only substances which are not liable to react dangerously with the materials of the shell, gaskets, equipment and protective linings (if applicable) may be carried</p>
         </div>
     </div>
+    {{#if adrData.replacement }}<h4 class="bottomReplacement">REPLACEMENT</h4>{{/if}}
 </div>
 <div class="secondPage">
     <div class="remarks">

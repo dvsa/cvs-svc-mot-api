@@ -55,6 +55,9 @@ public class AdrPassCertificateData {
     @JsonProperty("notes")
     private String notes;
 
+    @JsonProperty("replacement")
+    private boolean replacement;
+
     public String getVin() {
         return vin;
     }
@@ -275,5 +278,13 @@ public class AdrPassCertificateData {
 
         }
         return false;
+    }
+
+    public boolean isReplacement() {
+        return replacement;
+    }
+
+    public void setReplacement(boolean replacement) {
+        this.replacement = replacement;
     }
 }
