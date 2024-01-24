@@ -3,6 +3,8 @@ package uk.gov.dvsa.model.cvs.certificateData;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AdrPassCertificateData {
     private final String SUBSTANCES_PERMITTED_OPTION_1 = "Substances permitted under the tank code and any special provisions specified in 9 may be carried";
@@ -225,12 +227,23 @@ public class AdrPassCertificateData {
         return this.notes.length() >= 474 && this.notes.length() <= 632;
     }
 
+    public HashMap<String, String> dangerousGoodAcronyms = new HashMap<String, String>() {{
+        put("FP <61 (FL)", "FP");
+        put("AT", "AT");
+        put("Class 5.1 Hydrogen Peroxide (OX)", "Class 5.1 Hydrogen Peroxide (OX)");
+        put("MEMU", "MEMU");
+        put("Carbon Disulphide", "UN 1131 CARBON DISULPHIDE");
+        put("Hydrogen", "Hydrogen");
+        put("Explosives (type 2)", "EX/II");
+        put("Explosives (type 3)", "EX/III");
+    }};
+
     public String getFormattedPermittedDangerousGoods() {
         StringBuilder formattedPermittedDangerousGoods =  new StringBuilder("");
         if(this.permittedDangerousGoods == null)
             return "";
         for (String permittedDangerousGood : this.permittedDangerousGoods) {
-            formattedPermittedDangerousGoods.append(permittedDangerousGood + " ");
+            formattedPermittedDangerousGoods.append(dangerousGoodAcronyms.get(permittedDangerousGood) + " ");
         }
         return formattedPermittedDangerousGoods.toString();
     }
