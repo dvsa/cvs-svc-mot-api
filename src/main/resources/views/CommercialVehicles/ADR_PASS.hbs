@@ -7,7 +7,7 @@
     </style>
 </head>
 <body>
-    {{#if adrData.replacement }}<h4 class="topReplacement">REPLACEMENT</h4>{{/if}}
+    {{#if adrData.replacement }}<h4 class="topReplacement">REPLACEMENT</h4>{{else}}<h4 class="topReplacement">&nbsp;&nbsp;&nbsp;</h4>{{/if}}
     <div class="document">
         <div class="firstPage">
             <div class="header">
@@ -38,11 +38,13 @@
             </div>
             <div class="permittedDangerousGoods">
                 <h3>7 Vehicle designation(s) according to 9.1.1.2 of ADR</h3>
-                {{#if adrData.isTankStatementNull}}
-                    <br/>
-                {{else}}
-                    <p><span id="formattedPermittedDangerousGoods">{{adrData.formattedPermittedDangerousGoods}}</span></p>
-                {{/if}}
+                <div class="dangerousGoodAcronyms">
+                    {{#if adrData.permittedDangerousGoodsHasEXII}}<span>( EX/II )</span>{{else}}<span>(XXXXX)</span>{{/if}}
+                    {{#if adrData.permittedDangerousGoodsHasEXIII}}<span>( EX/III )</span>{{else}}<span>(XXXXX)</span>{{/if}}
+                    {{#if adrData.permittedDangerousGoodsHasFL}}<span>( FL )</span>{{else}}<span>(XXXXX)</span>{{/if}}
+                    {{#if adrData.permittedDangerousGoodsHasAT}}<span>( AT )</span>{{else}}<span>(XXXXX)</span>{{/if}}
+                    {{#if adrData.permittedDangerousGoodsHasMEMU}}<span>( MEMU )</span>{{else}}<span>(XXXXX)</span>{{/if}}
+                </div>
             </div>
             <div class = "brakeEndurance">
                 <h3>8 Endurance braking system</h3>
@@ -69,8 +71,8 @@
                         <p><strong>9.2</strong><span id="tc2IntermediateApprovalNo">    {{adrData.tc2InitApprovalNo}}</span></p>
                         <p><strong>9.3</strong><span id="tankManufactureSerialNo">  {{adrData.tankManufactureSerialNo}}</span></p><br/>
                         <p><strong>9.4</strong><span id="yearOfManufacture">    {{adrData.yearOfManufacture}}</span></p>
-                        <p><strong>9.5</strong><span id="specialProvisions">    {{adrData.specialProvisions}}</span></p>
-                        <p><strong>9.6</strong><span id="tankCode"> {{adrData.tankCode}}</span></p>
+                        <p><strong>9.5</strong><span id="tankCode">    {{adrData.tankCode}}</span></p>
+                        <p><strong>9.6</strong><span id="specialProvisions"> {{adrData.specialProvisions}}</span></p>
                     </div>
                 </div>
             </div>
@@ -84,13 +86,6 @@
                             <br/>
                             <br />
                             <p>10.2 In the case of a tank-vehicle/battery vehicle</p>
-                            <p>
-                                {{#if adrData.formattedSubstancesPermitted}}
-                                    <span id="statement">{{adrData.tankStatement.statement}}</span>
-                                {{else}}
-                                    <span id="productList">{{adrData.tankStatement.productList}}</span>
-                                {{/if}}
-                            </p>
                         </div>
                         <div class= "floatValues">
                             {{#if adrData.isExplosivesType2}}
@@ -132,19 +127,32 @@
                     </div>
                 </div>
                 <div class = "dangerousGoodsFooter">
-                    <h3>AS PER INSURERS PRODUCT LIST NO ATTACHED</h3>
+                    <div class = "statements">
+                        {{#if adrData.batteryListNumber}}
+                            <p> AS PER BATTERY-ELEMENT LIST NO {{adrData.batteryListNumber}} ATTACHED </p> //TODO: fix this to work
+                        {{/if}}
+                        {{#if adrData.tankStatement.productList}}
+                             <p>{{adrData.tankStatement.productList}}</p>
+                             <br/>
+                        {{/if}}
+                        {{#if adrData.tankStatement.statement}}
+                             <p> AS PER INSURERS PRODUCT LIST NO {{adrData.tankStatement.statement}} ATTACHED </p>
+                        {{/if}}
+                        {{#if adrData.hasCarriageStatement}}
+                             <p> THIS VEHICLE IS CERTIFIED FOR THE CARRIAGE OF DANGEROUS GOODS IN CONJUNCTION WITH SUITABLY CERTIFIED TANK OR BATTERY CONTAINERS OR SUITABLY CONSTRUCTED EXPLOSIVE CONTAINERS AS APPROPRIATE </p>
+                        {{/if}}
+                        {{#if adrData.m145Statement}}
+                             <p> VEHICLE FIRST REGISTERED IN ACCORDANCE WITH MULTILATERAL AGREEMENT M145 </p>
+                        {{/if}}
+                        {{#if adrData.hasNotes}}
+                            <p id="notes">{{adrData.notes}}</p>
+                        {{/if}}
+                        <br />
+                    </div>
                     <p>Only substances which are not liable to react dangerously with the materials of the shell, gaskets, equipment and protective linings (if applicable) may be carried</p>
                 </div>
             </div>
-            {{#if adrData.replacement }}<h4 class="bottomReplacement">REPLACEMENT</h4>{{/if}}
-        </div>
-        <div class="secondPage">
-            <div class="remarks">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-            </div>
+            {{#if adrData.replacement }}<h4 class="bottomReplacement">REPLACEMENT</h4>{{else}}<h4 class="bottomReplacement">&nbsp;&nbsp;&nbsp;</h4>{{/if}}
         </div>
     </div>
 </body>

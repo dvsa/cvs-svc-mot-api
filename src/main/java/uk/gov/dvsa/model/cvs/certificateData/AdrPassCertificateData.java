@@ -3,7 +3,10 @@ package uk.gov.dvsa.model.cvs.certificateData;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AdrPassCertificateData {
@@ -59,6 +62,12 @@ public class AdrPassCertificateData {
 
     @JsonProperty("replacement")
     private boolean replacement;
+
+    @JsonProperty("batteryListNumber")
+    private String batteryListNumber;
+
+    @JsonProperty("m145Statement")
+    private boolean m145Statement;
 
     public String getVin() {
         return vin;
@@ -227,33 +236,58 @@ public class AdrPassCertificateData {
         return this.notes.length() >= 474 && this.notes.length() <= 632;
     }
 
-    public HashMap<String, String> dangerousGoodAcronyms = new HashMap<String, String>() {{
-        put("FP <61 (FL)", "FP");
-        put("AT", "AT");
-        put("Class 5.1 Hydrogen Peroxide (OX)", "Class 5.1 Hydrogen Peroxide (OX)");
-        put("MEMU", "MEMU");
-        put("Carbon Disulphide", "UN 1131 CARBON DISULPHIDE");
-        put("Hydrogen", "Hydrogen");
-        put("Explosives (type 2)", "EX/II");
-        put("Explosives (type 3)", "EX/III");
-    }};
-
-    public String getFormattedPermittedDangerousGoods() {
-        StringBuilder formattedPermittedDangerousGoods =  new StringBuilder("");
-        if(this.permittedDangerousGoods == null)
-            return "";
+    public boolean getPermittedDangerousGoodsHasFL() {
         for (String permittedDangerousGood : this.permittedDangerousGoods) {
-            formattedPermittedDangerousGoods.append(dangerousGoodAcronyms.get(permittedDangerousGood) + " ");
+            if (permittedDangerousGood.equals("FP <61 (FL)")){
+                return true;
+            }
         }
-        return formattedPermittedDangerousGoods.toString();
-    }
+        return false;
+    };
+    public boolean getPermittedDangerousGoodsHasAT() {
+        for (String permittedDangerousGood : this.permittedDangerousGoods) {
+            if (permittedDangerousGood.equals("AT")){
+                return true;
+            }
+        }
+        return false;
+    };
+    public boolean getPermittedDangerousGoodsHasMEMU() {
+        for (String permittedDangerousGood : this.permittedDangerousGoods) {
+            if (permittedDangerousGood.equals("MEMU")){
+                return true;
+            }
+        }
+        return false;
+    };
+    public boolean getPermittedDangerousGoodsHasEXII() {
+        for (String permittedDangerousGood : this.permittedDangerousGoods) {
+            if (permittedDangerousGood.equals("Explosives (type 2)")){
+                return true;
+            }
+        }
+        return false;
+    };
+    public boolean getPermittedDangerousGoodsHasEXIII() {
+        for (String permittedDangerousGood : this.permittedDangerousGoods) {
+            if (permittedDangerousGood.equals("Explosives (type 3)")){
+                return true;
+            }
+        }
+        return false;
+    };
+
 
     public boolean getFormattedSubstancesPermitted() { // returns true for the first value that tankStatement can have and false for the other one so it can be processed in view
-        if(this.tankStatement != null && tankStatement.getSubstancesPermitted() != null && this.tankStatement.getSubstancesPermitted().equals(SUBSTANCES_PERMITTED_OPTION_1)){
-            return true;
-        } else {
-            return false;
-        }
+        return this.tankStatement != null && tankStatement.getSubstancesPermitted() != null && this.tankStatement.getSubstancesPermitted().equals(SUBSTANCES_PERMITTED_OPTION_1);
+    }
+
+    public List<String> carriageBodyTypes = Arrays.asList("Rigid skeletal", "Full drawbar skeletal",
+            "Centre axle skeletal", "Semi trailer skeletal");
+
+
+    public boolean getHasCarriageStatement(){
+        return (this.getPermittedDangerousGoodsHasEXII() || this.getPermittedDangerousGoodsHasEXIII()) && carriageBodyTypes.contains(adrVehicleType);
     }
 
     public boolean getIsTankStatementNull() {
@@ -299,5 +333,21 @@ public class AdrPassCertificateData {
 
     public void setReplacement(boolean replacement) {
         this.replacement = replacement;
+    }
+
+    public String isBatteryListNumber() {
+        return batteryListNumber;
+    }
+
+    public void setBatteryListNumber(String batteryListNumber) {
+        this.batteryListNumber = batteryListNumber;
+    }
+
+    public boolean isM145Statement() {
+        return m145Statement;
+    }
+
+    public void setM145Statement(boolean m145Statement) {
+        this.m145Statement = m145Statement;
     }
 }

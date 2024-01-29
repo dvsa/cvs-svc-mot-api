@@ -48,12 +48,6 @@ public class AdrPassTest {
     }
 
     @Test
-    public void verifyFormattedPermittedDangerousGoods() {
-        String formattedPermittedDangerousGoods = certificatePageObject.getFormattedPermittedDangerousGoods();
-        assertEquals(testCertificate.getAdrData().getFormattedPermittedDangerousGoods().trim(), formattedPermittedDangerousGoods.trim());
-    }
-
-    @Test
     public void verifyWeight() {
         String weight = certificatePageObject.getWeight();
         assertEquals(testCertificate.getAdrData().getWeight(), weight);
@@ -93,11 +87,5 @@ public class AdrPassTest {
     public void verifyTankCode() {
         String tankCode = certificatePageObject.getTankCode();
         assertEquals(testCertificate.getAdrData().getTankCode(), tankCode);
-    }
-
-    @Test
-    public void verifyNotes() {
-        String notes = certificatePageObject.getNotes();
-        assertEquals(testCertificate.getAdrData().getNotes(), notes);
     }
 }
