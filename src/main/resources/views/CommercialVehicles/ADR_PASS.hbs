@@ -129,7 +129,8 @@
                 <div class = "dangerousGoodsFooter">
                     <div class = "statements">
                         {{#if adrData.batteryListNumber}}
-                            <p> AS PER BATTERY-ELEMENT LIST NO {{adrData.batteryListNumber}} ATTACHED </p> //TODO: fix this to work
+                            <p> AS PER BATTERY-ELEMENT LIST NO {{adrData.batteryListNumber}} ATTACHED </p>
+                            <br />
                         {{/if}}
                         {{#if adrData.tankStatement.productList}}
                              <p>{{adrData.tankStatement.productList}}</p>
@@ -137,12 +138,15 @@
                         {{/if}}
                         {{#if adrData.tankStatement.statement}}
                              <p> AS PER INSURERS PRODUCT LIST NO {{adrData.tankStatement.statement}} ATTACHED </p>
+                             <br />
                         {{/if}}
                         {{#if adrData.hasCarriageStatement}}
                              <p> THIS VEHICLE IS CERTIFIED FOR THE CARRIAGE OF DANGEROUS GOODS IN CONJUNCTION WITH SUITABLY CERTIFIED TANK OR BATTERY CONTAINERS OR SUITABLY CONSTRUCTED EXPLOSIVE CONTAINERS AS APPROPRIATE </p>
+                             <br />
                         {{/if}}
                         {{#if adrData.m145Statement}}
                              <p> VEHICLE FIRST REGISTERED IN ACCORDANCE WITH MULTILATERAL AGREEMENT M145 </p>
+                             <br />
                         {{/if}}
                         {{#if adrData.hasNotes}}
                             <p id="notes">{{adrData.notes}}</p>
