@@ -69,6 +69,9 @@ public class AdrPassCertificateData {
     @JsonProperty("m145Statement")
     private boolean m145Statement;
 
+    @JsonProperty("compatibilityGroupJ")
+    private boolean compatibilityGroupJ;
+
     public String getVin() {
         return vin;
     }
@@ -302,27 +305,15 @@ public class AdrPassCertificateData {
         return this.adrVehicleType == null;
     }
 
-    public boolean getIsExplosivesType2() {
+    public boolean getIsExplosivesType2Or3() {
         if(this.permittedDangerousGoods == null){
             return false;
         }
         for (String permittedDangerousGood : this.permittedDangerousGoods) {
-            if(permittedDangerousGood.equals(PERMITTED_DANGEROUS_GOODS_EXPLOSIVES_2)){
+            if(permittedDangerousGood.equals(PERMITTED_DANGEROUS_GOODS_EXPLOSIVES_2)
+                    || permittedDangerousGood.equals(PERMITTED_DANGEROUS_GOODS_EXPLOSIVES_3)){
                 return true;
             }
-        }
-        return false;
-    }
-
-    public boolean getIsExplosivesType3() {
-        if(this.permittedDangerousGoods == null){
-            return false;
-        }
-        for (String permittedDangerousGood : this.permittedDangerousGoods) {
-            if(permittedDangerousGood.equals(PERMITTED_DANGEROUS_GOODS_EXPLOSIVES_3)){
-                return true;
-            }
-
         }
         return false;
     }
@@ -349,5 +340,13 @@ public class AdrPassCertificateData {
 
     public void setM145Statement(boolean m145Statement) {
         this.m145Statement = m145Statement;
+    }
+
+    public boolean isCompatibilityGroupJ() {
+        return compatibilityGroupJ;
+    }
+
+    public void setCompatibilityGroupJ(boolean compatibilityGroupJ) {
+        this.compatibilityGroupJ = compatibilityGroupJ;
     }
 }
