@@ -280,7 +280,6 @@ public class AdrPassCertificateData {
         return false;
     };
 
-
     public boolean getFormattedSubstancesPermitted() { // returns true for the first value that tankStatement can have and false for the other one so it can be processed in view
         return this.tankStatement != null && tankStatement.getSubstancesPermitted() != null && this.tankStatement.getSubstancesPermitted().equals(SUBSTANCES_PERMITTED_OPTION_1);
     }
@@ -303,19 +302,6 @@ public class AdrPassCertificateData {
 
     public boolean getIsVehicleTypeNull() {
         return this.adrVehicleType == null;
-    }
-
-    public boolean getIsExplosivesType2Or3() {
-        if(this.permittedDangerousGoods == null){
-            return false;
-        }
-        for (String permittedDangerousGood : this.permittedDangerousGoods) {
-            if(permittedDangerousGood.equals(PERMITTED_DANGEROUS_GOODS_EXPLOSIVES_2)
-                    || permittedDangerousGood.equals(PERMITTED_DANGEROUS_GOODS_EXPLOSIVES_3)){
-                return true;
-            }
-        }
-        return false;
     }
 
     public boolean isReplacement() {

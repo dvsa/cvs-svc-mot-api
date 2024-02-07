@@ -42,6 +42,8 @@ public class HtmlGenerator {
         handlebarsWithHelpers = registerEqualsHelper(handlebars);
         handlebarsWithHelpers = registerNotEqualsHelper(handlebars);
         handlebarsWithHelpers = registerOrHelper(handlebars);
+        handlebarsWithHelpers = registerAndHelper(handlebars);
+        handlebarsWithHelpers = registerNotHelper(handlebars);
         this.handlebars = handlebarsWithHelpers;
     }
 
@@ -127,6 +129,15 @@ public class HtmlGenerator {
     private Handlebars registerOrHelper(Handlebars handlebars) {
         return handlebars.registerHelper("or", ConditionalHelpers.or);
     }
+
+    private Handlebars registerAndHelper(Handlebars handlebars) {
+        return handlebars.registerHelper("and", ConditionalHelpers.and);
+    }
+
+    private Handlebars registerNotHelper(Handlebars handlebars) {
+        return handlebars.registerHelper("not", ConditionalHelpers.not);
+    }
+
 
     private List<String> processTemplates(Document context, List<Template> templates) {
         List<String> htmls = new ArrayList<>();
