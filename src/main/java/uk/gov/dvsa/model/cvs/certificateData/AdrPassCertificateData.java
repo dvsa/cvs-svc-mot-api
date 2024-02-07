@@ -280,6 +280,14 @@ public class AdrPassCertificateData {
         return false;
     };
 
+    public boolean getShowCatJInclusion() {
+        return (this.getPermittedDangerousGoodsHasEXIII() || this.getPermittedDangerousGoodsHasEXII()) && this.compatibilityGroupJ;
+    }
+
+    public boolean getShowCatJExclusion() {
+        return (this.getPermittedDangerousGoodsHasEXIII() || this.getPermittedDangerousGoodsHasEXII()) && !this.compatibilityGroupJ;
+    }
+
     public boolean getFormattedSubstancesPermitted() { // returns true for the first value that tankStatement can have and false for the other one so it can be processed in view
         return this.tankStatement != null && tankStatement.getSubstancesPermitted() != null && this.tankStatement.getSubstancesPermitted().equals(SUBSTANCES_PERMITTED_OPTION_1);
     }
