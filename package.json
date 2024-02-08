@@ -1,8 +1,7 @@
 {
   "devDependencies": {
     "husky": "^3.0.9",
-    "sonar-scanner": "^3.1.0",
-    "npm-run-all": "4.1.5"
+    "sonar-scanner": "^3.1.0"
   },
   "scripts": {
     "security-checks": "git secrets --scan",
