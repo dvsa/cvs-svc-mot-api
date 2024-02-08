@@ -15,9 +15,6 @@ jobs:
     runs-on: X64
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.CVS_MGMT_AWS_ROLE }}
@@ -27,12 +24,9 @@ jobs:
         with:
           secret-ids: sonarqube-gha
           parse-json-secrets: true
-      - name: Install dependencies
-        run: npm ci
       - name: Run SonarQube scanner
         run: |
-         npm run test && \
-         npm run sonar-scanner -- \
+         ./gradlew sonarqube -- \
          -Dsonar.host.url=${{ env.SONARQUBE_GHA_URL }} \
          -Dsonar.token=${{ env.SONARQUBE_GHA_TOKEN }} \
          -Dsonar.login=${{ env.SONARQUBE_GHA_TOKEN }} \
