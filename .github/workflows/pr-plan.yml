@@ -26,7 +26,7 @@ jobs:
           parse-json-secrets: true
       - name: Run SonarQube scanner
         run: |
-         ./gradlew sonarqube -- \
+         ./gradlew sonarqube \
          -Dsonar.host.url=${{ env.SONARQUBE_GHA_URL }} \
          -Dsonar.token=${{ env.SONARQUBE_GHA_TOKEN }} \
          -Dsonar.login=${{ env.SONARQUBE_GHA_TOKEN }} \
