@@ -17,5 +17,8 @@
     "hooks": {
       "pre-commit": "npm run security-checks"
     }
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
   }
 }
