@@ -10,7 +10,8 @@
     "package": "echo 'Nothing to do'",
     "sonar-scanner": "sonar-scanner",
     "test-i": "echo 'Not yet implemented'",
-    "test": "npm-run-all test:unit:coverage"
+    "test": "npm-run-all test:unit:coverage",
+    "test:unit:coverage": "cross-env npm run test:unit -- --coverage"
   },
   "husky": {
     "hooks": {
