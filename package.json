@@ -1,14 +1,17 @@
 {
   "devDependencies": {
     "husky": "^3.0.9",
-    "sonar-scanner": "^3.1.0"
+    "sonar-scanner": "^3.1.0",
+    "npm-run-all": "4.1.5"
   },
   "scripts": {
     "security-checks": "git secrets --scan",
     "tools-setup": "echo 'Nothing to do'",
     "package": "echo 'Nothing to do'",
     "sonar-scanner": "sonar-scanner",
-    "test-i": "echo 'Not yet implemented'"
+    "test-i": "echo 'Not yet implemented'",
+    "test": "npm-run-all test:unit:coverage"
+
   },
   "husky": {
     "hooks": {
