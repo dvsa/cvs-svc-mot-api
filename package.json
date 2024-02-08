@@ -9,7 +9,8 @@
     "tools-setup": "echo 'Nothing to do'",
     "package": "echo 'Nothing to do'",
     "sonar-scanner": "sonar-scanner",
-    "test-i": "echo 'Not yet implemented'"
+    "test-i": "echo 'Not yet implemented'",
+    "test": "npm run test:unit -- --coverage"
   },
   "husky": {
     "hooks": {
