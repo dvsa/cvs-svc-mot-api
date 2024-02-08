@@ -10,15 +10,11 @@
     "package": "echo 'Nothing to do'",
     "sonar-scanner": "sonar-scanner",
     "test-i": "echo 'Not yet implemented'",
-    "test": "npm run test:unit -- --coverage",
-    "test:unit": "BRANCH=local SLS_DEBUG=* jest --testMatch=\"**/*.unitTest.ts\" --runInBand --detectOpenHandles"
+    "test": "npm-run-all test:unit:coverage"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run security-checks"
     }
-  },
-  "dependencies": {
-    "jest": "^29.7.0"
   }
 }
