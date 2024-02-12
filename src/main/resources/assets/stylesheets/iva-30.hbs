@@ -44,13 +44,13 @@ margin-bottom: 5px;
 
 .section-title-border {
 border-style: solid;
+border-width: 2px;
 border-color: black;
 background-color: grey;
 font-weight:bold;
 text-align: center;
-margin-left: -3px;
 margin-top: -2px;
-width: 100.7%;
+width: 100%;
 }
 
 .section-title-border h1 {
@@ -80,15 +80,20 @@ width: 50%;
 width: 100%;
 }
 
-#footer-left {
-float: left;
-text-align: left;
+.footer-left {
+display: inline-block;
 width: 50%;
 }
 
-#footer-right {
-float: right;
+.footer-mid {
+display: inline-block;
+text-align: center;
+}
+
+.footer-right {
 text-align: right;
+display: inline-block;
+float: right;
 width: 40%;
 }
 
@@ -121,4 +126,68 @@ clear: both;
 .refusal-list p {
 margin: 0px;
 clear: both;
+}
+
+.page-header {
+width: 100%;
+margin-top: 2px;
+}
+
+.header-left {
+display: inline-block;
+}
+.header-right {
+display: inline-block;
+float: right;
+}
+
+#defect-details-subtitle-border {
+background-color: white;
+}
+
+.header-serial-no {
+width: fit-content;
+border-style: solid;
+border-width: 1px;
+margin-bottom: 1px;
+}
+
+.header-serial-no-title {
+padding: 2px;
+}
+
+.header-serial-no-value {
+font-weight: normal;
+margin-left: 5em;
+text-wrap: none;
+}
+
+.header-pagination {
+width: fit-content;
+border-style: solid;
+border-width: 1px;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 2em;
+padding-bottom: 2em;
+}
+
+.vehicle-detail-table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 1em;
+}
+
+.inspector-detail-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+.table-row-cell {
+border-style: solid;
+border-width: 1px;
+}
+
+#data-prot-section{
+margin-top: 5px;
 }
