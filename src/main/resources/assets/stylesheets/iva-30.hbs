@@ -1,10 +1,13 @@
 
 @page {
+counter-increment: page;
+counter-reset: page 1;
 size: A4 portrait;
 margin: 20px 24px 0 24px;
-padding: 0;
+@bottom-center {
+content: element(footer);
 }
-
+}
 p { margin:5px; }
 
 p,
@@ -26,6 +29,10 @@ page-break-inside: avoid;
 font-size: 90%;
 }
 
+.separate-page{
+page-break-after: always;
+}
+
 *,
 :after,
 :before {
@@ -33,12 +40,9 @@ box-sizing: border-box;
 line-height: 1;
 }
 
-.separate-page {
-page-break-after: always;
-}
 .section-border {
 border-style: solid;
-border-color: black grey grey grey;
+border-color: black black black black;
 margin-bottom: 5px;
 }
 
@@ -46,11 +50,12 @@ margin-bottom: 5px;
 border-style: solid;
 border-width: 2px;
 border-color: black;
-background-color: grey;
+background-color: #d0d0d0;
 font-weight:bold;
 text-align: center;
 margin-top: -2px;
-width: 100%;
+margin-left: -1px;
+width: 100.4%;
 }
 
 .section-title-border h1 {
@@ -77,7 +82,7 @@ width: 50%;
 }
 
 .footer {
-width: 100%;
+position: running(footer);
 }
 
 .footer-left {
@@ -88,6 +93,16 @@ width: 50%;
 .footer-mid {
 display: inline-block;
 text-align: center;
+}
+
+.footer-current-page-number:before{
+content: counter(page);
+font-weight: bold;
+}
+
+.footer-total-page-count:before{
+content: counter(pages);
+font-weight: bold;
 }
 
 .footer-right {
@@ -146,7 +161,7 @@ background-color: white;
 }
 
 .header-serial-no {
-width: fit-content;
+width: 250px;
 border-style: solid;
 border-width: 1px;
 margin-bottom: 1px;
@@ -154,6 +169,7 @@ margin-bottom: 1px;
 
 .header-serial-no-title {
 padding: 2px;
+margin-bottom: 0px;
 }
 
 .header-serial-no-value {
@@ -170,24 +186,33 @@ padding-left: 1em;
 padding-right: 1em;
 padding-top: 2em;
 padding-bottom: 2em;
+margin-top: 0px;
 }
 
-.vehicle-detail-table {
+.table {
 width: 100%;
 border-collapse: collapse;
 margin-bottom: 1em;
+table-layout: auto;
 }
 
-.inspector-detail-table {
-width: 100%;
-border-collapse: collapse;
+.vd-table-row-cell {
+border-style: solid;
+border-width: 1px;
+width: 50%;
 }
 
 .table-row-cell {
 border-style: solid;
 border-width: 1px;
+width: 50%;
 }
 
-#data-prot-section{
-margin-top: 5px;
+.no-border-cell{
+border: none;
+}
+
+#appointment-text{
+text-align: center;
+font-size: 85%;
 }
