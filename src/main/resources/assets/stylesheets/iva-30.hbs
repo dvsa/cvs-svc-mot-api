@@ -1,13 +1,15 @@
 
 @page{
 size: A4 portrait;
-margin-top: 50mm;
-margin-bottom: 50mm;
-margin-left: 1cm;
-margin-right: 1cm;
-@bottom-center {
-content: element(footer);
+margin 1cm 1cm 1cm 1cm;
+@bottom-left {
+content: element(footer-left);
 }
+@bottom-center {
+content: element(footer-mid);
+}
+@bottom-right {
+content: element(footer-right);
 }
 p { margin:5px; }
 
@@ -83,17 +85,13 @@ float: right;
 width: 50%;
 }
 
-.footer {
+
+.footer-left {
 position: running(footer)
 }
 
-.footer-left {
-display: inline-block;
-width: 50%;
-}
-
 .footer-mid {
-display: inline-block;
+position: running(footer);
 text-align: center;
 }
 
@@ -109,9 +107,7 @@ font-weight: bold;
 
 .footer-right {
 text-align: right;
-display: inline-block;
-float: right;
-width: 40%;
+position: running(footer);
 }
 
 #no-margin-p {
