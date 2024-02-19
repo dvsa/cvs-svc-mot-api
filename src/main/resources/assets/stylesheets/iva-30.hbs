@@ -1,13 +1,10 @@
 
 @page {
-counter-increment: page;
-counter-reset: page 1;
 size: A4 portrait;
 margin: 20px 24px 0 24px;
-@bottom-center {
-content: element(footer);
+padding: 0;
 }
-}
+
 p { margin:5px; }
 
 p,
@@ -29,10 +26,6 @@ page-break-inside: avoid;
 font-size: 90%;
 }
 
-.separate-page{
-page-break-after: always;
-}
-
 *,
 :after,
 :before {
@@ -40,22 +33,24 @@ box-sizing: border-box;
 line-height: 1;
 }
 
+.separate-page {
+page-break-after: always;
+}
 .section-border {
 border-style: solid;
-border-color: black black black black;
+border-color: black grey grey grey;
 margin-bottom: 5px;
 }
 
 .section-title-border {
 border-style: solid;
-border-width: 2px;
 border-color: black;
-background-color: #d0d0d0;
+background-color: grey;
 font-weight:bold;
 text-align: center;
+margin-left: -3px;
 margin-top: -2px;
-margin-left: -1px;
-width: 100.4%;
+width: 100.7%;
 }
 
 .section-title-border h1 {
@@ -82,33 +77,18 @@ width: 50%;
 }
 
 .footer {
-position: running(footer);
+width: 100%;
 }
 
-.footer-left {
-display: inline-block;
+#footer-left {
+float: left;
+text-align: left;
 width: 50%;
 }
 
-.footer-mid {
-display: inline-block;
-text-align: center;
-}
-
-.footer-current-page-number:before{
-content: counter(page);
-font-weight: bold;
-}
-
-.footer-total-page-count:before{
-content: counter(pages);
-font-weight: bold;
-}
-
-.footer-right {
-text-align: right;
-display: inline-block;
+#footer-right {
 float: right;
+text-align: right;
 width: 40%;
 }
 
@@ -141,78 +121,4 @@ clear: both;
 .refusal-list p {
 margin: 0px;
 clear: both;
-}
-
-.page-header {
-width: 100%;
-margin-top: 2px;
-}
-
-.header-left {
-display: inline-block;
-}
-.header-right {
-display: inline-block;
-float: right;
-}
-
-#defect-details-subtitle-border {
-background-color: white;
-}
-
-.header-serial-no {
-width: 250px;
-border-style: solid;
-border-width: 1px;
-margin-bottom: 1px;
-}
-
-.header-serial-no-title {
-padding: 2px;
-margin-bottom: 0px;
-}
-
-.header-serial-no-value {
-font-weight: normal;
-margin-left: 5em;
-text-wrap: none;
-}
-
-.header-pagination {
-width: fit-content;
-border-style: solid;
-border-width: 1px;
-padding-left: 1em;
-padding-right: 1em;
-padding-top: 2em;
-padding-bottom: 2em;
-margin-top: 0px;
-}
-
-.table {
-width: 100%;
-border-collapse: collapse;
-margin-bottom: 1em;
-table-layout: auto;
-}
-
-.vd-table-row-cell {
-border-style: solid;
-border-width: 1px;
-width: 50%;
-}
-
-.table-row-cell {
-border-style: solid;
-border-width: 1px;
-width: 50%;
-}
-
-.no-border-cell{
-border: none;
-}
-
-#appointment-text{
-text-align: center;
-font-size: 85%;
 }
