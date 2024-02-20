@@ -14,11 +14,11 @@ content: element(footer-right);
 }
 
 @page :first{
-margin-top: 31mm;
+margin-top: 35mm;
 @top-left{
 content: element(first-page-header-left);
 }
-@top-right-corner{
+@top-right{
 content: element(first-page-header-right);
 }
 }
@@ -72,13 +72,18 @@ margin-bottom: 5px;
 
 .section-title-border {
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 background-color: #d0d0d0;
 font-weight:bold;
 text-align: center;
+margin-top: -1px;
 margin-left: -1px;
-width: 100.4%;
+width: 100.3%;
+}
+
+#cert-title-border{
+margin-top: 0px;
 }
 
 .section-title-border h1 {
@@ -163,13 +168,15 @@ clear: both;
 .first-page-header-left {
 margin-top: 50px;
 position: running(first-page-header-left);
+padding-bottom: 0px;
+margin-bottom: 5px;
 }
 .first-page-header-right{
 margin-top: 50px;
 position: running(first-page-header-right);
-padding-left: 10px;
+padding-left: 350px;
 padding-bottom: 0px;
-margin-bottom: 0px;
+margin-bottom: 5px;
 }
 
 #defect-details-subtitle-border {
@@ -188,7 +195,7 @@ margin-bottom: 0px;
 }
 
 .header-pagination {
-width: 100px;
+width: 109px;
 border-style: solid;
 border-width: 1px;
 padding-left: 1em;
@@ -212,10 +219,10 @@ table-layout: auto;
 .table-row-cell {
 border-style: solid;
 border-width: 1px;
-padding: 0.25em;
+padding-bottom: 0.25em;
 width: 50%;
 vertical-align: middle;
-font-size: 85%;
+font-size: 92%;
 }
 
 .no-border-cell{
