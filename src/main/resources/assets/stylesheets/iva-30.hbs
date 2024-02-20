@@ -13,6 +13,14 @@ content: element(footer-right);
 }
 }
 
+@page :first{
+@top-left{
+content: element(first-page-header-left);
+@top-right{
+content:element(first-page-header-right);
+}
+}
+
 p { margin:5px; }
 
 p,
@@ -156,12 +164,11 @@ width: 100%;
 margin-top: 2px;
 }
 
-.header-left {
-display: inline-block;
+.first-page-header-left {
+position: running(first-page-header-left);
 }
 .header-right {
-display: inline-block;
-float: right;
+position: running(first-page-header-right);
 padding-bottom: 0px;
 margin-bottom: 0px;
 }
