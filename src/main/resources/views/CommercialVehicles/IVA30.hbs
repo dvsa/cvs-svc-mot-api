@@ -8,11 +8,11 @@
 </head>
 
 <body>
-<!-- FIRST PAGE HEADER -->
+
 <div class="first-page-header-left">
     <div class="header-serial-no">
         <div class="header-serial-no-title">
-            <span> <b>Serial Number: </b> <!-- Put Serial Number data here --> </span>
+            <span id="serial-no"> <b>Serial Number: </b> {{ivaData.serialNo}} </span>
         </div>
     </div>
     <div class="header-pagination">
@@ -24,7 +24,7 @@
     <img src="{{root}}/assets/images/dvsa_crest.png" alt="logo" width="110"/>
 </div>
 
-<!-- footer for all pages -->
+
 <div class="footer-left">
     <p> <b class="bold-title">IVA30VTA (DVSA0842) </b> </p>
 </div>
@@ -37,7 +37,7 @@
     <p><b>Version 1.0 Apr 2024</b></p>
 </div>
 
-<!-- first page -->
+
 <div class="separate-page">
     <div class="section-title-border" id ='cert-title-border'>
         <h1> INDIVIDUAL VEHICLE APPROVAL (IVA)</h1>
@@ -48,7 +48,7 @@
     <p id = "appointment-text"> AN APPOINTMENT FOR RE-EXAMINATION <b>CANNOT</b> BE MADE ON THE DAY ON WHICH THIS EXAMINATION WAS CARRIED OUT
         PLEASE CONTACT <b> (0300) 200 1188 </b> TO MAKE AN APPOINTMENT QUOTING YOUR TAS REFERENCE NUMBER </p>
 
-    <!--- Vehicle details section -->
+
     <table class="table">
         <thead>
         <th scope="row" colspan="2" class="section-title-border">
@@ -56,20 +56,20 @@
         </th>
         </thead>
         <tr class="table-row-cell">
-            <td class="table-row-cell"><b>Vehicle/Trailer NR No: </b> <!--Put data here --> </td>
-            <td class="table-row-cell"><b>Test Category: </b> <!--Put data here --> </td>
+            <td class="table-row-cell" id="veh-trl-no"><b>Vehicle/Trailer NR No: </b> {{ivaData.vehicleTrailerNrNo}} </td>
+            <td class="table-row-cell" id="test-category"><b>Test Category: </b> <span class="test-category-value">{{ivaData.testCategoryClass}}</span> ({{ivaData.testCategoryBasicNormal}}) </td>
         </tr>
         <tr class="table-row-cell">
-            <td class="table-row-cell"><b>Make/Model: </b> <!--Put data here --> </td>
-            <td class="table-row-cell"><b>VIN/Chassis No: </b> <!--Put data here --> </td>
+            <td class="table-row-cell" id="make-model"><b>Make/Model: </b> {{ivaData.make}}/{{ivaData.model}}</td>
+            <td class="table-row-cell" id="vin-chassis-no"><b>VIN/Chassis No: </b> {{ivaData.vin}} </td>
         </tr>
         <tr class="table-row-cell">
-            <td class="table-row-cell"> <b>Body Type: </b> <!--Put data here --> </td>
+            <td class="table-row-cell" id="body-type"> <b>Body Type: </b>{{ivaData.bodyType}} </td>
             <td class = "no-border-cell"></td>
         </tr>
     </table>
 
-    <!-- Required Standards Not Met Section -->
+
     <div class="section-border">
         <div class="section-title-border">
             <h1> DEFECT DETAILS </h1>
@@ -77,8 +77,24 @@
         <div class="section-title-border" id="defect-details-subtitle-border">
             <h1> Required Standard(s) Not Met: </h1>
         </div>
-        <div class="section-text-wrapper">
-            <!-- List incoming defects here -->
+        <div class="section-text-wrapper" id="required-standards">
+            {{#if ivaData.requiredStandards}}
+                <ul class="required-standard-list">
+                    {{#each ivaData.requiredStandards}}
+                        <li>
+                            <div>
+                                <p><span class="required-standard-section">{{this.sectionNumber}} - {{this.sectionDescription}}</span></p>
+                            </div>
+                            <div>
+                                <p><span> RS{{this.rsNumber}}: {{this.requiredStandard}} </span></p>
+                                {{#if this.additionalNotes}}
+                                    Additional Information: <span> {{this.additionalNotes}} </span>
+                                {{/if}}
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
         </div>
     </div>
 
@@ -86,31 +102,47 @@
         grounds that the vehicle fails to comply with the relevant requirements prescribed under The Road Vehicles
         (Approval) Regulations 2020 </p>
 
-    <!--- Signature Section --->
+
     <table class="table">
         <tr>
             <td></td>
-            <td class="table-row-cell"> <b>Reapplication required by: </b> <!--Put data here --> </td>
+            <td class="table-row-cell" id="re-app-date"> <b>Reapplication required by: </b> {{ivaData.reapplicationDate}} </td>
         </tr>
         <tr>
-            <td class="table-row-cell"> <b>Signed: </b> <!--Put data here --> </td>
-            <td class="table-row-cell"> <b>Date: </b>  <!--Put data here --> </td>
+            <td class="table-row-cell"> <b>Signed: </b> </td>
+            <td class="table-row-cell" id="date"> <b>Date: </b>  {{ivaData.date}} </td>
         </tr>
         <tr>
-            <td class="table-row-cell"> <b>Name: </b> <!--Put data here --> </td>
-            <td class="table-row-cell"> <b>Station: </b> <!--Put data here --> </td>
+            <td class="table-row-cell" id="tester-name"> <b>Name: </b> {{ivaData.testerName}} </td>
+            <td class="table-row-cell" id="station"> <b>Station: </b> {{ivaData.station}} </td>
         </tr>
         <tr>
             <td class="table-row-cell" colspan="2"> <p><b>The following additional defects may result in the vehicle not complying with the requirements
                 of The Road Vehicles (Construction and Use) Regulations 1986. (See notes overleaf) </b></p>
-                <p> N/A </p>
-                <!-- Put AdditionalDefects here -->
+                {{#if ivaData.additionalDefects}}
+                    <ul class="additional-defect-list" id="additional-defects">
+                        {{#each ivaData.additionalDefects}}
+                            <li>
+                                <div>
+                                    <span>
+                                        {{this.defectName}}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>
+                                        {{this.defectNotes}}
+                                    </span>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
             </td>
         </tr>
     </table>
 
 
-    <!-- Data Protection Section -->
+
     <div class="section-border">
         <div class="section-title-border">
             <h1> DATA PROTECTION STATEMENT 2019 </h1>
@@ -124,9 +156,9 @@
     </div>
 </div>
 
-<!-- back-page -->
+
 <div class="separate-page" id="back-page">
-    <!-- first box -->
+
     <div class="section-border">
         <div class="section-title-border">
             <h1>RE-EXAMINATION</h1>
