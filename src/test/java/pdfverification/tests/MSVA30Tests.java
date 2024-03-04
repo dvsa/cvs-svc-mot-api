@@ -50,7 +50,6 @@ public class MSVA30Tests {
 
     @Test
     public void verifyTitleIsOnPage1() throws IOException {
-
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(CERT_NAME));
     }
 
