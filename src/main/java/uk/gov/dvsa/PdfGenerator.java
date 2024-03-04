@@ -61,8 +61,6 @@ public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGate
             
             Document document = requestParser.parseRequest(input);
             List<String> html = htmlGeneratorFactory.create(document.getDocumentName()).generate(document);
-            logger.info(input.get("body").toString());
-
 
             byte [] binaryBody = new PDFGenerationService(new ITextRenderer()).generate(html);
 
