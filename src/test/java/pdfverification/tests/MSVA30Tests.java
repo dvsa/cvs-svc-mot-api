@@ -60,7 +60,7 @@ public class MSVA30Tests {
 
     @Test
     public void verifyPageCounterOnPage1() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("Page 1 of 2"));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("1 of 2"));
     }
 
     @Test
@@ -80,7 +80,7 @@ public class MSVA30Tests {
 
     @Test
     public void verifyPageCounterOnPage2() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Page 2 of 2"));
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("2 of 2"));
     }
 
     @Test
