@@ -2,7 +2,6 @@ package pdfverification.tests;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.itextpdf.text.pdf.PdfReader;
-import htmlverification.framework.page_object.CertificatePageSelector;
 import org.junit.Before;
 import org.junit.Test;
 import org.xhtmlrenderer.pdf.ITextRenderer;

@@ -28,10 +28,6 @@ public class MsvaPageObject extends BasePageObject {
         return getElementById(VIN.getSelector()).text();
     }
 
-    public String getBodyType() {
-        return getElementById(BODY_TYPE.getSelector()).text();
-    }
-
     public String getDate() {
         return getElementById(DATE.getSelector()).text();
     }

@@ -6,7 +6,6 @@ public enum MsvaPageSelector {
     TEST_TYPE("test-type"),
     MAKE_MODEL("make-model"),
     VIN("vin-chassis-no"),
-    BODY_TYPE("body-type"),
     DATE("date"),
     RE_APP_DATE("re-app-date"),
     TESTER_NAME("tester-name"),
