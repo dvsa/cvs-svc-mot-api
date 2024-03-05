@@ -26,7 +26,7 @@ import static uk.gov.dvsa.service.RequestParser.REQUEST_TRACE_ID_HEADER;
 
 public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
 
-    private static final java.util.logging.Logger logger = LogManager.getLogger(PdfGenerator.class);
+    private static final Logger logger = LogManager.getLogger(PdfGenerator.class);
 
     private final EventLogger eventLogger = new EventLogger(logger);
 
@@ -58,6 +58,8 @@ public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGate
 
                 eventLogger.logEventWithTraceInfo(EventType.CERT_SERVER_RECEIVE, requestTracingService.getCurrentTracingInformation());
             }
+
+            logger.info(input.get("body").toString());
             
             Document document = requestParser.parseRequest(input);
             List<String> html = htmlGeneratorFactory.create(document.getDocumentName()).generate(document);
