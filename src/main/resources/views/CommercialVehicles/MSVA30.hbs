@@ -12,7 +12,7 @@
 <div class="first-page-header-left">
     <div class="header-serial-no">
         <div class="header-serial-no-title">
-            <span id="serial-no"> <b>Serial Number: </b> <!-- Insert data here --> </span>
+            <span id="serial-no"> <b>Serial Number: </b> {{msvaData.serialNo}} </span>
         </div>
     </div>
     <div class="header-pagination">
@@ -51,15 +51,15 @@
 
     <table class="table">
         <tr class="table-row-cell">
-            <td class="table-row-cell" id="veh-trl-no"><b>Vehicle 'Z' No.: </b> <!-- Insert data here --> </td>
-            <td class="table-row-cell" id="test-category"><b>Type: </b> <span class="test-category-value"><!-- Insert data here --></span> <!-- Insert data here --> </td>
+            <td class="table-row-cell" id="veh-z-no"><b>Vehicle 'Z' No.: </b> {{msvaData.vehicleZNo}} </td>
+            <td class="table-row-cell" id="test-type"><b>Type: </b> <span class="test-category-value">{{msvaData.testType}}</span> </td>
         </tr>
         <tr class="table-row-cell">
-            <td class="table-row-cell" id="make-model"><b>Make/Model: </b><!-- Insert data here -->/<!-- Insert data here --></td>
+            <td class="table-row-cell" id="make-model"><b>Make/Model: </b>{{msvaData.make}}/{{msvaData.model}}</td>
             <td class="no-border-cell"></td>
         </tr>
         <tr class="table-row-cell">
-            <td class="table-row-cell" id="body-type"> <b>Vin/Chassis No: </b><!-- Insert data here --> </td>
+            <td class="table-row-cell" id="vin-chassis-no"> <b>VIN/Chassis No: </b>{{msvaData.vin}} </td>
             <td class = "no-border-cell"></td>
         </tr>
     </table>
@@ -73,9 +73,9 @@
             <h1> Required Standard(s) Not Met: </h1>
         </div>
         <div class="section-text-wrapper" id="required-standards">
-            {{#if ivaData.requiredStandards}}
+            {{#if msvaData.requiredStandards}}
                 <ul class="required-standard-list">
-                    {{#each ivaData.requiredStandards}}
+                    {{#each msvaData.requiredStandards}}
                         <li>
                             <div>
                                 <p><span class="required-standard-section">{{this.sectionNumber}} - {{this.sectionDescription}}</span></p>
@@ -101,34 +101,37 @@
     <table class="table">
         <tr>
             <td></td>
-            <td class="table-row-cell" id="re-app-date"> <b>Retest required by: </b> <!-- calculated data here --> </td>
+            <td class="table-row-cell" id="re-app-date"> <b>Retest required by: </b> {{msvaData.retestDate}} </td>
         </tr>
         <tr>
             <td class="table-row-cell"> <b>Signed: </b> </td>
-            <td class="table-row-cell" id="date"> <b>Date: </b> <!-- Insert data here --> </td>
+            <td class="table-row-cell" id="date"> <b>Date: </b> {{msvaData.date}} </td>
         </tr>
         <tr>
-            <td class="table-row-cell" id="tester-name"> <b>Name: </b> <!-- Insert data here --> </td>
-            <td class="table-row-cell" id="station"> <b>Station: </b> <!-- Insert data here --> </td>
+            <td class="table-row-cell" id="tester-name"> <b>Name: </b> {{msvaData.testerName}} </td>
+            <td class="table-row-cell" id="station"> <b>Station: </b> {{msvaData.station}} </td>
         </tr>
         <tr>
             <td class="table-row-cell" colspan="2"> <p><b>The following additional defects may result in the vehicle not complying with the requirements
                 of The Road Vehicles (Construction and Use) Regulations 1986. (See notes overleaf) </b></p>
+                {{#if msvaData.additionalDefects}}
                     <ul class="additional-defect-list" id="additional-defects">
-                        <!-- Insert additional defects data here -->
+                        {{#each msvaData.additionalDefects}}
                             <li>
                                 <div>
                                     <span>
-                                        <!-- Insert defect name data here -->
+                                        {{this.defectName}}
                                     </span>
                                 </div>
                                 <div>
                                     <span>
-                                        <!-- Insert defect notes data here -->
+                                        {{this.defectNotes}}
                                     </span>
                                 </div>
                             </li>
+                        {{/each}}
                     </ul>
+                {{/if}}
             </td>
         </tr>
     </table>
@@ -164,9 +167,9 @@
             <p> When modification/rectification, etc. has been completed an application for a re-examination (verbally or in writing)
                 should be made to the test station that issued this notification. </p>
             <p> At the time of submitting the vehicle for re-examination a fee will be payable, unless failure is due
-            only to one or more of the following items and the vehicle is submitted for re-examination at the test
-            station that issued this notification before the end of the fifth day on which DVSA are accepting vehicles
-            for test following the date of issue. </p>
+                only to one or more of the following items and the vehicle is submitted for re-examination at the test
+                station that issued this notification before the end of the fifth day on which DVSA are accepting vehicles
+                for test following the date of issue. </p>
 
             <ul class="item-list">
                 <li>No more than three failure items in section 8 &amp; 9, external projections (unbodied and/or bodied),

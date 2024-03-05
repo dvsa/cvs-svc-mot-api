@@ -41,10 +41,17 @@ public class MSVA30Tests {
 
     @Before
     public void setup() throws IOException {
-        msva30.setDummyProperty("dummy");
         msva30.setDocumentName(CertificateTypes.MSVA30.getCertificateType());
-        msva30.setWatermark("dvsa_crest.png");
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(msva30));
+
+        try (FileOutputStream fos = new FileOutputStream("generatedPdf.pdf")) {
+            fos.write(pdfData);
+            System.out.println("PDF file has been saved.");
+        } catch (IOException ioe) {
+            System.err.println("Failed to save the PDF file: " + ioe.getMessage());
+            throw ioe;
+        }
+
         pdfReader = pdfParser.readPdf(pdfData);
     }
 
