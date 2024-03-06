@@ -2,15 +2,14 @@ package pdfverification.tests;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.itextpdf.text.pdf.PdfReader;
+import htmlverification.service.CvsCertificateTestDataProvider;
 import org.junit.Before;
 import org.junit.Test;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import pdfverification.service.PDFParser;
-import uk.gov.dvsa.enums.CertificateTypes;
 import uk.gov.dvsa.model.cvs.MSVA30;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-import java.io.FileOutputStream;
 
 
 import java.io.IOException;
@@ -32,7 +31,7 @@ public class MSVA30Tests {
     private byte[] pdfData;
 
     public MSVA30Tests() {
-        this.msva30 = new MSVA30();
+        this.msva30 = CvsCertificateTestDataProvider.getMSVA30();
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
         this.pdfParser = new PDFParser();
         this.pdfGenerationService = new PDFGenerationService(new ITextRenderer());
@@ -40,17 +39,7 @@ public class MSVA30Tests {
 
     @Before
     public void setup() throws IOException {
-        msva30.setDocumentName(CertificateTypes.MSVA30.getCertificateType());
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(msva30));
-
-        try (FileOutputStream fos = new FileOutputStream("generatedPdf.pdf")) {
-            fos.write(pdfData);
-            System.out.println("PDF file has been saved.");
-        } catch (IOException ioe) {
-            System.err.println("Failed to save the PDF file: " + ioe.getMessage());
-            throw ioe;
-        }
-
         pdfReader = pdfParser.readPdf(pdfData);
     }
 
