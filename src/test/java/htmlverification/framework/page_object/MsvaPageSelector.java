@@ -3,7 +3,7 @@ package htmlverification.framework.page_object;
 public enum MsvaPageSelector {
     SERIAL_NO("serial-no"),
     VEH_Z_NO("veh-z-no"),
-    TEST_TYPE("test-type"),
+    TYPE("type"),
     MAKE_MODEL("make-model"),
     VIN("vin-chassis-no"),
     DATE("date"),

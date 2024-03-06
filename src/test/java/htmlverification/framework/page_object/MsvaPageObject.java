@@ -17,7 +17,7 @@ public class MsvaPageObject extends BasePageObject {
     }
 
     public String getTestType() {
-        return getElementById(TEST_TYPE.getSelector()).text();
+        return getElementById(TYPE.getSelector()).text();
     }
 
     public String getMakeModel() {

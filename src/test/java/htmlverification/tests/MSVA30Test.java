@@ -38,14 +38,14 @@ public class MSVA30Test {
     @Test
     public void verifyVehicleZNumber() {
         String vehicleZNumber = msvaPageObject.getVehicleZNumber();
-        assertEquals("Vehicle 'Z' No.: ".concat(testCertificate.getMsvaData().getVehicleZNo()), vehicleZNumber);
+        assertEquals("Vehicle 'Z' No.: ".concat(testCertificate.getMsvaData().getVehicleZNumber()), vehicleZNumber);
     }
 
     @Test
-    public void verifyTestType() {
-        String htmlTestType = msvaPageObject.getTestType();
-        String testType = testCertificate.getMsvaData().getTestType();
-        assertEquals("Type: ".concat(testType), htmlTestType);
+    public void verifyType() {
+        String htmlType = msvaPageObject.getTestType();
+        String Type = testCertificate.getMsvaData().getType();
+        assertEquals("Type: ".concat(Type), htmlType);
     }
 
     @Test
