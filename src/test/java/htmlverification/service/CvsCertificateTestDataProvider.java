@@ -636,7 +636,7 @@ public class CvsCertificateTestDataProvider {
         msva30.setDocumentName(CertificateTypes.MSVA30.getCertificateType());
         MsvaFailCertificateData msva30Data = new MsvaFailCertificateData();
         msva30Data.setVin("P0123010956789");
-        msva30Data.setSerialNo("012345");
+        msva30Data.setSerialNumber("012345");
         msva30Data.setVehicleZNumber("ABC123");
         msva30Data.setType("motorcycle");
         msva30Data.setMake("Make");

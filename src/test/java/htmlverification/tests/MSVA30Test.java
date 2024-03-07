@@ -32,7 +32,7 @@ public class MSVA30Test {
     @Test
     public void verifySerialNumber() {
         String serialNumber = msvaPageObject.getSerialNumber();
-        assertEquals("Serial Number: ".concat(testCertificate.getMsvaData().getSerialNo()), serialNumber);
+        assertEquals("Serial Number: ".concat(testCertificate.getMsvaData().getSerialNumber()), serialNumber);
     }
 
     @Test
@@ -44,8 +44,8 @@ public class MSVA30Test {
     @Test
     public void verifyType() {
         String htmlType = msvaPageObject.getTestType();
-        String Type = testCertificate.getMsvaData().getType();
-        assertEquals("Type: ".concat(Type), htmlType);
+        String type = testCertificate.getMsvaData().getType();
+        assertEquals("Type: ".concat(type), htmlType);
     }
 
     @Test

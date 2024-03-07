@@ -6,11 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MsvaFailCertificateData {
     @JsonProperty("serialNumber")
-    private String serialNo;
+    private String serialNumber;
     @JsonProperty("vehicleZNumber")
     private String vehicleZNumber;
-    @JsonProperty("Type")
-    private String Type;
+    @JsonProperty("type")
+    private String type;
     @JsonProperty("vin")
     private String vin;
     @JsonProperty("make")
@@ -30,12 +30,12 @@ public class MsvaFailCertificateData {
     @JsonProperty("requiredStandards")
     private RequiredStandard[] requiredStandards;
 
-    public String getSerialNo() {
-        return serialNo;
+    public String getSerialNumber() {
+        return serialNumber;
     }
 
-    public void setSerialNo(String serialNo) {
-        this.serialNo = serialNo;
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
     }
 
     public String getVehicleZNumber() {
@@ -47,11 +47,11 @@ public class MsvaFailCertificateData {
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
-    public void setType(String testType) {
-        this.Type = testType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getVin() {
