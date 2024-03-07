@@ -104,7 +104,12 @@
             <td class="table-row-cell" id="re-app-date"> <b>Retest required by: </b> {{msvaData.retestDate}} </td>
         </tr>
         <tr>
-            <td class="table-row-cell"> <b>Signed: </b> </td>
+            <td class="table-row-cell">
+                <b>Signed: </b>
+                <div class="signature-image__wrapper">
+                    <img id="signature-first-page" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/>
+                </div>
+            </td>
             <td class="table-row-cell" id="date"> <b>Date: </b> {{msvaData.date}} </td>
         </tr>
         <tr>
