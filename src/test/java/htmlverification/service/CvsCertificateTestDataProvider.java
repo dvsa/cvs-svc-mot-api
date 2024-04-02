@@ -229,6 +229,65 @@ public class CvsCertificateTestDataProvider {
         return vtp30;
     }
 
+    public static VTP30W getVtp30w() {
+        VTP30W vtp30 = new VTP30W();
+        vtp30.setDocumentName(CertificateTypes.CVS_FAIL.getCertificateType());
+        CvsMotFailCertificateData vtp30Data = new CvsMotFailCertificateData();
+
+        vtp30Data
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT)
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+
+                .setSeatBeltNumber("10")
+                .setSeatBeltPreviousCheckDate("12.11.2018")
+                .setSeatBeltTested("Yes")
+
+                .setCountryOfRegistrationCode("GB")
+                .setRawVin(VIN)
+                .setDateOfTheTest("12.11.2018")
+                .setExpiryDate("12.10.2018")
+                .setTestStationPNumber("P12345")
+                .setTestStationName("TEST STATION NAME")
+                .setMake("Aston Martin")
+                .setModel("DB11")
+                .setVehicleEuClassification("M1")
+                .setRawVrm("KA1SAPH")
+                .setCurrentOdometer(
+                        new CvsOdometerReading("22341", "mi", "01.02.2019")
+                )
+                .setOdometerHistoryList(Arrays.asList(
+                        new CvsOdometerReading("120", "km", "01.02.2016"),
+                        new CvsOdometerReading("330", "km", "30.01.2017")
+                ))
+                .setIssuersName("R.DREWNO")
+                .setTestStationName("POPULAR GARAGES")
+                .setTestNumber("1806 8140 0628")
+                .setEarliestDateOfTheNextTest("13.10.2018");
+
+        vtp30Data
+                .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT)
+                .setMajorDefects(generateRFRs(MAJOR_RFR_TEXT, 1))
+
+                .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT)
+                .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
+
+                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1));
+
+        vtp30.setFailData(vtp30Data);
+
+        Signature signature = new Signature();
+        signature
+                .setImageData("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==")
+                .setImageType("png");
+
+        vtp30.setSignature(signature);
+
+        return vtp30;
+    }
+
     public static VTG5 getVtg5() {
         VTG5 vtg5 = new VTG5();
         vtg5.setDocumentName(CertificateTypes.CVS_HGV_PASS.getCertificateType());
