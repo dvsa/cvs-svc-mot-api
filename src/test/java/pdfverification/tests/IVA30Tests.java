@@ -8,13 +8,11 @@ import org.junit.Test;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.IVA30;
-import uk.gov.dvsa.model.cvs.VTP30W;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IVA30Tests {
@@ -24,12 +22,12 @@ public class IVA30Tests {
     private PDFGenerationService pdfGenerationService;
     private HtmlGenerator htmlGenerator;
     private PDFParser pdfParser;
-    private VTP30W iva30;
+    private IVA30 iva30;
     private PdfReader pdfReader;
     private byte[] pdfData;
 
     public IVA30Tests() {
-        this.iva30 = CvsCertificateTestDataProvider.getVtp30w();
+        this.iva30 = CvsCertificateTestDataProvider.getIVA30();
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
         this.pdfParser = new PDFParser();
         this.pdfGenerationService = new PDFGenerationService(new ITextRenderer());
@@ -39,9 +37,6 @@ public class IVA30Tests {
     public void setup() throws IOException {
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(iva30));
         pdfReader = pdfParser.readPdf(pdfData);
-        FileOutputStream outputStream = new FileOutputStream("testCertificate.pdf");
-        outputStream.write(pdfData);
-        outputStream.close();
     }
 
     @Test
