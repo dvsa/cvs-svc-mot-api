@@ -15,6 +15,7 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
     public static final String MINOR_DEFECTS_HEADER_WELSH = "Atgyweiriwch cyn gynted â phosibl (ddiffygion bach)";
     public static final String DANGEROUS_DEFECTS_HEADER_WELSH = "Peidiwch â gyrru nes ei fod wedi cael ei atgyweirio (diffygion peryglus)";
     public static final String MAJOR_DEFECT_HEADER_WELSH = "Atgyweirio ar unwaith (diffygion mawr)";
+    public static final String PRS_DEFECTS_HEADER_WELSH = "Defects rectified at time of test"; // TODO - Welsh translation
     public static final String TESTING_ORGANISATION_WELSH = "ASIANTAETH SAFONAU GYRWYR A CHERBYDAU";
 
     @JsonProperty("AdvisoryDefectsWelsh")
@@ -29,6 +30,9 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
     @JsonProperty("MajorDefectsWelsh")
     private List<String> majorDefectsWelsh;
 
+    @JsonProperty("PRSDefectsWelsh")
+    private List<String> prsDefectsWelsh;
+
     @JsonProperty("AdvisoryDefectsHeaderWelsh")
     private String advisoryDefectsHeaderWelsh;
 
@@ -40,6 +44,9 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
 
     @JsonProperty("MajorDefectsHeaderWelsh")
     private String majorDefectsHeaderWelsh;
+
+    @JsonProperty("PrsDefectsHeaderWelsh")
+    private String prsDefectsHeaderWelsh;
 
     public List<String> getAdvisoryDefectsWelsh() {
         return advisoryDefectsWelsh;
@@ -57,6 +64,9 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
         return this.majorDefectsWelsh;
     }
 
+    public List<String> getPrsDefectsWelsh() {
+        return this.prsDefectsWelsh;
+    }
 
     public CvsMotFailCertificateDataWelsh setAdvisoryDefectsWelsh(List<String> advisoryDefectsWelsh) {
         this.advisoryDefectsWelsh = advisoryDefectsWelsh;
@@ -78,6 +88,11 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
         return this;
     }
 
+    public CvsMotFailCertificateDataWelsh setPrsDefectsWelsh(List<String> prsDefectsWelsh) {
+        this.prsDefectsWelsh = prsDefectsWelsh;
+        return this;
+    }
+
     public DefectsList getAdvisoryWelsh() {
         return new DefectsList(ADVISORIES_HEADER_WELSH, this.advisoryDefectsWelsh);
     }
@@ -94,6 +109,10 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
 
     public DefectsList getMajorWelsh() {
         return new DefectsList(MAJOR_DEFECT_HEADER_WELSH, this.majorDefectsWelsh, EU_NUMBER_FOR_DEFECTS);
+    }
+
+    public DefectsList getPrsWelsh() {
+        return new DefectsList(PRS_DEFECTS_HEADER_WELSH, this.prsDefectsWelsh, EU_NUMBER_FOR_DEFECTS);
     }
 
     public List<FormattedOdometerReading> getMileageHistoryWelsh() {
@@ -152,6 +171,15 @@ public class CvsMotFailCertificateDataWelsh extends CvsMotFailCertificateData {
 
     public CvsMotFailCertificateDataWelsh setMajorDefectsHeaderWelsh(String majorDefectsHeaderWelsh) {
         this.majorDefectsHeaderWelsh = majorDefectsHeaderWelsh;
+        return this;
+    }
+
+    public String getPrsDefectsHeaderWelsh() {
+        return prsDefectsHeaderWelsh;
+    }
+
+    public CvsMotFailCertificateDataWelsh setPrsDefectsHeaderWelsh(String prsDefectsHeaderWelsh) {
+        this.prsDefectsHeaderWelsh = prsDefectsHeaderWelsh;
         return this;
     }
 
