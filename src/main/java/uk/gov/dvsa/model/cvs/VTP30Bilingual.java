@@ -1,6 +1,6 @@
 package uk.gov.dvsa.model.cvs;
 
-public class VTP30FailBilingual extends VTP30W {
+public class VTP30Bilingual extends VTP30W {
 
     public String getTestType() {
         return "PSV";

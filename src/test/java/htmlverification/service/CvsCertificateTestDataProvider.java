@@ -545,6 +545,48 @@ public class CvsCertificateTestDataProvider {
         psvPassBilingual.setData(bilingualData);
         return psvPassBilingual;
     }
+    public static VTP30Bilingual getCvsPsvFailBilingual() {
+        VTP30Bilingual psvPassBilingual = new VTP30Bilingual();
+        psvPassBilingual.setDocumentName(CertificateTypes.CVS_PASS_BILINGUAL.getCertificateType());
+
+        CvsMotCertificateDataWelsh bilingualData = new CvsMotCertificateDataWelsh();
+        bilingualData
+                .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+
+                .setSeatBeltNumber("10")
+                .setSeatBeltPreviousCheckDate("12.11.2018")
+                .setSeatBeltTested("Yes")
+
+                .setCountryOfRegistrationCode("GB")
+                .setRawVin(VIN)
+                .setDateOfTheTest("12.11.2018")
+                .setExpiryDate("12.10.2018")
+                .setTestStationPNumber("P12345")
+                .setTestStationName("TEST STATION NAME")
+                .setMake("Aston Martin")
+                .setModel("DB11")
+                .setVehicleEuClassification("M1")
+                .setRawVrm("KA1SAPH")
+                .setCurrentOdometer(
+                        new CvsOdometerReading("22341", "mi", "01.02.2019")
+                )
+                .setOdometerHistoryList(Arrays.asList(
+                        new CvsOdometerReading("120", "km", "01.02.2016"),
+                        new CvsOdometerReading("330", "km", "30.01.2017")
+                ))
+                .setIssuersName("R.DREWNO")
+                .setTestStationName("POPULAR GARAGES")
+                .setTestNumber("1806 8140 0628")
+                .setEarliestDateOfTheNextTest("13.10.2018");
+
+        psvPassBilingual.setData(bilingualData);
+        return psvPassBilingual;
+    }
 
     public static CvsTrlPassBilingual getCvsTrlPassBilingual() {
         CvsTrlPassBilingual trlPassBilingual = new CvsTrlPassBilingual();
