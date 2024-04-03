@@ -1,28 +1,20 @@
 package uk.gov.dvsa.model.cvs;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
-import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
+import uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh;
 
 public class VTP30W extends CvsMotFailCertificate {
 
-    public Document setData(CvsMotCertificateDataWelsh data) {
-        this.data = data;
+    @JsonProperty("FAIL_DATA")
+    protected CvsMotFailCertificateDataWelsh failData;
+
+    public CvsMotFailCertificateDataWelsh getFailData() {
+        return failData;
+    }
+
+    public Document setFailData(CvsMotFailCertificateDataWelsh failData) {
+        this.failData = failData;
         return this;
-    }
-
-    public String getTestType() {
-        return "PSV";
-    }
-
-    public String getPresentedDocumentNameFail() {
-        return "VTP30W";
-    }
-
-    public String getVersionNumberFail() {
-        return "1.0";
-    }
-
-    public String getRegOrIdHeadingWelsh() {
-        return "Rhif cofrestru";
     }
 }
