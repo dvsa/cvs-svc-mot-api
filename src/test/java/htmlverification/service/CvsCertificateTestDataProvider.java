@@ -231,15 +231,15 @@ public class CvsCertificateTestDataProvider {
 
     public static VTP30W getVtp30w() {
         VTP30W vtp30 = new VTP30W();
-        vtp30.setDocumentName(CertificateTypes.CVS_FAIL.getCertificateType());
-        CvsMotFailCertificateData vtp30Data = new CvsMotFailCertificateData();
+        vtp30.setDocumentName(CertificateTypes.CVS_FAIL_WELSH.getCertificateType());
+        CvsMotFailCertificateDataWelsh vtp30Data = new CvsMotFailCertificateDataWelsh();
 
         vtp30Data
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT)
-                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setMinorDefectsHeaderWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
 
-                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT)
-                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH)
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
 
                 .setSeatBeltNumber("10")
                 .setSeatBeltPreviousCheckDate("12.11.2018")
@@ -268,11 +268,11 @@ public class CvsCertificateTestDataProvider {
                 .setEarliestDateOfTheNextTest("13.10.2018");
 
         vtp30Data
-                .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT)
-                .setMajorDefects(generateRFRs(MAJOR_RFR_TEXT, 1))
+                .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT_WELSH)
+                .setMajorDefectsWelsh(generateRFRs(MAJOR_RFR_TEXT, 1))
 
-                .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT)
-                .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
+                .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH_CVS)
+                .setDangerousDefectsWelsh(generateRFRs(DANGEROUS_RFR_TEXT, 1))
 
                 .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1));
 
