@@ -10,23 +10,12 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.VTP30W;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-
 import static htmlverification.framework.component.DefectSummaryComponent.*;
 import static org.junit.Assert.assertTrue;
 
 public class VTP30WTests {
-
-    private static final int FIRST_WELSH_PAGE_NUMBER = 3;
-    private static final int FIRST_ENGLISH_PAGE_NUMBER = 1;
-    private static final String ISSUER_SIGNATURE = "Issuer signature";
-    private static final String ISSUED_BY_DVSA = "Issued by DVSA";
-    private static final String ISSUER_SIGNATURE_WELSH = "Llofnod y cyhoeddwr";
-    private static final String ISSUED_BY_DVSA_WELSH = "Cyhoeddwyd gan ASGC";
-
+    private static final int FIRST_WELSH_PAGE_NUMBER = 1;
     private PDFGenerationService pdfGenerationService;
     private HtmlGenerator htmlGenerator;
     private PDFParser pdfParser;
@@ -50,19 +39,64 @@ public class VTP30WTests {
 
    @Test
     public void verifyWelshTitleIsOnFirstPage() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Gwrthodiad tystysgrif prawf MOT"));
-    }
-
-    @Test
-    public void verifyEnglishTitleIsOnThirdPage() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, FIRST_ENGLISH_PAGE_NUMBER).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Gwrthod tystysgrif prawf MOT"));
     }
 
     @Test
     public void verifyWelshRfrs() throws Exception {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(MINOR_DEFECTS_HEADER_TEXT_WELSH));
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(ADVISORIES_HEADER_TEXT_WELSH));
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(MAJOR_DEFECTS_HEADER_TEXT_WELSH));
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains(MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS));
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains(ADVISORIES_HEADER_TEXT_WELSH_CVS));
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains(MAJOR_DEFECTS_HEADER_TEXT_WELSH_CVS));
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains(DANGEROUS_DEFECTS_HEADER_TEXT_WELSH_CVS));
+    }
+
+    @Test
+    public void verifyWelshVehicleId() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Rhif adnabod cerbyd"));
+    }
+
+    @Test
+    public void verifyWelshId() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Rhif adnabod"));
+    }
+
+    @Test
+    public void verifyWelshCountryOfRegistration() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Gwlad cofrestru"));
+    }
+
+    @Test
+    public void verifyWelshMakeAndModel() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Math a model"));
+    }
+
+    @Test
+    public void verifyWelshVehicleCategory() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Categori cerbyd"));
+    }
+
+    @Test
+    public void verifyWelshOdometer() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Odomedr"));
+    }
+
+    @Test
+    public void verifyWelshDateOfTest() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Dyddiad y prawf"));
+    }
+
+    @Test
+    public void verifyWelshLocationOfTheTest() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Lleoliad y prawf"));
+    }
+
+    @Test
+    public void verifyWelshTestingOrganisationAndInspection() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Sefydliad ac arolygydd y prawf"));
+    }
+
+    @Test
+    public void verifyWelshTestNumber() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Rhif prawf"));
     }
 }
