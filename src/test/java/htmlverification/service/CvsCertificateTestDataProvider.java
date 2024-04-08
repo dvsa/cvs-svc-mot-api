@@ -291,7 +291,6 @@ public class CvsCertificateTestDataProvider {
                 .setImageType("png");
 
         vtp30.setSignature(signature);
-
         return vtp30;
     }
 
