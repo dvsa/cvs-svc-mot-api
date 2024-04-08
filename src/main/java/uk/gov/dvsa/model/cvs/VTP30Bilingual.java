@@ -23,10 +23,10 @@ public class VTP30Bilingual extends VTP30W {
     }
 
     public String getRegOrIdHeading() {
-        return "Identification number";
+        return "Registration number";
     }
 
     public String getRegOrIdHeadingWelsh() {
-        return "Rhif adnabod";
+        return "Rhif cofrestru";
     }
 }

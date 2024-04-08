@@ -1,7 +1,6 @@
 package htmlverification.service;
 
 import htmlverification.framework.component.DefectSummaryComponent;
-import htmlverification.tests.CvsPsvFailBilingualTest;
 import uk.gov.dvsa.model.cvs.*;
 import uk.gov.dvsa.model.cvs.certificateData.*;
 import uk.gov.dvsa.enums.CertificateTypes;
@@ -685,7 +684,7 @@ public class CvsCertificateTestDataProvider {
 
     public static VTP30Bilingual getVtp30Bilingual() {
         VTP30Bilingual hgvFailBilingual = new VTP30Bilingual();
-        hgvFailBilingual.setDocumentName(CertificateTypes.CVS_FAIL_WELSH_BILINGUAL.getCertificateType());
+        hgvFailBilingual.setDocumentName(CertificateTypes.CVS_FAIL_BILINGUAL.getCertificateType());
 
         CvsMotFailCertificateDataWelsh bilingualData = new CvsMotFailCertificateDataWelsh();
         bilingualData
