@@ -33,7 +33,7 @@
         </div>
         <div class="footer__certificate-tag">
                <span class="footer__certificate-tag-text">
-               {{presentedDocumentNameFailWelsh}}/{{VersionNumberFailWelsh}}
+               {{presentedDocumentNameFailWelsh}}/{{versionNumberFailWelsh}}
                </span>
         </div>
     </div>
@@ -167,7 +167,7 @@
                 <!-- /heading-info -->
             </div>
             <div class="header__right">
-                <img src="{{root}}/assets/images/dvsa_crest.png" alt="DVSA Crown" class="header__logo" id="logo"/>
+                <img src="{{root}}/assets/images/dvsa-crest-welsh-v2.png" alt="DVSA Crown" class="header__logo" id="logo"/>
             </div>
             <div class="clearfix"></div>
             <!-- header__three-columns -->
@@ -238,8 +238,8 @@
                 {{#if failData.advisoryWelsh.present}}
                     {{~> views/CommercialVehicles/reasonsForRejection failData.advisoryWelsh}}
                 {{/if}}
-                {{#if failData.prs.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection failData.prs}}
+                {{#if failData.prsWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection failData.prsWelsh}}
                 {{/if}}
             </div>
         </div>
