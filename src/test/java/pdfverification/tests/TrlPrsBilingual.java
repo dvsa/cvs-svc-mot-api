@@ -17,6 +17,9 @@ import java.io.IOException;
 import static htmlverification.framework.component.DefectSummaryComponent.*;
 import static htmlverification.framework.component.DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH;
 import static org.junit.Assert.assertTrue;
+import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.MINOR_DEFECTS_HEADER_WELSH;
+import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh.DANGEROUS_DEFECTS_HEADER_WELSH;
+import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh.MAJOR_DEFECT_HEADER_WELSH;
 
 public class TrlPrsBilingual {
     private final HtmlGenerator htmlGenerator;
@@ -52,35 +55,34 @@ public class TrlPrsBilingual {
     @Test
     public void verifyEnglishTitles() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Tystysgrif prawf MOT (TRL)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Gwrthod tystysgrif prawf MOT"));
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains("Gwrthod tystysgrif prawf MOT"));
 
     }
 
     @Test
     public void verifyBilingualMinorDefectsHeader() throws Exception {
         assertTrue(pdfParser.getRawText(pdfReader, 3).contains(MINOR_DEFECTS_HEADER_TEXT));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains(MINOR_DEFECTS_HEADER_TEXT_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains(MINOR_DEFECTS_HEADER_WELSH));
 
     }
 
     @Test
     public void verifyBilingualAdvisoryDefectsHeader() throws Exception {
         assertTrue(pdfParser.getRawText(pdfReader, 3).contains(ADVISORIES_HEADER_TEXT));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains(ADVISORIES_HEADER_TEXT_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains(ADVISORIES_HEADER_TEXT_WELSH));
 
     }
 
     @Test
     public void verifyBilingualMajorDefectsHeader() throws Exception {
         assertTrue(pdfParser.getRawText(pdfReader, 3).contains(MAJOR_DEFECTS_HEADER_TEXT));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains(MAJOR_DEFECTS_HEADER_TEXT_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains(MAJOR_DEFECT_HEADER_WELSH));
 
     }
 
     @Test
     public void verifyBilingualDangerousDefectsHeader() throws Exception {
         assertTrue(pdfParser.getRawText(pdfReader, 3).contains(DANGEROUS_DEFECTS_HEADER_TEXT));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains(DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH));
-
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains("Peidiwch â gyrru nes ei fod wedi cael ei atgyweirio"));
     }
 }
