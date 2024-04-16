@@ -629,10 +629,8 @@ public class CvsCertificateTestDataProvider {
     public static CvsTrlPRSBilingual getCvsTrlPrsBilingual() {
         CvsTrlPRSBilingual trlPrsBilingual = new CvsTrlPRSBilingual();
         trlPrsBilingual.setDocumentName(CertificateTypes.CVS_TRL_PRS_BILINGUAL.getCertificateType());
-
         CvsMotFailCertificateDataWelsh failData = new CvsMotFailCertificateDataWelsh();
         CvsMotCertificateDataWelsh passData = new CvsMotCertificateDataWelsh();
-
 
         passData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
@@ -662,7 +660,6 @@ public class CvsCertificateTestDataProvider {
                 .setEarliestDateOfTheNextTest("13.10.2018")
                 .setTrn("ABC1234")
                 .setIsTrailer(true);
-
 
         failData
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -708,7 +705,6 @@ public class CvsCertificateTestDataProvider {
                 .setImageType("png");
 
         trlPrsBilingual.setSignature(signature);
-
         trlPrsBilingual.setData(passData);
         trlPrsBilingual.setData(passData);
 
