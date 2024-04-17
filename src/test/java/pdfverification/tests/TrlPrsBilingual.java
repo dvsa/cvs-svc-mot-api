@@ -41,17 +41,20 @@ public class TrlPrsBilingual {
     public void setup() throws Exception {
         byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
+        FileOutputStream fileOutputStream = new FileOutputStream("pdfData.pdf");
+        fileOutputStream.write(pdfData);
+        fileOutputStream.close();
     }
 
     @Test
     public void verifyEnglishTitles() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (TRL)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Refusal of MOT test certificate"));
     }
 
     @Test
     public void verifyWelshTitles() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Tystysgrif prawf MOT (TRL)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Tystysgrif prawf MOT (TRL)"));
         assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Gwrthod tystysgrif prawf MOT"));
 
     }
@@ -59,12 +62,12 @@ public class TrlPrsBilingual {
     @Test
     public void verifyBilingualMinorDefectsHeader() throws Exception {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(MINOR_DEFECTS_HEADER_TEXT));
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(MINOR_DEFECTS_HEADER_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(MINOR_DEFECTS_HEADER_WELSH));
     }
 
     @Test
     public void verifyBilingualAdvisoryDefectsHeader() throws Exception {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(ADVISORIES_HEADER_TEXT));
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(ADVISORIES_HEADER_TEXT_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(ADVISORIES_HEADER_TEXT_WELSH));
     }
 }
