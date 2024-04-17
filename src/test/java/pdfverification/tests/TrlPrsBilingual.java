@@ -41,9 +41,6 @@ public class TrlPrsBilingual {
     public void setup() throws Exception {
         byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
-        FileOutputStream fileOutputStream = new FileOutputStream("pdfData.pdf");
-        fileOutputStream.write(pdfData);
-        fileOutputStream.close();
     }
 
     @Test
