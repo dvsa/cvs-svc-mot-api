@@ -662,18 +662,9 @@ public class CvsCertificateTestDataProvider {
                 .setIsTrailer(true);
 
         failData
-                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
-                .setDangerousDefectsWelsh(generateRFRs(DANGEROUS_RFR_TEXT, 1))
-                .setMajorDefectsWelsh(generateRFRs(MAJOR_RFR_TEXT, 1))
-                .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
-                .setMajorDefects(generateRFRs(MAJOR_RFR_TEXT, 1))
-                .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT)
-                .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT)
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT)
-                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT)
-                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
-                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setPrsDefectsHeaderWelsh(DefectSummaryComponent.PRS_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setPrsDefectsWelsh(generateRFRs(PRS_RFR_TEXT, 1))
+                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1))
                 .setSeatBeltNumber("10")
                 .setSeatBeltPreviousCheckDate("12.11.2018")
                 .setSeatBeltTested("Yes")
