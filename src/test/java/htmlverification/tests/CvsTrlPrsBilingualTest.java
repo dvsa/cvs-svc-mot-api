@@ -35,8 +35,8 @@ public class CvsTrlPrsBilingualTest {
         testCertificate = CvsCertificateTestDataProvider.getCvsTrlPrsBilingual();
 
         String certHtmlVTG5A = htmlGenerator.generate(testCertificate).get(0);
-        String certHtmlVTG5AW = htmlGenerator.generate(testCertificate).get(1);
-        String certHtmlVTG30 = htmlGenerator.generate(testCertificate).get(2);
+        String certHtmlVTG5AW = htmlGenerator.generate(testCertificate).get(2);
+        String certHtmlVTG30 = htmlGenerator.generate(testCertificate).get(1);
         String certHtmlVTG30W = htmlGenerator.generate(testCertificate).get(3);
 
         certificatePageObjectVTG5A = new CertificatePageObject(certHtmlVTG5A);
