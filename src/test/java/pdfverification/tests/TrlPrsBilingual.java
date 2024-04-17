@@ -11,16 +11,11 @@ import uk.gov.dvsa.model.cvs.CvsMotCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static htmlverification.framework.component.DefectSummaryComponent.*;
-import static htmlverification.framework.component.DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.MINOR_DEFECTS_HEADER_WELSH;
-import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh.DANGEROUS_DEFECTS_HEADER_WELSH;
-import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh.MAJOR_DEFECT_HEADER_WELSH;
 
 public class TrlPrsBilingual {
     private final HtmlGenerator htmlGenerator;
