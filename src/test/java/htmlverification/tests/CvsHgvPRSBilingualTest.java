@@ -9,10 +9,13 @@ import uk.gov.dvsa.model.cvs.CvsHgvPRSBilingual;
 import uk.gov.dvsa.service.HtmlGenerator;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData.PASS_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData.PASS_WITH_DEFECTS_HEADER;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.PASS_SUMMARY_HEADER_WELSH;
+import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.PASS_WITH_DEFECTS_HEADER_WELSH;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateData.FAILED_SUMMARY_HEADER;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh.FAILED_SUMMARY_HEADER_WELSH;
 import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
@@ -54,7 +57,7 @@ public class CvsHgvPRSBilingualTest {
         String resultNameFailWelsh = certificatePageObjectVTG30W.getDefectSummaryComponent().getResultNameItem().text();
 
         assertEquals(
-                String.format("%s%s%s %s", "(", EU_NUMBER_SUMMARY_HEADER, ")", PASS_SUMMARY_HEADER),
+                String.format("%s%s%s %s", "(", EU_NUMBER_SUMMARY_HEADER, ")", PASS_WITH_DEFECTS_HEADER),
                 resultName
         );
         assertEquals(
@@ -62,7 +65,7 @@ public class CvsHgvPRSBilingualTest {
                 resultNameFail
         );
         assertEquals(
-                String.format("%s%s%s %s", "(", EU_NUMBER_SUMMARY_HEADER, ")", PASS_SUMMARY_HEADER_WELSH),
+                String.format("%s%s%s %s", "(", EU_NUMBER_SUMMARY_HEADER, ")", PASS_WITH_DEFECTS_HEADER_WELSH),
                 resultNameWelsh
         );
         assertEquals(
@@ -150,7 +153,31 @@ public class CvsHgvPRSBilingualTest {
 
     @Test
     public void verifyPrsDefects() {
-        //
+        List<String> prsDefects = certificatePageObjectVTG5.getDefectSummaryComponent().getPrsDefects().eachText();
+    }
+
+    @Test
+    public void verifyAdvisoryDefects() {
+        List<String> advisoryDefects = certificatePageObjectVTG5.getDefectSummaryComponent().getAdvisories().eachText();
+        assertEquals(1, advisoryDefects.size());
+    }
+
+    @Test
+    public void verifyAdvisoryDefectsWelsh() {
+        List<String> advisoryDefects = certificatePageObjectVTG5W.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
+        assertEquals(1, advisoryDefects.size());
+    }
+
+    @Test
+    public void verifyMinorDefects() {
+        List<String> minorDefects = certificatePageObjectVTG5.getDefectSummaryComponent().getMinorDefects().eachText();
+        assertEquals(1, minorDefects.size());
+    }
+
+    @Test
+    public void verifyMinorDefectsWelsh() {
+        List<String> minorDefects = certificatePageObjectVTG5W.getDefectSummaryComponent().getMinorDefectsWelshCVS().eachText();
+        assertEquals(1, minorDefects.size());
     }
 
     @Test
@@ -194,10 +221,10 @@ public class CvsHgvPRSBilingualTest {
 
         String organisation = testCertificate.getData().getTestingOrganisation();
         String organisationFail = testCertificate.getFailData().getTestingOrganisation();
+        String organisationWelsh = testCertificate.getFailData().getTestingOrganisationWelsh();
+
         String testerName = testCertificate.getData().getIssuersName();
         String testerNameFail = testCertificate.getFailData().getIssuersName();
-
-        String organisationWelsh = testCertificate.getFailData().getTestingOrganisationWelsh();
 
         assertEquals(organisation + " " + testerName, orgName);
         assertEquals(organisationFail + " " + testerNameFail, orgNameFail);

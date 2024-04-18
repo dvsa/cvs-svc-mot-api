@@ -16,17 +16,11 @@ import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
 public class HgvPRSBilingualTests {
-    private static final String CERT_NAME = "MOT test certificate (HGV)";
-    private static final String CERT_NAME_FAIL = "Refusal of MOT test certificate";
-    private static final String CERT_NAME_WELSH = "Tystysgrif prawf MOT (HGV)";
-    private static final String CERT_NAME_FAIL_WELSH = "Gwrthod tystysgrif prawf MOT";
-
     private HtmlGenerator htmlGenerator;
     private PDFGenerationService pdfGenerationService;
     private CvsMotCertificate testCertificate;
     private PDFParser pdfParser;
     private PdfReader pdfReader;
-    private byte[] pdfData;
 
     public HgvPRSBilingualTests() {
         this.testCertificate = CvsCertificateTestDataProvider.getCvsHgvPRSBilingual();
@@ -37,16 +31,16 @@ public class HgvPRSBilingualTests {
 
     @Before
     public void setup() throws Exception {
-        pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
+        byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
     }
 
     @Test
     public void verifyTitle() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(CERT_NAME));
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(CERT_NAME_FAIL));
-        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(CERT_NAME_WELSH));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains(CERT_NAME_FAIL_WELSH));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (HGV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Tystysgrif prawf MOT (HGV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Gwrthod tystysgrif prawf MOT"));
     }
 
     @Test

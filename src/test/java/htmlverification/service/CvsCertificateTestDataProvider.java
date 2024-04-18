@@ -687,11 +687,12 @@ public class CvsCertificateTestDataProvider {
 
         CvsMotFailCertificateDataWelsh bilingualFailData = new CvsMotFailCertificateDataWelsh();
         bilingualFailData
+                .setPrsDefectsHeaderWelsh(DefectSummaryComponent.PRS_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setPrsDefectsWelsh(generateRFRs(PRS_RFR_TEXT, 1))
                 .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1))
                 .setSeatBeltNumber("10")
                 .setSeatBeltPreviousCheckDate("12.11.2018")
                 .setSeatBeltTested("Yes")
-
                 .setCountryOfRegistrationCode("GB")
                 .setRawVin(VIN)
                 .setDateOfTheTest("22.08.2023")
@@ -717,12 +718,14 @@ public class CvsCertificateTestDataProvider {
                 .setTrn(null)
                 .setIsTrailer(false);
 
-        bilingualFailData
-                .setPrsDefectsHeaderWelsh(DefectSummaryComponent.PRS_DEFECTS_HEADER_TEXT_WELSH_CVS)
-                .setPrsDefectsWelsh(generateRFRs(PRS_RFR_TEXT, 1));
-
         CvsMotCertificateDataWelsh bilingualData = new CvsMotCertificateDataWelsh();
         bilingualData
+                .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
                 .setCountryOfRegistrationCode("GB")
                 .setRawVin(VIN)
                 .setDateOfTheTest("22.08.2023")
