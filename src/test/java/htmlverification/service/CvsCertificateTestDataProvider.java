@@ -1133,4 +1133,23 @@ public class CvsCertificateTestDataProvider {
             reasonsForRejection.add(rfrName + " #" + i); }
         return reasonsForRejection;
     }
+
+    public static CvsPsvPRSBilingual getCvsPsvPRSBilingual() {
+        CvsPsvPRSBilingual cvsPsvPRSBilingual = new CvsPsvPRSBilingual();
+
+        cvsPsvPRSBilingual.setDocumentName(CertificateTypes.CVS_PSV_PRS_BILINGUAL.getCertificateType());
+        cvsPsvPRSBilingual.setData(getVtp20W().getData());
+        cvsPsvPRSBilingual.setFailData(getVtp30w().getFailData());
+
+        return cvsPsvPRSBilingual;
+    }
+
+    public static CvsMotCertificate getCvsPsvPRSBilingualHavingInvalidXMLCharacter() {
+        CvsPsvPRSBilingual document = getCvsPsvPRSBilingual();
+
+        CvsMotFailCertificateData data = document.getFailData();
+        data.setPrsDefects(generateRFRs(INVALID_XML_RFR_TEXT, 3));
+
+        return document;
+    }
 }
