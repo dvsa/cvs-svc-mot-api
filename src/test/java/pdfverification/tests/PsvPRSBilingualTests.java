@@ -34,14 +34,17 @@ public class PsvPRSBilingualTests {
     public void setup() throws Exception {
         byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
+        FileOutputStream fileOutputStream = new FileOutputStream("pdfpsvprsvbilingual.pdf");
+        fileOutputStream.write(pdfData);
+        fileOutputStream.close();
     }
 
     @Test
     public void verifyTitle() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (PSV)"));
         assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Refusal of MOT test certificate"));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Tystysgrif prawf MOT (PSV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 6).contains("Gwrthod tystysgrif prawf MOT"));
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains("Tystysgrif prawf MOT (PSV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 7).contains("Gwrthod tystysgrif prawf MOT"));
     }
 
     @Test
