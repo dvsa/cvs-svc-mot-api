@@ -11,6 +11,7 @@ import uk.gov.dvsa.model.cvs.CvsMotCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
@@ -33,6 +34,9 @@ public class PsvPRSBilingualTests {
     public void setup() throws Exception {
         byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
+        FileOutputStream fileOutputStream = new FileOutputStream("psvprs.pdf");
+        fileOutputStream.write(pdfData);
+        fileOutputStream.close();
     }
 
     @Test
