@@ -4,10 +4,6 @@ import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
 
 public class CvsPsvPRSBilingual extends VTP30Bilingual {
-    public String getTestType() {
-        return "TRL";
-    }
-
     public String getPresentedDocumentNamePass() {
         return "VTP20";
     }

@@ -24,7 +24,7 @@ public class PsvPRSBilingualTests {
     private PdfReader pdfReader;
 
     public PsvPRSBilingualTests() {
-        this.testCertificate = CvsCertificateTestDataProvider.getCvsHgvPRSBilingual();
+        this.testCertificate = CvsCertificateTestDataProvider.getCvsPsvPRSBilingual();
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
         this.pdfGenerationService = new PDFGenerationService(new ITextRenderer());
         this.pdfParser = new PDFParser();
@@ -34,17 +34,14 @@ public class PsvPRSBilingualTests {
     public void setup() throws Exception {
         byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
-        FileOutputStream fileOutputStream = new FileOutputStream("psvprs.pdf");
-        fileOutputStream.write(pdfData);
-        fileOutputStream.close();
     }
 
     @Test
     public void verifyTitle() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (HGV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Refusal of MOT test certificate"));
-        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Tystysgrif prawf MOT (HGV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Gwrthod tystysgrif prawf MOT"));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (PSV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Tystysgrif prawf MOT (PSV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 6).contains("Gwrthod tystysgrif prawf MOT"));
     }
 
     @Test
