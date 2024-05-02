@@ -1,5 +1,6 @@
 package htmlverification.tests;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jknack.handlebars.Handlebars;
 import htmlverification.framework.page_object.CertificatePageObject;
 import htmlverification.service.CvsCertificateTestDataProvider;
@@ -8,8 +9,12 @@ import org.junit.Test;
 import uk.gov.dvsa.model.cvs.CvsPsvPRSBilingual;
 import uk.gov.dvsa.service.HtmlGenerator;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData.PASS_WITH_DEFECTS_HEADER;
@@ -31,11 +36,28 @@ public class CvsPsvPrsBilingualTest {
     @Before
     public void setup() throws IOException {
         testCertificate = CvsCertificateTestDataProvider.getCvsPsvPRSBilingual();
-
         String certHtmlVTP20 = htmlGenerator.generate(testCertificate).get(0);
         String certHtmlVTP30 = htmlGenerator.generate(testCertificate).get(1);
         String certHtmlVTP20Welsh = htmlGenerator.generate(testCertificate).get(2);
         String certHtmlVTP30Welsh = htmlGenerator.generate(testCertificate).get(3);
+
+        AtomicInteger index = new AtomicInteger(1); // Start index at 1 or 0 as needed
+
+        htmlGenerator.generate(testCertificate).stream().forEach(x -> {
+            String fileName = "vtp30welshPage" + index.getAndIncrement() + ".html"; // Increment index for each file
+            try (FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
+                // Assuming x is a byte array that should be written to the file.
+                // You might need to adjust this if x is not a byte array.
+                fileOutputStream.write(x.getBytes());
+            } catch (FileNotFoundException e) {
+                System.err.println("File not found: " + e.getMessage());
+            } catch (IOException e) {
+                System.err.println("I/O Error: " + e.getMessage());
+                throw new RuntimeException(e);
+            }
+        });
+        System.out.println(testCertificate.getTestType());
+
 
         certificatePageObjectVTP20 = new CertificatePageObject(certHtmlVTP20);
         certificatePageObjectVTP30 = new CertificatePageObject(certHtmlVTP30);
@@ -107,6 +129,19 @@ public class CvsPsvPrsBilingualTest {
         assertEquals(1, minorDefects.size());
     }
 
+
+    @Test
+    public void verifyMajorDefects() {
+        List<String> vtp30MajorDefects = certificatePageObjectVTP30.getDefectSummaryComponent().getMajorDefects().eachText();
+        assertEquals(1, vtp30MajorDefects.size());
+    }
+
+    @Test
+    public void verifyDangerousDefects() {
+        List<String> vtp30DangerousDefects = certificatePageObjectVTP30.getDefectSummaryComponent().getDangerousDefects().eachText();
+        assertEquals(1, vtp30DangerousDefects.size());
+    }
+
     @Test
     public void verifyAdvisoryDefectsWelsh() {
         List<String> advisoryDefects = certificatePageObjectVTP30Welsh.getDefectSummaryComponent().getAdvisoriesWelshCVS().eachText();
@@ -117,6 +152,18 @@ public class CvsPsvPrsBilingualTest {
     public void verifyMinorDefectsWelsh() {
         List<String> minorDefects = certificatePageObjectVTP30Welsh.getDefectSummaryComponent().getMinorDefectsWelshCVS().eachText();
         assertEquals(1, minorDefects.size());
+    }
+
+    @Test
+    public void verifyMajorDefectsWelsh() {
+        List<String> vtp30MajorDefects = certificatePageObjectVTP30Welsh.getDefectSummaryComponent().getMajorDefectsWelshCVS().eachText();
+        assertEquals(1, vtp30MajorDefects.size());
+    }
+
+    @Test
+    public void verifyDangerousDefectsWelsh() {
+        List<String> vtp30DangerousDefects = certificatePageObjectVTP30Welsh.getDefectSummaryComponent().getDangerousDefectsWelshCVS().eachText();
+        assertEquals(1, vtp30DangerousDefects.size());
     }
 
     @Test
