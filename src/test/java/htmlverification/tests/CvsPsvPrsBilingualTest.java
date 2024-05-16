@@ -9,8 +9,6 @@ import org.junit.Test;
 import uk.gov.dvsa.model.cvs.CvsPsvPRSBilingual;
 import uk.gov.dvsa.service.HtmlGenerator;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
