@@ -11,6 +11,9 @@ import uk.gov.dvsa.model.cvs.certificateData.AdditionalDefect;
 import uk.gov.dvsa.model.cvs.certificateData.RequiredStandard;
 import uk.gov.dvsa.service.HtmlGenerator;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 import static org.junit.Assert.assertEquals;
 
 public class IVA30Test {
