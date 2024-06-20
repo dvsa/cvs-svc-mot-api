@@ -23,8 +23,6 @@ public class IvaFailCertificateData {
     private String bodyType;
     @JsonProperty("date")
     private String date;
-    @JsonProperty("reapplicationDate")
-    private String reapplicationDate;
     @JsonProperty("station")
     private String station;
     @JsonProperty("testerName")
@@ -33,6 +31,8 @@ public class IvaFailCertificateData {
     private AdditionalDefect[] additionalDefects;
     @JsonProperty("requiredStandards")
     private RequiredStandard[] requiredStandards;
+    @JsonProperty("reapplicationDate")
+    private String reapplicationDate;
 
     public String getSerialNo() {
         return serialNo;
@@ -106,14 +106,6 @@ public class IvaFailCertificateData {
         this.date = date;
     }
 
-    public String getReapplicationDate() {
-        return reapplicationDate;
-    }
-
-    public void setReapplicationDate(String reapplicationDate) {
-        this.reapplicationDate = reapplicationDate;
-    }
-
     public String getStation() {
         return station;
     }
@@ -146,5 +138,11 @@ public class IvaFailCertificateData {
         this.requiredStandards = requiredStandards;
     }
 
+    public String getReapplicationDate() {
+        return reapplicationDate;
+    }
 
+    public void setReapplicationDate(String reapplicationDate) {
+        this.reapplicationDate = reapplicationDate;
+    }
 }
