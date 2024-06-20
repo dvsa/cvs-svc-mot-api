@@ -89,7 +89,7 @@ public class IVA30Test {
     @Test
     public void verifyReapplicationDate() {
         String reapplicationDate = ivaPageObject.getReapplicationDate();
-        assertEquals("Reapplication required by:", reapplicationDate);
+        assertEquals("Reapplication required by: 27/05/2024", reapplicationDate);
     }
 
     @Test
