@@ -145,4 +145,6 @@ public class IvaFailCertificateData {
     public void setRequiredStandards(RequiredStandard[] requiredStandards) {
         this.requiredStandards = requiredStandards;
     }
+
+
 }
