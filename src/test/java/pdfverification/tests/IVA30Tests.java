@@ -13,7 +13,6 @@ import uk.gov.dvsa.service.PDFGenerationService;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IVA30Tests {
@@ -38,9 +37,6 @@ public class IVA30Tests {
     public void setup() throws IOException {
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(iva30));
         pdfReader = pdfParser.readPdf(pdfData);
-        FileOutputStream fileOutputStream  = new FileOutputStream("dan.pdf");
-        fileOutputStream.write(pdfData);
-        fileOutputStream.close();
     }
 
     @Test
