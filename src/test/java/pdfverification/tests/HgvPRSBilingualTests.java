@@ -34,14 +34,21 @@ public class HgvPRSBilingualTests {
     public void setup() throws Exception {
         byte[] pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
+        try (FileOutputStream fos = new FileOutputStream("generatedPdf.pdf")) {
+            fos.write(pdfData);
+            System.out.println("PDF file has been saved.");
+        } catch (IOException ioe) {
+            System.err.println("Failed to save the PDF file: " + ioe.getMessage());
+            throw ioe;
+        }
     }
 
     @Test
     public void verifyTitle() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (HGV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Refusal of MOT test certificate"));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Tystysgrif prawf MOT (HGV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 6).contains("Gwrthod tystysgrif prawf MOT"));
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Tystysgrif prawf MOT (HGV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 5).contains("Gwrthod tystysgrif prawf MOT"));
     }
 
     @Test
