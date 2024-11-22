@@ -3,9 +3,9 @@ package uk.gov.dvsa.model.cvs.certificateData;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Recalls {
-    @JsonProperty("manufacturer")
+    @JsonProperty
     private String manufacturer;
-    @JsonProperty("hasRecall")
+    @JsonProperty
     private boolean hasRecall;
 
     public Recalls(){}
