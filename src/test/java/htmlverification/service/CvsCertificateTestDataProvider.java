@@ -99,7 +99,10 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtp20.setData(vtp20Data);
 
@@ -150,7 +153,10 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtp20W.setData(vtp20WData);
 
@@ -216,7 +222,10 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtp30Data
                 .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT)
@@ -274,6 +283,9 @@ public class CvsCertificateTestDataProvider {
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
                 .setEarliestDateOfTheNextTest("13.10.2018")
+                .setRecalls(
+                        new Recalls(null, true)
+                )
                 .setOdometerUnit("mi");
 
         vtp30Data
@@ -331,7 +343,10 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtg5.setData(vtg5Data);
 
@@ -368,7 +383,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("1806 8140 0628")
                 .setEarliestDateOfTheNextTest("13.10.2018")
                 .setTrn("ABC1234")
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtg5a.setData(vtg5aData);
 
@@ -416,7 +434,10 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("TESTER NAME")
                 .setTestStationName("TEST STATION NAME")
                 .setTestNumber("X01X00001")
-                .setEarliestDateOfTheNextTest("01.07.2024");
+                .setEarliestDateOfTheNextTest("01.07.2024")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtg5W.setData(vtg5WData);
 
@@ -456,7 +477,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("1806 8140 0628")
                 .setEarliestDateOfTheNextTest("13.10.2018")
                 .setTrn("ABC1234")
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtg5AW.setData(vtg5AWData);
 
@@ -661,7 +685,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("1806 8140 0628")
                 .setEarliestDateOfTheNextTest("13.10.2018")
                 .setTrn("ABC1234")
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         failData
                 .setPrsDefectsHeaderWelsh(DefectSummaryComponent.PRS_DEFECTS_HEADER_TEXT_WELSH_CVS)
@@ -691,7 +718,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("X01X00001")
                 .setEarliestDateOfTheNextTest("01.07.2024")
                 .setTrn("ABC1234")
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setRecalls(
+                        new Recalls(null, true)
+                );
         trlPrsBilingual.setFailData(failData);
 
         Signature signature = new Signature();
@@ -796,7 +826,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("X01X00001")
                 .setEarliestDateOfTheNextTest("01.07.2024")
                 .setTrn(null)
-                .setIsTrailer(false);
+                .setIsTrailer(false)
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         CvsMotCertificateDataWelsh bilingualData = new CvsMotCertificateDataWelsh();
         bilingualData
@@ -827,7 +860,10 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("TESTER NAME")
                 .setTestStationName("TEST STATION NAME")
                 .setTestNumber("X01X00001")
-                .setEarliestDateOfTheNextTest("01.07.2024");
+                .setEarliestDateOfTheNextTest("01.07.2024")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         hgvPRSBilingual.setFailData(bilingualFailData);
         hgvPRSBilingual.setData(bilingualData);
@@ -936,7 +972,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
                 .setEarliestDateOfTheNextTest("13.10.2018")
-                .setTrn("ABC1234");
+                .setTrn("ABC1234")
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtg30Data
                 .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT)
@@ -1003,7 +1042,10 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("X01X00001")
                 .setEarliestDateOfTheNextTest("01.07.2024")
                 .setTrn("ABC1234")
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setRecalls(
+                        new Recalls(null, true)
+                );
 
         vtg30wData
                 .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))

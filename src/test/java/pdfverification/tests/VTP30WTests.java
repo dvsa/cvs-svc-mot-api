@@ -11,6 +11,7 @@ import uk.gov.dvsa.model.cvs.VTP30W;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import static htmlverification.framework.component.DefectSummaryComponent.*;
 import static org.junit.Assert.assertTrue;

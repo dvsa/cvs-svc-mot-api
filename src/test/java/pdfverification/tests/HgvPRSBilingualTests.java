@@ -11,6 +11,7 @@ import uk.gov.dvsa.model.cvs.CvsMotCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
@@ -38,9 +39,9 @@ public class HgvPRSBilingualTests {
     @Test
     public void verifyTitle() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (HGV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains("Refusal of MOT test certificate"));
-        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Tystysgrif prawf MOT (HGV)"));
-        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Gwrthod tystysgrif prawf MOT"));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Tystysgrif prawf MOT (HGV)"));
+        assertTrue(pdfParser.getRawText(pdfReader, 6).contains("Gwrthod tystysgrif prawf MOT"));
     }
 
     @Test
