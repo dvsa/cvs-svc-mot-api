@@ -8,7 +8,9 @@ public class Recalls {
     @JsonProperty("hasRecall")
     private boolean hasRecall;
 
-    public Recalls(String manufacturer,Boolean hasRecall){
+    public Recalls(){}
+
+    public Recalls(String manufacturer, Boolean hasRecall){
         this.manufacturer = manufacturer;
         this.hasRecall = hasRecall;
     }
