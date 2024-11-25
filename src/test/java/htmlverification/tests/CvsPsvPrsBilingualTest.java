@@ -200,5 +200,21 @@ public class CvsPsvPrsBilingualTest {
         assertEquals("12.10.2018", expiryDate);
         assertEquals("12.10.2018", expiryDateWelsh);
     }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObjectVTP20Welsh.getElement(".recalls__content-header").text();
+        String contentText = certificatePageObjectVTP20Welsh.getElement(".recalls__content-text").text();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
+    }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObjectVTP20.getElement(".recalls__content-header").text();
+        String contentText = certificatePageObjectVTP20.getElement(".recalls__content-text").text();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
+    }
 }
 

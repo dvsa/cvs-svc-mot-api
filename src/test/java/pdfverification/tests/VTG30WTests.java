@@ -43,6 +43,7 @@ public class VTG30WTests {
     @Test
     public void verifyTitle() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(CERT_NAME));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("Mae gan y cerbyd hwn wedi cael ei alw'n ôl"));
     }
 
     @Test

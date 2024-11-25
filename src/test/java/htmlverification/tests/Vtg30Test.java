@@ -66,4 +66,12 @@ public class Vtg30Test {
         assertEquals("", actual);
     }
 
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObject.getElement(".recalls__content-header").text();
+        String contentText = certificatePageObject.getElement(".recalls__content-text").text();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
+    }
+
 }

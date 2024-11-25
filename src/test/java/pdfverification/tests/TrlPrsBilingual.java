@@ -43,13 +43,16 @@ public class TrlPrsBilingual {
     public void verifyEnglishTitles() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains("MOT test certificate (TRL)"));
         assertTrue(pdfParser.getRawText(pdfReader, 3).contains("Refusal of MOT test certificate"));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("This vehicle has an outstanding recall"));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains("This vehicle has an outstanding recall"));
     }
 
     @Test
     public void verifyWelshTitles() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Tystysgrif prawf MOT (TRL)"));
         assertTrue(pdfParser.getRawText(pdfReader, 6).contains("Gwrthod tystysgrif prawf MOT"));
-
+        assertTrue(pdfParser.getRawText(pdfReader, 4).contains("Mae gan y cerbyd hwn wedi cael ei alw'n ôl"));
+        assertTrue(pdfParser.getRawText(pdfReader, 6).contains("Mae gan y cerbyd hwn wedi cael ei alw'n ôl"));
     }
 
     @Test

@@ -101,4 +101,9 @@ public class VTP30WTests {
     public void verifyWelshTestNumber() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, FIRST_WELSH_PAGE_NUMBER).contains("Rhif prawf"));
     }
+
+    @Test
+    public void verifyRecallTitle() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("Mae gan y cerbyd hwn wedi cael ei alw'n ôl"));
+    }
 }
