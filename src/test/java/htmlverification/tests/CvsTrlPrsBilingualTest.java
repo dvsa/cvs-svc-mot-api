@@ -194,16 +194,16 @@ public class CvsTrlPrsBilingualTest {
 
     @Test
     public void verifyRecallsWelsh() {
-        String titleText = certificatePageObjectVTG5AW.getElement(".recalls__content-header").text();
-        String contentText = certificatePageObjectVTG5AW.getElement(".recalls__content-text").text();
+        String titleText = certificatePageObjectVTG5AW.getRecallsHeader();
+        String contentText = certificatePageObjectVTG5AW.getRecallsBody();
         assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
         assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
     }
 
     @Test
     public void verifyRecallsEnglish() {
-        String titleText = certificatePageObjectVTG5A.getElement(".recalls__content-header").text();
-        String contentText = certificatePageObjectVTG5A.getElement(".recalls__content-text").text();
+        String titleText = certificatePageObjectVTG5A.getRecallsHeader();
+        String contentText = certificatePageObjectVTG5A.getRecallsBody();
         assertEquals("This vehicle has an outstanding recall", titleText);
         assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
     }
