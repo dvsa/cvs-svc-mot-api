@@ -1180,6 +1180,45 @@ public class CvsCertificateTestDataProvider {
         return msva30;
     }
 
+    public static VTG12 getVTG12() {
+        VTG12 vtg12 = new VTG12();
+        vtg12.setDocumentName(CertificateTypes.VTG12.getCertificateType());
+        String[] reasonsForAbandonment = { "Reason 1 exists","Reason 2 exists" };
+        String additionalComments = "additional comments";
+
+        AbandonedData abandonedData = new AbandonedData(
+                "poiuytrewq01230109567891",
+                reasonsForAbandonment,
+                "2024 06",
+                "fake location",
+                "fake tester",
+                "12341",
+                "documentName",
+                additionalComments);
+        vtg12.setData(abandonedData);
+        return vtg12;
+    }
+
+    public static VTP12 getVTP12() {
+        VTP12 vtp12 = new VTP12();
+        vtp12.setDocumentName(CertificateTypes.VTP12.getCertificateType());
+        String[] reasonsForAbandonment = { "Reason 1 exists","Reason 2 exists" };
+        String additionalComments = "additional comments";
+
+        AbandonedData abandonedData = new AbandonedData(
+                "poiuytrewq01230109567891",
+                reasonsForAbandonment,
+                "2024 06",
+                "fake location",
+                "fake tester",
+                "12341",
+                "documentName",
+                additionalComments);
+        vtp12.setData(abandonedData);
+        return vtp12;
+    }
+
+
     public static VTG30 getVtg30HavingInvalidXMLCharacter() {
         VTG30 document = getVtg30();
 

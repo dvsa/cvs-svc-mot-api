@@ -11,6 +11,7 @@ import uk.gov.dvsa.model.mot.MotFailCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
