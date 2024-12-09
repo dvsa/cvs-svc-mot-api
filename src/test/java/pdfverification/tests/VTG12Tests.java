@@ -49,10 +49,6 @@ public class VTG12Tests {
     public void setup() throws Exception {
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
-
-        try (FileOutputStream fos = new FileOutputStream("testVTG12.pdf")) {
-            fos.write(pdfData);
-        }
     }
 
     @Test
