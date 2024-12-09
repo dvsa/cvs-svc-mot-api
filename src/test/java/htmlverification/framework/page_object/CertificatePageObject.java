@@ -386,4 +386,56 @@ public class CertificatePageObject extends BasePageObject {
     }
 
     public String getAxle4FitmentCode() { return getElementById(AXLE4_FITMENT_CODE.getSelector()).text(); }
+
+    public String getDocumentType() {
+        return getElementById(DOCUMENT_TYPE.getSelector()).text();
+    }
+
+    public String getRegulationText() {
+        return getElementById(REGULATION_TEXT.getSelector()).text();
+    }
+
+    public String getSpacedVin(Integer index) {
+        return getElementById(VIN_ID.getSelector()+"_"+index).text();
+    }
+
+    public String getFirstPageTitle() {
+        return getElementById(FIRST_PAGE_TITLE.getSelector()).text();
+    }
+
+    public String getFooterDocumentType() {
+        return getElementById(FOOTER_DOCUMENT_TYPE.getSelector()).text();
+    }
+
+    public String getFooterTestNumber() {
+        return getElementById(FOOTER_TEST_NUMBER.getSelector()).text();
+    }
+
+    public String getFooterDatePopulated() {
+        return getElementById(FOOTER_DATE_POPULATED.getSelector()).text();
+    }
+
+    public String getRunningHeaderLeft() {
+        return getElement("." + RUNNING_HEADER_LEFT.getSelector()).text();
+    }
+
+    public String getRunningHeaderRight() {
+        return getElement("." + RUNNING_HEADER.getSelector()).getElementsByTag("span").text();
+    }
+
+    public String getVehicleTestType() {
+        return getElementById(VEHICLE_TYPE_TEXT.getSelector()).text();
+    }
+
+    public String getReasonsForAbandonment(Integer index) {
+        return getElementById(REASONS_FOR_ABANDONMENT.getSelector()+index).text();
+    }
+
+    public String getAdditionalComments() {
+        return getElementById(ADDITIONAL_COMMENTS.getSelector()).text();
+    }
+
+    public String getDataProtectionWithDocumentType() {
+        return getElementById(DATA_PROTECTION_WITH_DOCUMENT_TYPE.getSelector()).text();
+    }
 }

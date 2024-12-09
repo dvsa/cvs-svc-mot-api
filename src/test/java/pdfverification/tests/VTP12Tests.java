@@ -16,17 +16,16 @@ import static org.junit.Assert.assertTrue;
 
 public class VTP12Tests {
 
-    private static final String NOTIFICATION_OF_FAILURE_TO_COMPLY = "Services Vehicle for Examination (VTP12)";
+    private static final String DYNAMIC_TITLE_SECTION = "Services Vehicle for Examination (VTP12)";
     private static final String REGULATION_LINE1 = "Regulation 13 of the Motor Vehicles (Tests) ";
     private static final String REGULATION_LINE2 = "Regulations 1981 as amended";
-    private static final String VEHICLE_TYPE_TEXT_LINE1 = "In respect of the goods vehicle with registration number / chassis serial number / trailer";
-    private static final String VEHICLE_TYPE_TEXT_LINE2 = "identification mark :";
+    private static final String VEHICLE_TYPE_TEXT_LINE = "In respect of the public service vehicle with registration number / chassis serial number :";
     private static final String VIN = "P O I U Y T R E W Q 0 1 2 3 0 1 0 9 5 6 7 8 9 1";
-    private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists";
-    private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 1 exists";
+    private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTP12";
+    private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 1 exists VTP12";
     private static final String ROLLING_FOOTER_LEFT = "VTP12 (DVSA 12341)";
     private static final String ROLLING_FOOTER_RIGHT = "Date (2024 06)";
-    private static final String ADDITIONAL_COMMENTS = "additional comments";
+    private static final String ADDITIONAL_COMMENTS = "additional comments VTP12";
     private static final String ROLLING_HEADER_LEFT = "VTP12";
     private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Public Services Vehicle for Examination";
 
@@ -58,7 +57,7 @@ public class VTP12Tests {
 
     @Test
     public void verifyTitle() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(NOTIFICATION_OF_FAILURE_TO_COMPLY));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(DYNAMIC_TITLE_SECTION));
     }
 
     @Test
@@ -69,8 +68,7 @@ public class VTP12Tests {
 
     @Test
     public void verifyVehicleTypeText() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(VEHICLE_TYPE_TEXT_LINE1));
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(VEHICLE_TYPE_TEXT_LINE2));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(VEHICLE_TYPE_TEXT_LINE));
     }
 
     @Test

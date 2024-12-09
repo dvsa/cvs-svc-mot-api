@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.AbandonedData;
 
-public class  AbandonedCertificate extends Document {
+public abstract class AbandonedCertificate extends Document {
     @JsonProperty("DATA")
     protected AbandonedData data;
 

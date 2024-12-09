@@ -1183,8 +1183,8 @@ public class CvsCertificateTestDataProvider {
     public static VTG12 getVTG12() {
         VTG12 vtg12 = new VTG12();
         vtg12.setDocumentName(CertificateTypes.VTG12.getCertificateType());
-        String[] reasonsForAbandonment = { "Reason 1 exists","Reason 2 exists" };
-        String additionalComments = "additional comments";
+        String[] reasonsForAbandonment = { "Reason 1 exists VTG12","Reason 2 exists VTG12" };
+        String additionalComments = "additional comments VTG12";
 
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
@@ -1202,8 +1202,8 @@ public class CvsCertificateTestDataProvider {
     public static VTP12 getVTP12() {
         VTP12 vtp12 = new VTP12();
         vtp12.setDocumentName(CertificateTypes.VTP12.getCertificateType());
-        String[] reasonsForAbandonment = { "Reason 1 exists","Reason 2 exists" };
-        String additionalComments = "additional comments";
+        String[] reasonsForAbandonment = { "Reason 1 exists VTP12","Reason 2 exists VTP12" };
+        String additionalComments = "additional comments VTP12";
 
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",

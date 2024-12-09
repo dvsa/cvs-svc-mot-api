@@ -119,7 +119,21 @@ public enum CertificatePageSelector {
     AXLE1_FITMENT_CODE("axle1_fitmentCode"),
     AXLE2_FITMENT_CODE("axle2_fitmentCode"),
     AXLE3_FITMENT_CODE("axle3_fitmentCode"),
-    AXLE4_FITMENT_CODE("axle4_fitmentCode");
+    AXLE4_FITMENT_CODE("axle4_fitmentCode"),
+    DOCUMENT_TYPE("documentType"),
+    REGULATION_TEXT("regulationText"),
+    FIRST_PAGE_TITLE("firstPageTitle"),
+    FOOTER_DOCUMENT_TYPE("footerDocumentType"),
+    FOOTER_TEST_NUMBER("footerTestNumber"),
+    FOOTER_DATE_POPULATED("footerDatePopulated"),
+    RUNNING_HEADER_LEFT("header-left"),
+    RUNNING_HEADER("running-header"),
+    VEHICLE_TYPE_TEXT("vehicleTypeText"),
+    RUNNING_HEADER_TEXT("runningHeaderText"),
+    REASONS_FOR_ABANDONMENT("reasonsForAbandonment_"),
+    ADDITIONAL_COMMENTS("additionalComments"),
+    DATA_PROTECTION_WITH_DOCUMENT_TYPE("dataProtectionWithDocumentType");
+
 
     private final String selector;
 
