@@ -1188,12 +1188,11 @@ public class CvsCertificateTestDataProvider {
 
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
+                "",
                 reasonsForAbandonment,
                 "2024 06",
                 "fake location",
                 "fake tester",
-                "12341",
-                "documentName",
                 additionalComments);
         vtg12.setData(abandonedData);
         return vtg12;
@@ -1207,12 +1206,11 @@ public class CvsCertificateTestDataProvider {
 
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
+                "",
                 reasonsForAbandonment,
                 "2024 06",
                 "fake location",
                 "fake tester",
-                "12341",
-                "documentName",
                 additionalComments);
         vtp12.setData(abandonedData);
         return vtp12;

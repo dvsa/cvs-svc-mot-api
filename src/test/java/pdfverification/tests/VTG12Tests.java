@@ -24,7 +24,7 @@ public class VTG12Tests {
     private static final String VIN = "P O I U Y T R E W Q 0 1 2 3 0 1 0 9 5 6 7 8 9 1";
     private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTG12";
     private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 2 exists VTG12";
-    private static final String ROLLING_FOOTER_LEFT = "VTG12 (DVSA 12341)";
+    private static final String ROLLING_FOOTER_LEFT = "VTG12 (DVSA 0440)";
     private static final String ROLLING_FOOTER_RIGHT = "Date (2024 06)";
     private static final String ADDITIONAL_COMMENTS = "additional comments VTG12";
     private static final String ROLLING_HEADER_LEFT = "VTG12";

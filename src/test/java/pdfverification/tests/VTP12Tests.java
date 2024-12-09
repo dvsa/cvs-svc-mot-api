@@ -23,7 +23,7 @@ public class VTP12Tests {
     private static final String VIN = "P O I U Y T R E W Q 0 1 2 3 0 1 0 9 5 6 7 8 9 1";
     private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTP12";
     private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 1 exists VTP12";
-    private static final String ROLLING_FOOTER_LEFT = "VTP12 (DVSA 12341)";
+    private static final String ROLLING_FOOTER_LEFT = "VTP12 (DVSA 0453)";
     private static final String ROLLING_FOOTER_RIGHT = "Date (2024 06)";
     private static final String ADDITIONAL_COMMENTS = "additional comments VTP12";
     private static final String ROLLING_HEADER_LEFT = "VTP12";

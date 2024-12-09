@@ -3,101 +3,72 @@ package uk.gov.dvsa.model.cvs.certificateData;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AbandonedData {
-    @JsonProperty("Vin")
-    private String vin;
+    @JsonProperty("ChassisNumber")
+    private String chassisNumber;
 
-    @JsonProperty("ReasonsForAbandonment")
-    private String[] reasonsForAbandonment;
+    @JsonProperty("RegistrationNumber")
+    private String registrationNumber;
 
-    // might generate time in different part of the code
-    @JsonProperty("DatePopulated")
-    private String datePopulated;
+    @JsonProperty("ReasonsForRefusal")
+    private String[] reasonsForRefusal;
 
-    @JsonProperty("Location")
-    private String location;
+    @JsonProperty("TestStationName")
+    private String testStationName;
 
-    @JsonProperty("TestersName")
-    private String testersName;
-
-    @JsonProperty("TestNumber")
-    private String testNumber;
-
-    @JsonProperty("Signature")
-    private String signature;
-
-    @JsonProperty("documentName")
-    private String documentName;
+    //print name
+    @JsonProperty("IssuersName")
+    private String issuersName;
 
     @JsonProperty("AdditionalComments")
     private String additionalComments;
 
+    @JsonProperty("TestStationPNumber")
+    private String testStationPNumber;
+
+    @JsonProperty("DateOfTheTest")
+    private String dateOfTheTest;
+
     public AbandonedData() {
     }
 
-    public AbandonedData(String vin,
-                         String[] reasonsForAbandonment,
-                         String datePopulated,
-                         String location,
-                         String testersName,
-                         String testNumber,
-                         String documentName,
+    public AbandonedData(String chassisNumber,
+                         String registrationNumber,
+                         String[] reasonsForRefusal,
+                         String dateOfTheTest,
+                         String testStationName,
+                         String issuersName,
                          String additionalComments) {
-        this.vin = vin;
-        this.reasonsForAbandonment = reasonsForAbandonment;
-        this.datePopulated = datePopulated;
-        this.location = location;
-        this.testersName = testersName;
-        this.testNumber = testNumber;
-        this.documentName = documentName;
+        this.chassisNumber = chassisNumber;
+        this.registrationNumber = registrationNumber;
+        this.reasonsForRefusal = reasonsForRefusal;
+        this.dateOfTheTest = dateOfTheTest;
+        this.testStationName = testStationName;
+        this.issuersName = issuersName;
         this.additionalComments = additionalComments;
     }
 
-    public AbandonedData(String vin,
-                         String[] reasonsForAbandonment,
-                         String datePopulated,
-                         String location,
-                         String testersName,
-                         String testNumber,
-                         String signature,
-                         String documentName,
-                         String additionalComments) {
-        this.vin = vin;
-        this.reasonsForAbandonment = reasonsForAbandonment;
-        this.datePopulated = datePopulated;
-        this.location = location;
-        this.testersName = testersName;
-        this.signature = signature;
-        this.testNumber = testNumber;
-        this.documentName = documentName;
-        this.additionalComments = additionalComments;
+    public String[] getChassisNumber() {
+        return chassisNumber.split("");
     }
 
-    public String[] getVin() {
-        return vin.split("");
+    public String[] getReasonsForRefusal() {
+        return reasonsForRefusal;
     }
 
-    public String[] getReasonsForAbandonment() {
-        return reasonsForAbandonment;
+    public String getDateOfTheTest() {
+        return dateOfTheTest;
     }
 
-    public String getDatePopulated() {
-        return datePopulated;
+    public String getTestStationName() {
+        return testStationName;
     }
 
-    public String getLocation() {
-        return location;
+    public String getTestStationPNumber() {
+        return testStationPNumber;
     }
 
-    public String getTestersName() {
-        return testersName;
-    }
-
-    public String getTestNumber() {
-        return testNumber;
-    }
-
-    public String getSignature() {
-        return signature;
+    public String getIssuersName() {
+        return issuersName;
     }
 
     public String getAdditionalComments() {

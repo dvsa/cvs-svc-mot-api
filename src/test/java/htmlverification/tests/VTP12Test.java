@@ -62,12 +62,12 @@ public class VTP12Test {
 
     @Test
     public void verifyFooterTestNumber() {
-        assertEquals("(DVSA " + testCertificate.getData().getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
+        assertEquals("(DVSA " + testCertificate.getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
     }
 
     @Test
     public void verifyFooterDatePopulated() {
-        assertEquals("Date (" +testCertificate.getData().getDatePopulated() + ")", certificatePageObject.getFooterDatePopulated());
+        assertEquals("Date (" +testCertificate.getData().getDateOfTheTest() + ")", certificatePageObject.getFooterDatePopulated());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class VTP12Test {
 
     @Test
     public void verifyVin() {
-        String[] vin = testCertificate.getData().getVin();
+        String[] vin = testCertificate.getData().getChassisNumber();
         for (int i = 0; i < vin.length; i++) {
             assertEquals(vin[i], certificatePageObject.getSpacedVin(i));
         }
@@ -96,7 +96,7 @@ public class VTP12Test {
 
     @Test
     public void verifyReasonsForAbandonment() {
-        String[] reasonsForAbandonment = testCertificate.getData().getReasonsForAbandonment();
+        String[] reasonsForAbandonment = testCertificate.getData().getReasonsForRefusal();
         for (int i = 0; i < reasonsForAbandonment.length; i++) {
             assertEquals(reasonsForAbandonment[i], certificatePageObject.getReasonsForAbandonment(i));
         }
