@@ -1,6 +1,9 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 public class AbandonedData {
     @JsonProperty("ChassisNumber")
@@ -59,6 +62,13 @@ public class AbandonedData {
 
     public String getDateOfTheTest() {
         return dateOfTheTest;
+    }
+
+    public String getDateOfTheTestYearMonth() {
+        String[] dateString = dateOfTheTest.split("\\.");
+        String month = Month.of(Integer.parseInt(dateString[1])).
+                getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
+        return month +" "+  Integer.parseInt(dateString[2]);
     }
 
     public String getTestStationName() {

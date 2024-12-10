@@ -427,6 +427,10 @@ public class CertificatePageObject extends BasePageObject {
         return getElementById(VEHICLE_TYPE_TEXT.getSelector()).text();
     }
 
+    public String getSanctionText() {
+        return getElementById(SECTION_TEXT.getSelector()).text();
+    }
+
     public String getReasonsForAbandonment(Integer index) {
         return getElementById(REASONS_FOR_ABANDONMENT.getSelector()+index).text();
     }

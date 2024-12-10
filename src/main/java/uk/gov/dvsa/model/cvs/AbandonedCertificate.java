@@ -33,6 +33,9 @@ public abstract class AbandonedCertificate extends Document {
         return this.titleTextIncludingRollingHeaders;
     }
 
+    protected String sectionTextRef;
+    public String getSectionTextRef() { return this.sectionTextRef; }
+
     @JsonProperty("TestNumber")
     protected String testNumber;
     public String getTestNumber() { return testNumber; }

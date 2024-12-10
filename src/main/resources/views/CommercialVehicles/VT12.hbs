@@ -17,7 +17,7 @@
           <!-- header -->
           <div class="header">
             <img src="{{root}}/assets/images/dvsa_crest.png" alt="DVSA" class="header__crest-img"/>
-            <div class="header__title-text">
+            <div class="title-text">
               <div class="bold-text" id="firstPageTitle">
                 Notification of Failure to Comply with the Conditions of Acceptance of a
                   {{titleTextIncludingRollingHeaders}} ({{documentType}})
@@ -30,10 +30,10 @@
 
           <!-- footer -->
           <div class="footer-left">
-            <b id="footerDocumentType">{{documentType}}</b><span id="footerTestNumber"> (DVSA {{testNumber}})</span>
+            <b id="footerDocumentType">{{documentType}}</b><span id="footerTestNumber"> (DVSA{{testNumber}})</span>
           </div>
           <div class="footer-right">
-            <p id="footerDatePopulated">Date ({{data.dateOfTheTest}})</p>
+            <p id="footerDatePopulated">Date ({{data.dateOfTheTestYearMonth}})</p>
           </div>
           <!-- /footer -->
 
@@ -50,8 +50,8 @@
           </div>
 
 
-          <div id="paragraph-after-vin" class="standard-text">
-            having been submitted for an examination under Section 45 of the Road Traffic Act 1998, it is hereby notified that the examination did not proceed or could not be completed because of a failure to comply with those conditions of acceptance for examination recorded below.
+          <div id="sectionText" class="standard-text">
+            having been submitted for an examination under Section {{sectionTextRef}} of the Road Traffic Act 1998, it is hereby notified that the examination did not proceed or could not be completed because of a failure to comply with those conditions of acceptance for examination recorded below.
           </div>
 
           <b class="standard-text">
@@ -113,7 +113,7 @@
       <div class="data-protection-box">
         <div class="data-protection-text bold-text">Data Protection</div>
         <div class="data-protection-text" id="dataProtectionWithDocumentType">
-          We Collect, use and store your personal data so that we can correctly issue your vehicle with a {{documentType}} failure notification.
+          We collect, use and store your personal data so that we can correctly issue your vehicle with a {{documentType}} failure notification.
         </div>
         <div class="data-protection-text">
           We may share your personal data if we have a lawful reason. For example as part of a criminal investigation or to prevent fraud. Find out more at

@@ -10,12 +10,14 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
+
+import java.io.FileOutputStream;
 import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
 public class VTG12Tests {
 
-    private static final String DYNAMIC_TITLE_SECTION = "Vehicle for Examination (VTG12)";
+    private static final String DYNAMIC_TITLE_SECTION = "Examination (VTG12)";
     private static final String REGULATION_LINE1 = "Regulations 7 and 8 of the Goods Vehicles (Plating";
     private static final String REGULATION_LINE2 = "and Testing) Regulations 1988 as Amended";
     private static final String VEHICLE_TYPE_TEXT_LINE1 = "In respect of the goods vehicle with registration number / chassis serial number / trailer";
@@ -23,15 +25,17 @@ public class VTG12Tests {
     private static final String VIN = "P O I U Y T R E W Q 0 1 2 3 0 1 0 9 5 6 7 8 9 1";
     private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTG12";
     private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 2 exists VTG12";
-    private static final String ROLLING_FOOTER_LEFT = "VTG12 (DVSA 0440)";
-    private static final String ROLLING_FOOTER_RIGHT = "Date (2024 06)";
+    private static final String ROLLING_FOOTER_LEFT = "VTG12 (DVSA0440)";
+    private static final String ROLLING_FOOTER_RIGHT = "Date (Feb 2024)";
     private static final String ADDITIONAL_COMMENTS = "additional comments VTG12";
     private static final String ROLLING_HEADER_LEFT = "VTG12";
     private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Goods Vehicle for Examination";
     private static final String PRINT_NAME = "fake tester";
     private static final String LOCATION = "fake12312312";
     private static final String LOCATION_NUMBER = "fake12312312";
-    private static final String DATE_OF_THE_TEST = "2024 06";
+    private static final String DATE_OF_THE_TEST = "01.02.2024";
+    private static final String SECTION_TEXT = "having been submitted for an examination under Section 49 and 51 of the Road Traffic Act 1998, it";
+
 
     private HtmlGenerator htmlGenerator;
     private PDFGenerationService pdfGenerationService;
@@ -56,6 +60,7 @@ public class VTG12Tests {
 
     @Test
     public void verifyTitle() throws IOException {
+        try (FileOutputStream fos = new FileOutputStream("testVTG112.pdf")) { fos.write(pdfData); }
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(DYNAMIC_TITLE_SECTION));
     }
 
@@ -74,6 +79,11 @@ public class VTG12Tests {
     @Test
     public void verifyVINText() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(VIN));
+    }
+
+    @Test
+    public void verifySectionText() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(SECTION_TEXT));
     }
 
     @Test

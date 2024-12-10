@@ -9,16 +9,13 @@ import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class VTP12Test {
 
     private static final String DYNAMIC_TITLE_SECTION = "Public Services Vehicle for Examination";
     private static final String REGULATION_TEXT = "Regulation 13 of the Motor Vehicles (Tests) Regulations 1981 as amended";
     private static final String VEHICLE_TYPE_TEXT_LINE = "In respect of the public service vehicle with registration number / chassis serial number :";
-    private static final String PRINT_NAME = "fake tester";
-    private static final String LOCATION = "fake12312312";
-    private static final String LOCATION_NUMBER = "fake12312312";
-    private static final String DATE_OF_THE_TEST = "2024 06";
 
     protected HtmlGenerator htmlGenerator;
     protected AbandonedCertificate testCertificate;
@@ -66,12 +63,12 @@ public class VTP12Test {
 
     @Test
     public void verifyFooterTestNumber() {
-        assertEquals("(DVSA " + testCertificate.getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
+        assertEquals("(DVSA" + testCertificate.getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
     }
 
     @Test
     public void verifyFooterDatePopulated() {
-        assertEquals("Date (" +testCertificate.getData().getDateOfTheTest() + ")", certificatePageObject.getFooterDatePopulated());
+        assertEquals("Date (" +testCertificate.getData().getDateOfTheTestYearMonth() + ")", certificatePageObject.getFooterDatePopulated());
     }
 
     @Test
@@ -85,6 +82,11 @@ public class VTP12Test {
         for (int i = 0; i < vin.length; i++) {
             assertEquals(vin[i], certificatePageObject.getSpacedVin(i));
         }
+    }
+
+    @Test
+    public void verifySectionText() {
+        assertTrue(certificatePageObject.getSanctionText().contains(testCertificate.getSectionTextRef()));
     }
 
     @Test
@@ -113,7 +115,7 @@ public class VTP12Test {
 
     @Test
     public void verifyDataProtectionWithDocumentType() {
-        assertEquals("We Collect, use and store your personal data so that we can correctly issue your vehicle with a " + testCertificate.getDocumentType() + " failure notification." , certificatePageObject.getDataProtectionWithDocumentType());
+        assertEquals("We collect, use and store your personal data so that we can correctly issue your vehicle with a " + testCertificate.getDocumentType() + " failure notification." , certificatePageObject.getDataProtectionWithDocumentType());
     }
 
     @Test

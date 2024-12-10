@@ -137,7 +137,8 @@ public enum CertificatePageSelector {
     PRINT_NAME("printName"),
     LOCATION("location"),
     LOCATION_NUMBER("locationNumber"),
-    DATE_OF_THE_TEST("dateOfTheTest");
+    DATE_OF_THE_TEST("dateOfTheTest"),
+    SECTION_TEXT("sectionText");
 
 
     private final String selector;

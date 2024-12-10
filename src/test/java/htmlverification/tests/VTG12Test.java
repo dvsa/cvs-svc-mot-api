@@ -7,10 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
-
 import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class VTG12Test {
 
@@ -64,12 +63,12 @@ public class VTG12Test {
 
     @Test
     public void verifyFooterTestNumber() {
-        assertEquals("(DVSA " + testCertificate.getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
+        assertEquals("(DVSA" + testCertificate.getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
     }
 
     @Test
     public void verifyFooterDatePopulated() {
-        assertEquals("Date (" +testCertificate.getData().getDateOfTheTest() + ")", certificatePageObject.getFooterDatePopulated());
+        assertEquals("Date (" +testCertificate.getData().getDateOfTheTestYearMonth() + ")", certificatePageObject.getFooterDatePopulated());
     }
 
     @Test
@@ -83,6 +82,11 @@ public class VTG12Test {
         for (int i = 0; i < vin.length; i++) {
             assertEquals(vin[i], certificatePageObject.getSpacedVin(i));
         }
+    }
+
+    @Test
+    public void verifySectionText() {
+        assertTrue(certificatePageObject.getSanctionText().contains(testCertificate.getSectionTextRef()));
     }
 
     @Test
@@ -111,7 +115,7 @@ public class VTG12Test {
 
     @Test
     public void verifyDataProtectionWithDocumentType() {
-        assertEquals("We Collect, use and store your personal data so that we can correctly issue your vehicle with a " + testCertificate.getDocumentType() + " failure notification." , certificatePageObject.getDataProtectionWithDocumentType());
+        assertEquals("We collect, use and store your personal data so that we can correctly issue your vehicle with a " + testCertificate.getDocumentType() + " failure notification." , certificatePageObject.getDataProtectionWithDocumentType());
     }
 
     @Test

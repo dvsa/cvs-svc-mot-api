@@ -8,5 +8,6 @@ public class VTG12 extends AbandonedCertificate {
         super.vehicleTypeText = "In respect of the goods vehicle with registration number / chassis serial number / trailer identification mark :";
         super.titleTextIncludingRollingHeaders = "Goods Vehicle for Examination";
         super.testNumber = "0440";
+        super.sectionTextRef = "49 and 51";
     }
 }

@@ -8,5 +8,6 @@ public class VTP12 extends AbandonedCertificate {
         super.vehicleTypeText = "In respect of the public service vehicle with registration number / chassis serial number :";
         super.titleTextIncludingRollingHeaders = "Public Services Vehicle for Examination";
         super.testNumber = "0453";
+        super.sectionTextRef = "45";
     }
 }

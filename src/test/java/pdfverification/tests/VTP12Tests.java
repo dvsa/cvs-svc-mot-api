@@ -10,27 +10,30 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
+
+import java.io.FileOutputStream;
 import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
 public class VTP12Tests {
 
-    private static final String DYNAMIC_TITLE_SECTION = "Services Vehicle for Examination (VTP12)";
+    private static final String DYNAMIC_TITLE_SECTION = "Examination (VTP12)";
     private static final String REGULATION_LINE1 = "Regulation 13 of the Motor Vehicles (Tests) ";
     private static final String REGULATION_LINE2 = "Regulations 1981 as amended";
     private static final String VEHICLE_TYPE_TEXT_LINE = "In respect of the public service vehicle with registration number / chassis serial number :";
     private static final String VIN = "P O I U Y T R E W Q 0 1 2 3 0 1 0 9 5 6 7 8 9 1";
     private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTP12";
     private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 1 exists VTP12";
-    private static final String ROLLING_FOOTER_LEFT = "VTP12 (DVSA 0453)";
-    private static final String ROLLING_FOOTER_RIGHT = "Date (2024 06)";
+    private static final String ROLLING_FOOTER_LEFT = "VTP12 (DVSA0453)";
+    private static final String ROLLING_FOOTER_RIGHT = "Date (Feb 2024)";
     private static final String ADDITIONAL_COMMENTS = "additional comments VTP12";
     private static final String ROLLING_HEADER_LEFT = "VTP12";
     private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Public Services Vehicle for Examination";
     private static final String PRINT_NAME = "fake tester";
     private static final String LOCATION = "fake12312312";
     private static final String LOCATION_NUMBER = "fake12312312";
-    private static final String DATE_OF_THE_TEST = "2024 06";
+    private static final String DATE_OF_THE_TEST = "01.02.2024";
+    private static final String SECTION_TEXT = "having been submitted for an examination under Section 45 of the Road Traffic Act 1998, it is";
 
 
     private HtmlGenerator htmlGenerator;
@@ -56,6 +59,7 @@ public class VTP12Tests {
 
     @Test
     public void verifyTitle() throws IOException {
+        try (FileOutputStream fos = new FileOutputStream("testVTP112.pdf")) { fos.write(pdfData); }
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(DYNAMIC_TITLE_SECTION));
     }
 
@@ -73,6 +77,11 @@ public class VTP12Tests {
     @Test
     public void verifyVINText() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(VIN));
+    }
+
+    @Test
+    public void verifySectionText() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(SECTION_TEXT));
     }
 
     @Test
