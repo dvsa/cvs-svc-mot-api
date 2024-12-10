@@ -36,6 +36,7 @@ public class AbandonedData {
                          String[] reasonsForRefusal,
                          String dateOfTheTest,
                          String testStationName,
+                         String testStationPNumber,
                          String issuersName,
                          String additionalComments) {
         this.chassisNumber = chassisNumber;
@@ -43,6 +44,7 @@ public class AbandonedData {
         this.reasonsForRefusal = reasonsForRefusal;
         this.dateOfTheTest = dateOfTheTest;
         this.testStationName = testStationName;
+        this.testStationPNumber = testStationPNumber;
         this.issuersName = issuersName;
         this.additionalComments = additionalComments;
     }

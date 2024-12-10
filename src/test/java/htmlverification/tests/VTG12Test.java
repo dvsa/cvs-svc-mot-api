@@ -113,4 +113,29 @@ public class VTG12Test {
     public void verifyDataProtectionWithDocumentType() {
         assertEquals("We Collect, use and store your personal data so that we can correctly issue your vehicle with a " + testCertificate.getDocumentType() + " failure notification." , certificatePageObject.getDataProtectionWithDocumentType());
     }
+
+    @Test
+    public void verifySignature() {
+        assertEquals(testCertificate.getSignature().getFormattedImageData(), certificatePageObject.getSignature());
+    }
+
+    @Test
+    public void verifyPrintName() {
+        assertEquals(testCertificate.getData().getIssuersName(), certificatePageObject.getPrintName());
+    }
+
+    @Test
+    public void verifyLocation() {
+        assertEquals(testCertificate.getData().getTestStationName(), certificatePageObject.getLocation());
+    }
+
+    @Test
+    public void verifyLocationNumber() {
+        assertEquals(testCertificate.getData().getTestStationPNumber(), certificatePageObject.getLocationNumber());
+    }
+
+    @Test
+    public void verifyDateOfTheTest() {
+        assertEquals(testCertificate.getData().getDateOfTheTest(), certificatePageObject.getDateOfTest());
+    }
 }

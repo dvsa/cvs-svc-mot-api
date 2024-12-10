@@ -10,7 +10,6 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
@@ -28,6 +27,10 @@ public class VTP12Tests {
     private static final String ADDITIONAL_COMMENTS = "additional comments VTP12";
     private static final String ROLLING_HEADER_LEFT = "VTP12";
     private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Public Services Vehicle for Examination";
+    private static final String PRINT_NAME = "fake tester";
+    private static final String LOCATION = "fake12312312";
+    private static final String LOCATION_NUMBER = "fake12312312";
+    private static final String DATE_OF_THE_TEST = "2024 06";
 
 
     private HtmlGenerator htmlGenerator;
@@ -101,5 +104,25 @@ public class VTP12Tests {
     @Test
     public void verifyRollingHeaderRightText() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 2).contains(ROLLING_HEADER_RIGHT));
+    }
+
+    @Test
+    public void verifyPrintName() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(PRINT_NAME));
+    }
+
+    @Test
+    public void verifyLocation() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(LOCATION));
+    }
+
+    @Test
+    public void verifyLocationNumber() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(LOCATION_NUMBER));
+    }
+
+    @Test
+    public void verifyDate() throws IOException {
+        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(DATE_OF_THE_TEST));
     }
 }

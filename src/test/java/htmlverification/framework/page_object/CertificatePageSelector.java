@@ -132,7 +132,12 @@ public enum CertificatePageSelector {
     RUNNING_HEADER_TEXT("runningHeaderText"),
     REASONS_FOR_ABANDONMENT("reasonsForAbandonment_"),
     ADDITIONAL_COMMENTS("additionalComments"),
-    DATA_PROTECTION_WITH_DOCUMENT_TYPE("dataProtectionWithDocumentType");
+    DATA_PROTECTION_WITH_DOCUMENT_TYPE("dataProtectionWithDocumentType"),
+    SIGNATURE("signature"),
+    PRINT_NAME("printName"),
+    LOCATION("location"),
+    LOCATION_NUMBER("locationNumber"),
+    DATE_OF_THE_TEST("dateOfTheTest");
 
 
     private final String selector;

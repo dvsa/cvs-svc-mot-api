@@ -90,22 +90,23 @@
       <table class="table">
         <tr>
           <td class="table-row-cell table-row-left"><b>Signature: </b></td>
-          <td class="table-row-cell table-row-right" colspan="3">{{data.signature}}</td>
-
+          <td class="table-row-cell table-row-right" colspan="3">
+            <img id="signature" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/>
+          </td>
         </tr>
         <tr>
           <td class="table-row-cell table-row-left"><b>Print Name: </b></td>
-          <td class="table-row-cell table-row-right" colspan="3">{{data.issuersName}}</td>
+          <td class="table-row-cell table-row-right" colspan="3" id="printName">{{data.issuersName}}</td>
         </tr>
         <tr>
           <td class="table-row-cell table-row-left"><b>Location: </b></td>
-          <td class="table-row-cell table-row-right" colspan="3">{{data.testStationName}}</td>
+          <td class="table-row-cell table-row-right" colspan="3" id="location">{{data.testStationName}}</td>
         </tr>
         <tr>
           <td class="table-row-cell last-row-first-column"><b>Location Number: </b></td>
-          <td class="table-row-cell last-row-second-column">{{data.testStationPNumber}}</td>
+          <td class="table-row-cell last-row-second-column" id="locationNumber">{{data.testStationPNumber}}</td>
           <td class="table-row-cell last-row-third-column"><b>Date: </b></td>
-          <td class="table-row-cell last-row-fourth-column">{{data.dateOfTheTest}}</td>
+          <td class="table-row-cell last-row-fourth-column" id="dateOfTheTest">{{data.dateOfTheTest}}</td>
         </tr>
       </table>
 

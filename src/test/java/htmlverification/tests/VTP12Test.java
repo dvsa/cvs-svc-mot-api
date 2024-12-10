@@ -15,6 +15,10 @@ public class VTP12Test {
     private static final String DYNAMIC_TITLE_SECTION = "Public Services Vehicle for Examination";
     private static final String REGULATION_TEXT = "Regulation 13 of the Motor Vehicles (Tests) Regulations 1981 as amended";
     private static final String VEHICLE_TYPE_TEXT_LINE = "In respect of the public service vehicle with registration number / chassis serial number :";
+    private static final String PRINT_NAME = "fake tester";
+    private static final String LOCATION = "fake12312312";
+    private static final String LOCATION_NUMBER = "fake12312312";
+    private static final String DATE_OF_THE_TEST = "2024 06";
 
     protected HtmlGenerator htmlGenerator;
     protected AbandonedCertificate testCertificate;
@@ -110,5 +114,30 @@ public class VTP12Test {
     @Test
     public void verifyDataProtectionWithDocumentType() {
         assertEquals("We Collect, use and store your personal data so that we can correctly issue your vehicle with a " + testCertificate.getDocumentType() + " failure notification." , certificatePageObject.getDataProtectionWithDocumentType());
+    }
+
+    @Test
+    public void verifySignature() {
+        assertEquals(testCertificate.getSignature().getFormattedImageData(), certificatePageObject.getSignature());
+    }
+
+    @Test
+    public void verifyPrintName() {
+        assertEquals(testCertificate.getData().getIssuersName(), certificatePageObject.getPrintName());
+    }
+
+    @Test
+    public void verifyLocation() {
+        assertEquals(testCertificate.getData().getTestStationName(), certificatePageObject.getLocation());
+    }
+
+    @Test
+    public void verifyLocationNumber() {
+        assertEquals(testCertificate.getData().getTestStationPNumber(), certificatePageObject.getLocationNumber());
+    }
+
+    @Test
+    public void verifyDateOfTheTest() {
+        assertEquals(testCertificate.getData().getDateOfTheTest(), certificatePageObject.getDateOfTest());
     }
 }

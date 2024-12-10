@@ -438,4 +438,24 @@ public class CertificatePageObject extends BasePageObject {
     public String getDataProtectionWithDocumentType() {
         return getElementById(DATA_PROTECTION_WITH_DOCUMENT_TYPE.getSelector()).text();
     }
+
+    public String getSignature() {
+        return getElementById(SIGNATURE.getSelector()).attr("src");
+    }
+
+    public String getPrintName() {
+        return getElementById(PRINT_NAME.getSelector()).text();
+    }
+
+    public String getLocation() {
+        return getElementById(LOCATION.getSelector()).text();
+    }
+
+    public String getLocationNumber() {
+        return getElementById(LOCATION_NUMBER.getSelector()).text();
+    }
+
+    public String getDateOfTest() {
+        return getElementById(DATE_OF_THE_TEST.getSelector()).text();
+    }
 }

@@ -14,6 +14,9 @@ public abstract class AbandonedCertificate extends Document {
     public Signature getSignature() {
         return signature;
     }
+    public void setSignature(Signature signature) {
+         this.signature = signature;
+    }
 
     public String getDocumentType() {
         return this.getDocumentName().split("/")[1];
@@ -32,9 +35,7 @@ public abstract class AbandonedCertificate extends Document {
 
     @JsonProperty("TestNumber")
     protected String testNumber;
-    public String getTestNumber() {
-        return testNumber;
-    }
+    public String getTestNumber() { return testNumber; }
 
     public AbandonedData getData() {
         return data;
