@@ -13,7 +13,6 @@ import uk.gov.dvsa.service.PDFGenerationService;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IVA30Tests {

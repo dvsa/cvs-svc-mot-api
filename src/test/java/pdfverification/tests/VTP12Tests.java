@@ -10,8 +10,6 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
-import java.io.FileOutputStream;
 import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
@@ -58,7 +56,6 @@ public class VTP12Tests {
 
     @Test
     public void verifyTitle() throws IOException {
-        try (FileOutputStream fos = new FileOutputStream("testVTP112.pdf")) { fos.write(pdfData); }
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(DYNAMIC_TITLE_SECTION));
     }
 

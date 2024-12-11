@@ -10,11 +10,7 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.MSVA30;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
-
-import java.io.FileOutputStream;
 import java.io.IOException;
-
 import static org.junit.Assert.assertTrue;
 
 public class MSVA30Tests {
