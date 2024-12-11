@@ -395,8 +395,8 @@ public class CertificatePageObject extends BasePageObject {
         return getElementById(REGULATION_TEXT.getSelector()).text();
     }
 
-    public String getSpacedVin(Integer index) {
-        return getElementById(VIN_ID.getSelector()+"_"+index).text();
+    public String getSpacedRegistrationNumber(Integer index) {
+        return getElementById(REGISTRATION_TEXT.getSelector()+index).text();
     }
 
     public String getFirstPageTitle() {

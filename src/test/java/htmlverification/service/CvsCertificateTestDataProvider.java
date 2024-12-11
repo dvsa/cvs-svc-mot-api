@@ -1188,7 +1188,6 @@ public class CvsCertificateTestDataProvider {
 
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
-                "",
                 reasonsForRefusal,
                 "01.02.2024",
                 "fake location",
@@ -1215,7 +1214,6 @@ public class CvsCertificateTestDataProvider {
 
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
-                "",
                 reasonsForRefusal,
                 "01.02.2024",
                 "fake location",

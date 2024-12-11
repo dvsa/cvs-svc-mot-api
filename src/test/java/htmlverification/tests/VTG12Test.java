@@ -67,20 +67,15 @@ public class VTG12Test {
     }
 
     @Test
-    public void verifyFooterDatePopulated() {
-        assertEquals("Date (" +testCertificate.getData().getDateOfTheTestYearMonth() + ")", certificatePageObject.getFooterDatePopulated());
-    }
-
-    @Test
     public void verifyVehicleTypeText() {
         assertEquals(testCertificate.getVehicleTypeText(), certificatePageObject.getVehicleTestType());
     }
 
     @Test
-    public void verifyVin() {
-        String[] vin = testCertificate.getData().getChassisNumber();
-        for (int i = 0; i < vin.length; i++) {
-            assertEquals(vin[i], certificatePageObject.getSpacedVin(i));
+    public void verifyRegistrationNumber() {
+        String[] reg = testCertificate.getData().getRegistrationNumber();
+        for (int i = 0; i < reg.length; i++) {
+            assertEquals(reg[i], certificatePageObject.getSpacedRegistrationNumber(i));
         }
     }
 

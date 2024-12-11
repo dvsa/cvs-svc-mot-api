@@ -121,6 +121,7 @@ public enum CertificatePageSelector {
     AXLE3_FITMENT_CODE("axle3_fitmentCode"),
     AXLE4_FITMENT_CODE("axle4_fitmentCode"),
     DOCUMENT_TYPE("documentType"),
+    REGISTRATION_TEXT("reg_"),
     REGULATION_TEXT("regulationText"),
     FIRST_PAGE_TITLE("firstPageTitle"),
     FOOTER_DOCUMENT_TYPE("footerDocumentType"),

@@ -30,10 +30,11 @@
 
           <!-- footer -->
           <div class="footer-left">
-            <b id="footerDocumentType">{{documentType}}</b><span id="footerTestNumber"> (DVSA{{testNumber}})</span>
+            <b id="footerDocumentType">{{documentType}}</b>
+            <span id="footerTestNumber"><b> (DVSA{{testNumber}})</b></span>
           </div>
           <div class="footer-right">
-            <p id="footerDatePopulated">Date ({{data.dateOfTheTestYearMonth}})</p>
+            <p id="footerDatePopulated" class="bold-text">Jan 2025</p>
           </div>
           <!-- /footer -->
 
@@ -42,8 +43,8 @@
           </div>
 
           <div class="vin-wrapper">
-            {{#each data.chassisNumber}}
-              <span class="vin-text" id="vin_{{@index}}">
+            {{#each data.registrationNumber}}
+              <span class="vin-text" id="reg_{{@index}}">
                 {{this}}
               </span>
             {{/each}}
@@ -63,7 +64,7 @@
             <div class="header-left">
               {{documentType}}
             </div>
-            <span>
+            <span class="bold-text">
               Notification of Failure to Comply with the Conditions of Acceptance of a {{titleTextIncludingRollingHeaders}}
             </span>
           </div>

@@ -25,10 +25,9 @@ public class VTP12Tests {
     private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTP12";
     private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 1 exists VTP12";
     private static final String ROLLING_FOOTER_LEFT = "VTP12 (DVSA0453)";
-    private static final String ROLLING_FOOTER_RIGHT = "Date (Feb 2024)";
     private static final String ADDITIONAL_COMMENTS = "additional comments VTP12";
     private static final String ROLLING_HEADER_LEFT = "VTP12";
-    private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Public Services Vehicle for Examination";
+    private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Public Service Vehicle for Examination";
     private static final String PRINT_NAME = "fake tester";
     private static final String LOCATION = "fake12312312";
     private static final String LOCATION_NUMBER = "fake12312312";
@@ -93,11 +92,6 @@ public class VTP12Tests {
     @Test
     public void verifyRollingFooterLeftText() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(ROLLING_FOOTER_LEFT));
-    }
-
-    @Test
-    public void verifyRollingFooterRightText() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(ROLLING_FOOTER_RIGHT));
     }
 
     @Test

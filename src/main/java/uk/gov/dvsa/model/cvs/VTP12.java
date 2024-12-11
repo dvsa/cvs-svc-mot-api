@@ -6,7 +6,7 @@ public class VTP12 extends AbandonedCertificate {
         super();
         super.regulationText = "Regulation 13 of the Motor Vehicles (Tests) Regulations 1981 as amended";
         super.vehicleTypeText = "In respect of the public service vehicle with registration number / chassis serial number :";
-        super.titleTextIncludingRollingHeaders = "Public Services Vehicle for Examination";
+        super.titleTextIncludingRollingHeaders = "Public Service Vehicle for Examination";
         super.testNumber = "0453";
         super.sectionTextRef = "45";
     }

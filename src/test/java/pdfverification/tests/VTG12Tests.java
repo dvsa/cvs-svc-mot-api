@@ -26,7 +26,6 @@ public class VTG12Tests {
     private static final String REASONS_FOR_REFUSAL_LINE1 = "Reason 1 exists VTG12";
     private static final String REASONS_FOR_REFUSAL_LINE2 = "Reason 2 exists VTG12";
     private static final String ROLLING_FOOTER_LEFT = "VTG12 (DVSA0440)";
-    private static final String ROLLING_FOOTER_RIGHT = "Date (Feb 2024)";
     private static final String ADDITIONAL_COMMENTS = "additional comments VTG12";
     private static final String ROLLING_HEADER_LEFT = "VTG12";
     private static final String ROLLING_HEADER_RIGHT = "Acceptance of a Goods Vehicle for Examination";
@@ -60,7 +59,6 @@ public class VTG12Tests {
 
     @Test
     public void verifyTitle() throws IOException {
-        try (FileOutputStream fos = new FileOutputStream("testVTG112.pdf")) { fos.write(pdfData); }
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(DYNAMIC_TITLE_SECTION));
     }
 
@@ -95,11 +93,6 @@ public class VTG12Tests {
     @Test
     public void verifyRollingFooterLeftText() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(ROLLING_FOOTER_LEFT));
-    }
-
-    @Test
-    public void verifyRollingFooterRightText() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 1).contains(ROLLING_FOOTER_RIGHT));
     }
 
     @Test

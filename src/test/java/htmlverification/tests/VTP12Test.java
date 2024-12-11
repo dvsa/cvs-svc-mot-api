@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class VTP12Test {
 
-    private static final String DYNAMIC_TITLE_SECTION = "Public Services Vehicle for Examination";
+    private static final String DYNAMIC_TITLE_SECTION = "Public Service Vehicle for Examination";
     private static final String REGULATION_TEXT = "Regulation 13 of the Motor Vehicles (Tests) Regulations 1981 as amended";
     private static final String VEHICLE_TYPE_TEXT_LINE = "In respect of the public service vehicle with registration number / chassis serial number :";
 
@@ -67,20 +67,15 @@ public class VTP12Test {
     }
 
     @Test
-    public void verifyFooterDatePopulated() {
-        assertEquals("Date (" +testCertificate.getData().getDateOfTheTestYearMonth() + ")", certificatePageObject.getFooterDatePopulated());
-    }
-
-    @Test
     public void verifyVehicleTypeText() {
         assertEquals(testCertificate.getVehicleTypeText(), certificatePageObject.getVehicleTestType());
     }
 
     @Test
     public void verifyVin() {
-        String[] vin = testCertificate.getData().getChassisNumber();
+        String[] vin = testCertificate.getData().getRegistrationNumber();
         for (int i = 0; i < vin.length; i++) {
-            assertEquals(vin[i], certificatePageObject.getSpacedVin(i));
+            assertEquals(vin[i], certificatePageObject.getSpacedRegistrationNumber(i));
         }
     }
 
