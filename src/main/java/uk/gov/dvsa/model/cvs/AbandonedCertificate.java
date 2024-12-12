@@ -6,21 +6,15 @@ import uk.gov.dvsa.model.cvs.certificateData.AbandonedData;
 import uk.gov.dvsa.model.cvs.certificateData.Signature;
 
 public abstract class AbandonedCertificate extends Document {
+    protected String regulationText;
+    protected String vehicleTypeText;
+    protected String titleTextIncludingRollingHeaders;
+    protected String sectionTextRef;
+    protected String testNumber;
     @JsonProperty("ABANDONED_DATA")
-    protected AbandonedData data;
-
+    private AbandonedData data;
     @JsonProperty("Signature")
     private Signature signature;
-
-    protected String regulationText;
-
-    protected String vehicleTypeText;
-
-    protected String titleTextIncludingRollingHeaders;
-
-    protected String sectionTextRef;
-
-    protected String testNumber;
 
     public AbandonedData getData() {
         return data;

@@ -5,22 +5,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class AbandonedData {
     @JsonProperty("RegistrationNumber")
     private String registrationNumber;
-
     @JsonProperty("ReasonsForRefusal")
     private String[] reasonsForRefusal;
-
     @JsonProperty("TestStationName")
     private String testStationName;
-
     @JsonProperty("TestStationPNumber")
     private String testStationPNumber;
-
     @JsonProperty("IssuersName")
     private String issuersName;
-
     @JsonProperty("AdditionalComments")
     private String additionalComments;
-
     @JsonProperty("DateOfTheTest")
     private String dateOfTheTest;
 
