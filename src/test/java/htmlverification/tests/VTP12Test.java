@@ -13,6 +13,8 @@ public class VTP12Test extends AbandonedTest {
         super.DYNAMIC_TITLE_SECTION = "Public Service Vehicle for Examination";
         super.REGULATION_TEXT = "Regulation 13 of the Motor Vehicles (Tests) Regulations 1981 as amended";
         super.VEHICLE_TYPE_TEXT_LINE = "In respect of the public service vehicle with registration number / chassis serial number :";
+        super.FORM_NUMBER = "0453";
+        super.SECTION_REF_TEXT = "45";
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
     }
 

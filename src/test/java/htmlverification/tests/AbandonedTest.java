@@ -12,6 +12,9 @@ public abstract class AbandonedTest {
     protected String DYNAMIC_TITLE_SECTION;
     protected String REGULATION_TEXT;
     protected String VEHICLE_TYPE_TEXT_LINE;
+    protected String FORM_NUMBER;
+    protected String SECTION_REF_TEXT;
+
 
     protected HtmlGenerator htmlGenerator;
     protected AbandonedCertificate testCertificate;
@@ -22,6 +25,8 @@ public abstract class AbandonedTest {
         assertEquals(REGULATION_TEXT, testCertificate.getRegulationText());
         assertEquals(VEHICLE_TYPE_TEXT_LINE, testCertificate.getVehicleTypeText());
         assertEquals(DYNAMIC_TITLE_SECTION, testCertificate.getTitleTextIncludingRollingHeaders());
+        assertEquals(FORM_NUMBER, testCertificate.getFormNumber());
+        assertEquals(SECTION_REF_TEXT, testCertificate.getSectionTextRef());
     }
 
     @Test
