@@ -33,17 +33,8 @@ public abstract class AbandonedCertificate extends Document {
         return data;
     }
 
-    public Document setData(AbandonedData data) {
-        this.data = data;
-        return this;
-    }
-
     public Signature getSignature() {
         return signature;
-    }
-
-    public void setSignature(Signature signature) {
-        this.signature = signature;
     }
 
     public String getRegulationText() { return this.regulationText; }
@@ -53,4 +44,13 @@ public abstract class AbandonedCertificate extends Document {
     public String getSectionTextRef() { return this.sectionTextRef; }
 
     public String getTestNumber() { return testNumber; }
+
+    public Document setData(AbandonedData data) {
+        this.data = data;
+        return this;
+    }
+
+    public void setSignature(Signature signature) {
+        this.signature = signature;
+    }
 }

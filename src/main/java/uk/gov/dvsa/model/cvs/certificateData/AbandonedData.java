@@ -12,14 +12,14 @@ public class AbandonedData {
     @JsonProperty("TestStationName")
     private String testStationName;
 
+    @JsonProperty("TestStationPNumber")
+    private String testStationPNumber;
+
     @JsonProperty("IssuersName")
     private String issuersName;
 
     @JsonProperty("AdditionalComments")
     private String additionalComments;
-
-    @JsonProperty("TestStationPNumber")
-    private String testStationPNumber;
 
     @JsonProperty("DateOfTheTest")
     private String dateOfTheTest;
@@ -51,10 +51,6 @@ public class AbandonedData {
         return reasonsForRefusal;
     }
 
-    public String getDateOfTheTest() {
-        return dateOfTheTest;
-    }
-
     public String getTestStationName() {
         return testStationName;
     }
@@ -69,6 +65,10 @@ public class AbandonedData {
 
     public String getAdditionalComments() {
         return additionalComments;
+    }
+
+    public String getDateOfTheTest() {
+        return dateOfTheTest;
     }
 
 }
