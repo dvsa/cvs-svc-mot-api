@@ -8,9 +8,6 @@ import uk.gov.dvsa.model.cvs.certificateData.Signature;
 public abstract class AbandonedCertificate extends Document {
     @JsonProperty("ABANDONED_DATA")
     protected AbandonedData data;
-    public AbandonedData getData() {
-        return data;
-    }
 
     public Document setData(AbandonedData data) {
         this.data = data;
@@ -19,22 +16,14 @@ public abstract class AbandonedCertificate extends Document {
 
     @JsonProperty("Signature")
     private Signature signature;
-    public Signature getSignature() {
-        return signature;
-    }
-    public void setSignature(Signature signature) {
-         this.signature = signature;
-    }
 
     public String getDocumentType() {
         return this.getDocumentName().split("/")[1];
     }
 
     protected String regulationText;
-    public String getRegulationText() { return this.regulationText; }
 
     protected String vehicleTypeText;
-    public String getVehicleTypeText() { return this.vehicleTypeText; }
 
     protected String titleTextIncludingRollingHeaders;
     public String getTitleTextIncludingRollingHeaders() {
@@ -42,8 +31,26 @@ public abstract class AbandonedCertificate extends Document {
     }
 
     protected String sectionTextRef;
-    public String getSectionTextRef() { return this.sectionTextRef; }
 
     protected String testNumber;
+
+    public AbandonedData getData() {
+        return data;
+    }
+
+    public Signature getSignature() {
+        return signature;
+    }
+
+    public void setSignature(Signature signature) {
+        this.signature = signature;
+    }
+
+    public String getRegulationText() { return this.regulationText; }
+
+    public String getVehicleTypeText() { return this.vehicleTypeText; }
+
+    public String getSectionTextRef() { return this.sectionTextRef; }
+
     public String getTestNumber() { return testNumber; }
 }
