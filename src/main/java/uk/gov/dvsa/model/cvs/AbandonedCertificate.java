@@ -8,6 +8,14 @@ import uk.gov.dvsa.model.cvs.certificateData.Signature;
 public abstract class AbandonedCertificate extends Document {
     @JsonProperty("ABANDONED_DATA")
     protected AbandonedData data;
+    public AbandonedData getData() {
+        return data;
+    }
+
+    public Document setData(AbandonedData data) {
+        this.data = data;
+        return this;
+    }
 
     @JsonProperty("Signature")
     private Signature signature;
@@ -36,16 +44,6 @@ public abstract class AbandonedCertificate extends Document {
     protected String sectionTextRef;
     public String getSectionTextRef() { return this.sectionTextRef; }
 
-    @JsonProperty("TestNumber")
     protected String testNumber;
     public String getTestNumber() { return testNumber; }
-
-    public AbandonedData getData() {
-        return data;
-    }
-
-    public Document setData(AbandonedData data) {
-        this.data = data;
-        return this;
-    }
 }

@@ -10,10 +10,12 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.mot.MotFailCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
+
 import static org.junit.Assert.*;
 
 public class VT30Tests {
