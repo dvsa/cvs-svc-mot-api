@@ -63,7 +63,7 @@ public class VTG12Test {
 
     @Test
     public void verifyFooterTestNumber() {
-        assertEquals("(DVSA" + testCertificate.getTestNumber() + ")", certificatePageObject.getFooterTestNumber());
+        assertEquals("(DVSA" + testCertificate.getFormNumber() + ")", certificatePageObject.getFooterTestNumber());
     }
 
     @Test

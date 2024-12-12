@@ -10,7 +10,7 @@ public abstract class AbandonedCertificate extends Document {
     protected String vehicleTypeText;
     protected String titleTextIncludingRollingHeaders;
     protected String sectionTextRef;
-    protected String testNumber;
+    protected String formNumber;
     @JsonProperty("ABANDONED_DATA")
     private AbandonedData data;
     @JsonProperty("Signature")
@@ -26,7 +26,7 @@ public abstract class AbandonedCertificate extends Document {
 
     public String getSectionTextRef() { return this.sectionTextRef; }
 
-    public String getTestNumber() { return testNumber; }
+    public String getFormNumber() { return formNumber; }
 
     public AbandonedData getData() {
         return data;
