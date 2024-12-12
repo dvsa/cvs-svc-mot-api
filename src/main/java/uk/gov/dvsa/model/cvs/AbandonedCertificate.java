@@ -9,11 +9,6 @@ public abstract class AbandonedCertificate extends Document {
     @JsonProperty("ABANDONED_DATA")
     protected AbandonedData data;
 
-    public Document setData(AbandonedData data) {
-        this.data = data;
-        return this;
-    }
-
     @JsonProperty("Signature")
     private Signature signature;
 
@@ -36,6 +31,11 @@ public abstract class AbandonedCertificate extends Document {
 
     public AbandonedData getData() {
         return data;
+    }
+
+    public Document setData(AbandonedData data) {
+        this.data = data;
+        return this;
     }
 
     public Signature getSignature() {
