@@ -12,18 +12,11 @@ public abstract class AbandonedCertificate extends Document {
     @JsonProperty("Signature")
     private Signature signature;
 
-    public String getDocumentType() {
-        return this.getDocumentName().split("/")[1];
-    }
-
     protected String regulationText;
 
     protected String vehicleTypeText;
 
     protected String titleTextIncludingRollingHeaders;
-    public String getTitleTextIncludingRollingHeaders() {
-        return this.titleTextIncludingRollingHeaders;
-    }
 
     protected String sectionTextRef;
 
@@ -41,6 +34,10 @@ public abstract class AbandonedCertificate extends Document {
 
     public String getVehicleTypeText() { return this.vehicleTypeText; }
 
+    public String getTitleTextIncludingRollingHeaders() {
+        return this.titleTextIncludingRollingHeaders;
+    }
+
     public String getSectionTextRef() { return this.sectionTextRef; }
 
     public String getTestNumber() { return testNumber; }
@@ -52,5 +49,9 @@ public abstract class AbandonedCertificate extends Document {
 
     public void setSignature(Signature signature) {
         this.signature = signature;
+    }
+
+    public String getDocumentType() {
+        return this.getDocumentName().split("/")[1];
     }
 }
