@@ -12,7 +12,6 @@ public class AbandonedData {
     @JsonProperty("TestStationName")
     private String testStationName;
 
-    //print name
     @JsonProperty("IssuersName")
     private String issuersName;
 
