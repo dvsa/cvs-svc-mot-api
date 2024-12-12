@@ -16,14 +16,6 @@ public abstract class AbandonedCertificate extends Document {
     @JsonProperty("Signature")
     private Signature signature;
 
-    public AbandonedData getData() {
-        return data;
-    }
-
-    public Signature getSignature() {
-        return signature;
-    }
-
     public String getRegulationText() { return this.regulationText; }
 
     public String getVehicleTypeText() { return this.vehicleTypeText; }
@@ -35,6 +27,14 @@ public abstract class AbandonedCertificate extends Document {
     public String getSectionTextRef() { return this.sectionTextRef; }
 
     public String getTestNumber() { return testNumber; }
+
+    public AbandonedData getData() {
+        return data;
+    }
+
+    public Signature getSignature() {
+        return signature;
+    }
 
     public Document setData(AbandonedData data) {
         this.data = data;
