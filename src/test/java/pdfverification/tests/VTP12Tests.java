@@ -31,6 +31,6 @@ public class VTP12Tests extends AbandonedTests {
         super.LOCATION = "fake12312312";
         super.LOCATION_NUMBER = "fake12312312";
         super.DATE_OF_THE_TEST = "01.02.2024";
-        super.SECTION_TEXT = "having been submitted for an examination under Section 45 of the Road Traffic Act 1998, it is";
+        super.SECTION_TEXT = "having been submitted for an examination under Section 45 of the Road Traffic Act 1988, it is";
     }
 }
